@@ -3543,6 +3543,10 @@ export namespace Networking.Envelopes {
         error?: string;
     }
 
+    export class UnknownMessage {
+        
+    }
+
 
     export class Signature extends ProtoBufMessage {
         constructor(data: SignatureData);
