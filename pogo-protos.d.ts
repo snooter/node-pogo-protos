@@ -2334,6 +2334,17 @@ export namespace Networking.Requests.Messages {
     }
 
 
+    export class CheckAwardedBadgesMessage extends ProtoBufMessage {
+        constructor(data: CheckAwardedBadgesMessageData);
+        static decode(buffer?: any, length?: number | string, enc?: string): CheckAwardedBadgesMessage;
+
+    }
+
+    interface CheckAwardedBadgesMessageData {
+
+    }
+
+
     export class CheckChallengeMessage extends ProtoBufMessage {
         constructor(data: CheckChallengeMessageData);
         static decode(buffer?: any, length?: number | string, enc?: string): CheckChallengeMessage;
@@ -2357,6 +2368,28 @@ export namespace Networking.Requests.Messages {
 
     interface ClaimCodenameMessageData {
         codename?: string;
+    }
+
+
+    export class CollectDailyBonusMessage extends ProtoBufMessage {
+        constructor(data: CollectDailyBonusMessageData);
+        static decode(buffer?: any, length?: number | string, enc?: string): CollectDailyBonusMessage;
+
+    }
+
+    interface CollectDailyBonusMessageData {
+
+    }
+
+
+    export class CollectDailyDefenderBonusMessage extends ProtoBufMessage {
+        constructor(data: CollectDailyDefenderBonusMessageData);
+        static decode(buffer?: any, length?: number | string, enc?: string): CollectDailyDefenderBonusMessage;
+
+    }
+
+    interface CollectDailyDefenderBonusMessageData {
+
     }
 
 
@@ -2445,6 +2478,17 @@ export namespace Networking.Requests.Messages {
 
     interface DownloadSettingsMessageData {
         hash?: string;
+    }
+
+
+    export class EchoMessage extends ProtoBufMessage {
+        constructor(data: EchoMessageData);
+        static decode(buffer?: any, length?: number | string, enc?: string): EchoMessage;
+
+    }
+
+    interface EchoMessageData {
+
     }
 
 
@@ -2645,6 +2689,17 @@ export namespace Networking.Requests.Messages {
     }
 
 
+    export class GetBuddyWalkedMessage extends ProtoBufMessage {
+        constructor(data: GetBuddyWalkedMessageData);
+        static decode(buffer?: any, length?: number | string, enc?: string): GetBuddyWalkedMessage;
+
+    }
+
+    interface GetBuddyWalkedMessageData {
+
+    }
+
+
     export class GetDownloadUrlsMessage extends ProtoBufMessage {
         constructor(data: GetDownloadUrlsMessageData);
         static decode(buffer?: any, length?: number | string, enc?: string): GetDownloadUrlsMessage;
@@ -2688,6 +2743,17 @@ export namespace Networking.Requests.Messages {
         gym_latitude?: number;
         gym_longitude?: number;
         client_version?: string;
+    }
+
+
+    export class GetHatchedEggsMessage extends ProtoBufMessage {
+        constructor(data: GetHatchedEggsMessageData);
+        static decode(buffer?: any, length?: number | string, enc?: string): GetHatchedEggsMessage;
+
+    }
+
+    interface GetHatchedEggsMessageData {
+
     }
 
 
@@ -3003,6 +3069,17 @@ export namespace Networking.Requests.Messages {
 
     interface SetPlayerTeamMessageData {
         team?: Enums.TeamColor;
+    }
+
+
+    export class SfidaActionLogMessage extends ProtoBufMessage {
+        constructor(data: SfidaActionLogMessageData);
+        static decode(buffer?: any, length?: number | string, enc?: string): SfidaActionLogMessage;
+
+    }
+
+    interface SfidaActionLogMessageData {
+
     }
 
 
@@ -3635,6 +3712,17 @@ export namespace Networking.Envelopes {
         timestamp?: Long;
         request_hash: Long[];
         unknown25?: Long;
+    }
+
+
+    export class UnknownMessage extends ProtoBufMessage {
+        constructor(data: UnknownMessageData);
+        static decode(buffer?: any, length?: number | string, enc?: string): UnknownMessage;
+
+    }
+
+    interface UnknownMessageData {
+
     }
 
 }
