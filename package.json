@@ -1,11 +1,11 @@
 {
-  "name": "node-pogo-protos",
-  "version": "3.10.0",
+  "name": "node-pogo-protos-vnext",
+  "version": "2.11.0",
   "description": "Pokémon Go Protobuf files from POGOProtos, wrapped up in a Node module using protobuf.js",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cyraxx/node-pogo-protos.git"
+    "url": "git+https://github.com/pogosandbox/node-pogo-protos.git"
   },
   "keywords": [
     "pokemon",
@@ -13,14 +13,16 @@
     "pogo",
     "api",
     "protobuf",
-    "niantic"
+    "niantic",
+    "beta",
+    "v-next"
   ],
-  "author": "Andreas Reich (https://github.com/cyraxx)",
+  "author": "niico",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cyraxx/node-pogo-protos/issues"
+    "url": "https://github.com/pogosandbox/node-pogo-protos/issues"
   },
-  "homepage": "https://github.com/cyraxx/node-pogo-protos#readme",
+  "homepage": "https://github.com/pogosandbox/node-pogo-protos#readme",
   "dependencies": {
     "protobufjs": "^6.8.0"
   },
@@ -29,7 +31,8 @@
     "mz": "^2.6.0"
   },
   "scripts": {
-    "compile": "pbjs --keep-case -t static-module -o compiled.js ./proto/POGOProtos.proto",
+    "compile": "node proto/compile.js",
+    "js": "pbjs --keep-case -t static-module -o compiled.js ./proto/POGOProtos.proto",
     "ts": "pbts -o compiled.d.ts compiled.js"
   }
 }

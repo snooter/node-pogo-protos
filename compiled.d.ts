@@ -23992,6 +23992,625 @@ export namespace POGOProtos {
                     public toJSON(): { [k: string]: any };
                 }
 
+                type RegisterPushNotificationMessage$Properties = {
+                    apn_token?: POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken$Properties;
+                    gcm_token?: POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken$Properties;
+                };
+
+                /**
+                 * Constructs a new RegisterPushNotificationMessage.
+                 * @exports POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage
+                 * @constructor
+                 * @param {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage$Properties=} [properties] Properties to set
+                 */
+                class RegisterPushNotificationMessage {
+
+                    /**
+                     * Constructs a new RegisterPushNotificationMessage.
+                     * @exports POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage
+                     * @constructor
+                     * @param {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage$Properties=} [properties] Properties to set
+                     */
+                    constructor(properties?: POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage$Properties);
+
+                    /**
+                     * RegisterPushNotificationMessage apn_token.
+                     * @type {(POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken$Properties|null)}
+                     */
+                    public apn_token: (POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken$Properties|null);
+
+                    /**
+                     * RegisterPushNotificationMessage gcm_token.
+                     * @type {(POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken$Properties|null)}
+                     */
+                    public gcm_token: (POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken$Properties|null);
+
+                    /**
+                     * Creates a new RegisterPushNotificationMessage instance using the specified properties.
+                     * @param {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage$Properties=} [properties] Properties to set
+                     * @returns {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage} RegisterPushNotificationMessage instance
+                     */
+                    public static create(properties?: POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage$Properties): POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage;
+
+                    /**
+                     * Encodes the specified RegisterPushNotificationMessage message. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.verify|verify} messages.
+                     * @param {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage$Properties} message RegisterPushNotificationMessage message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    public static encode(message: POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified RegisterPushNotificationMessage message, length delimited. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.verify|verify} messages.
+                     * @param {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage$Properties} message RegisterPushNotificationMessage message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a RegisterPushNotificationMessage message from the specified reader or buffer.
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @param {number} [length] Message length if known beforehand
+                     * @returns {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage} RegisterPushNotificationMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage;
+
+                    /**
+                     * Decodes a RegisterPushNotificationMessage message from the specified reader or buffer, length delimited.
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @returns {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage} RegisterPushNotificationMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage;
+
+                    /**
+                     * Verifies a RegisterPushNotificationMessage message.
+                     * @param {Object.<string,*>} message Plain object to verify
+                     * @returns {?string} `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): string;
+
+                    /**
+                     * Creates a RegisterPushNotificationMessage message from a plain object. Also converts values to their respective internal types.
+                     * @param {Object.<string,*>} object Plain object
+                     * @returns {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage} RegisterPushNotificationMessage
+                     */
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage;
+
+                    /**
+                     * Creates a RegisterPushNotificationMessage message from a plain object. Also converts values to their respective internal types.
+                     * This is an alias of {@link POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.fromObject}.
+                     * @function
+                     * @param {Object.<string,*>} object Plain object
+                     * @returns {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage} RegisterPushNotificationMessage
+                     */
+                    public static from(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage;
+
+                    /**
+                     * Creates a plain object from a RegisterPushNotificationMessage message. Also converts values to other types if specified.
+                     * @param {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage} message RegisterPushNotificationMessage
+                     * @param {$protobuf.ConversionOptions} [options] Conversion options
+                     * @returns {Object.<string,*>} Plain object
+                     */
+                    public static toObject(message: POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage, options?: $protobuf.ConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Creates a plain object from this RegisterPushNotificationMessage message. Also converts values to other types if specified.
+                     * @param {$protobuf.ConversionOptions} [options] Conversion options
+                     * @returns {Object.<string,*>} Plain object
+                     */
+                    public toObject(options?: $protobuf.ConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this RegisterPushNotificationMessage to JSON.
+                     * @returns {Object.<string,*>} JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                namespace RegisterPushNotificationMessage {
+
+                    type ApnToken$Properties = {
+                        registration_id?: string;
+                        bundle_identifier?: string;
+                        payload_byte_size?: number;
+                    };
+
+                    /**
+                     * Constructs a new ApnToken.
+                     * @exports POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken
+                     * @constructor
+                     * @param {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken$Properties=} [properties] Properties to set
+                     */
+                    class ApnToken {
+
+                        /**
+                         * Constructs a new ApnToken.
+                         * @exports POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken
+                         * @constructor
+                         * @param {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken$Properties=} [properties] Properties to set
+                         */
+                        constructor(properties?: POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken$Properties);
+
+                        /**
+                         * ApnToken registration_id.
+                         * @type {string}
+                         */
+                        public registration_id: string;
+
+                        /**
+                         * ApnToken bundle_identifier.
+                         * @type {string}
+                         */
+                        public bundle_identifier: string;
+
+                        /**
+                         * ApnToken payload_byte_size.
+                         * @type {number}
+                         */
+                        public payload_byte_size: number;
+
+                        /**
+                         * Creates a new ApnToken instance using the specified properties.
+                         * @param {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken$Properties=} [properties] Properties to set
+                         * @returns {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken} ApnToken instance
+                         */
+                        public static create(properties?: POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken$Properties): POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken;
+
+                        /**
+                         * Encodes the specified ApnToken message. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken.verify|verify} messages.
+                         * @param {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken$Properties} message ApnToken message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        public static encode(message: POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified ApnToken message, length delimited. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken.verify|verify} messages.
+                         * @param {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken$Properties} message ApnToken message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes an ApnToken message from the specified reader or buffer.
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken} ApnToken
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken;
+
+                        /**
+                         * Decodes an ApnToken message from the specified reader or buffer, length delimited.
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken} ApnToken
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken;
+
+                        /**
+                         * Verifies an ApnToken message.
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {?string} `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): string;
+
+                        /**
+                         * Creates an ApnToken message from a plain object. Also converts values to their respective internal types.
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken} ApnToken
+                         */
+                        public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken;
+
+                        /**
+                         * Creates an ApnToken message from a plain object. Also converts values to their respective internal types.
+                         * This is an alias of {@link POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken.fromObject}.
+                         * @function
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken} ApnToken
+                         */
+                        public static from(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken;
+
+                        /**
+                         * Creates a plain object from an ApnToken message. Also converts values to other types if specified.
+                         * @param {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken} message ApnToken
+                         * @param {$protobuf.ConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        public static toObject(message: POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken, options?: $protobuf.ConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Creates a plain object from this ApnToken message. Also converts values to other types if specified.
+                         * @param {$protobuf.ConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        public toObject(options?: $protobuf.ConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this ApnToken to JSON.
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+                    }
+
+                    type GcmToken$Properties = {
+                        registration_id?: string;
+                    };
+
+                    /**
+                     * Constructs a new GcmToken.
+                     * @exports POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken
+                     * @constructor
+                     * @param {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken$Properties=} [properties] Properties to set
+                     */
+                    class GcmToken {
+
+                        /**
+                         * Constructs a new GcmToken.
+                         * @exports POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken
+                         * @constructor
+                         * @param {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken$Properties=} [properties] Properties to set
+                         */
+                        constructor(properties?: POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken$Properties);
+
+                        /**
+                         * GcmToken registration_id.
+                         * @type {string}
+                         */
+                        public registration_id: string;
+
+                        /**
+                         * Creates a new GcmToken instance using the specified properties.
+                         * @param {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken$Properties=} [properties] Properties to set
+                         * @returns {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken} GcmToken instance
+                         */
+                        public static create(properties?: POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken$Properties): POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken;
+
+                        /**
+                         * Encodes the specified GcmToken message. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken.verify|verify} messages.
+                         * @param {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken$Properties} message GcmToken message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        public static encode(message: POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified GcmToken message, length delimited. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken.verify|verify} messages.
+                         * @param {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken$Properties} message GcmToken message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a GcmToken message from the specified reader or buffer.
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken} GcmToken
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken;
+
+                        /**
+                         * Decodes a GcmToken message from the specified reader or buffer, length delimited.
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken} GcmToken
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken;
+
+                        /**
+                         * Verifies a GcmToken message.
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {?string} `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): string;
+
+                        /**
+                         * Creates a GcmToken message from a plain object. Also converts values to their respective internal types.
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken} GcmToken
+                         */
+                        public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken;
+
+                        /**
+                         * Creates a GcmToken message from a plain object. Also converts values to their respective internal types.
+                         * This is an alias of {@link POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken.fromObject}.
+                         * @function
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken} GcmToken
+                         */
+                        public static from(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken;
+
+                        /**
+                         * Creates a plain object from a GcmToken message. Also converts values to other types if specified.
+                         * @param {POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken} message GcmToken
+                         * @param {$protobuf.ConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        public static toObject(message: POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken, options?: $protobuf.ConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Creates a plain object from this GcmToken message. Also converts values to other types if specified.
+                         * @param {$protobuf.ConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        public toObject(options?: $protobuf.ConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this GcmToken to JSON.
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+                    }
+                }
+
+                type UpdateNotificationStatusMessage$Properties = {
+                    notification_ids?: string[];
+                    create_timestamp_ms?: (number|Long)[];
+                    state?: POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage.NotificationState;
+                };
+
+                /**
+                 * Constructs a new UpdateNotificationStatusMessage.
+                 * @exports POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage
+                 * @constructor
+                 * @param {POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage$Properties=} [properties] Properties to set
+                 */
+                class UpdateNotificationStatusMessage {
+
+                    /**
+                     * Constructs a new UpdateNotificationStatusMessage.
+                     * @exports POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage
+                     * @constructor
+                     * @param {POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage$Properties=} [properties] Properties to set
+                     */
+                    constructor(properties?: POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage$Properties);
+
+                    /**
+                     * UpdateNotificationStatusMessage notification_ids.
+                     * @type {Array.<string>}
+                     */
+                    public notification_ids: string[];
+
+                    /**
+                     * UpdateNotificationStatusMessage create_timestamp_ms.
+                     * @type {Array.<number|Long>}
+                     */
+                    public create_timestamp_ms: (number|Long)[];
+
+                    /**
+                     * UpdateNotificationStatusMessage state.
+                     * @type {POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage.NotificationState}
+                     */
+                    public state: POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage.NotificationState;
+
+                    /**
+                     * Creates a new UpdateNotificationStatusMessage instance using the specified properties.
+                     * @param {POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage$Properties=} [properties] Properties to set
+                     * @returns {POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage} UpdateNotificationStatusMessage instance
+                     */
+                    public static create(properties?: POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage$Properties): POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage;
+
+                    /**
+                     * Encodes the specified UpdateNotificationStatusMessage message. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage.verify|verify} messages.
+                     * @param {POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage$Properties} message UpdateNotificationStatusMessage message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    public static encode(message: POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified UpdateNotificationStatusMessage message, length delimited. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage.verify|verify} messages.
+                     * @param {POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage$Properties} message UpdateNotificationStatusMessage message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes an UpdateNotificationStatusMessage message from the specified reader or buffer.
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @param {number} [length] Message length if known beforehand
+                     * @returns {POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage} UpdateNotificationStatusMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage;
+
+                    /**
+                     * Decodes an UpdateNotificationStatusMessage message from the specified reader or buffer, length delimited.
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @returns {POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage} UpdateNotificationStatusMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage;
+
+                    /**
+                     * Verifies an UpdateNotificationStatusMessage message.
+                     * @param {Object.<string,*>} message Plain object to verify
+                     * @returns {?string} `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): string;
+
+                    /**
+                     * Creates an UpdateNotificationStatusMessage message from a plain object. Also converts values to their respective internal types.
+                     * @param {Object.<string,*>} object Plain object
+                     * @returns {POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage} UpdateNotificationStatusMessage
+                     */
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage;
+
+                    /**
+                     * Creates an UpdateNotificationStatusMessage message from a plain object. Also converts values to their respective internal types.
+                     * This is an alias of {@link POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage.fromObject}.
+                     * @function
+                     * @param {Object.<string,*>} object Plain object
+                     * @returns {POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage} UpdateNotificationStatusMessage
+                     */
+                    public static from(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage;
+
+                    /**
+                     * Creates a plain object from an UpdateNotificationStatusMessage message. Also converts values to other types if specified.
+                     * @param {POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage} message UpdateNotificationStatusMessage
+                     * @param {$protobuf.ConversionOptions} [options] Conversion options
+                     * @returns {Object.<string,*>} Plain object
+                     */
+                    public static toObject(message: POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage, options?: $protobuf.ConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Creates a plain object from this UpdateNotificationStatusMessage message. Also converts values to other types if specified.
+                     * @param {$protobuf.ConversionOptions} [options] Conversion options
+                     * @returns {Object.<string,*>} Plain object
+                     */
+                    public toObject(options?: $protobuf.ConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this UpdateNotificationStatusMessage to JSON.
+                     * @returns {Object.<string,*>} JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                namespace UpdateNotificationStatusMessage {
+
+                    /**
+                     * NotificationState enum.
+                     * @name NotificationState
+                     * @memberof POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage
+                     * @enum {number}
+                     * @property {number} UNSET_STATE=0 UNSET_STATE value
+                     * @property {number} VIEWED=1 VIEWED value
+                     */
+                    enum NotificationState {
+                        UNSET_STATE = 0,
+                        VIEWED = 1
+                    }
+                }
+
+                type OptOutPushNotificationCategoryMessage$Properties = {
+                    categories?: string[];
+                };
+
+                /**
+                 * Constructs a new OptOutPushNotificationCategoryMessage.
+                 * @exports POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage
+                 * @constructor
+                 * @param {POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage$Properties=} [properties] Properties to set
+                 */
+                class OptOutPushNotificationCategoryMessage {
+
+                    /**
+                     * Constructs a new OptOutPushNotificationCategoryMessage.
+                     * @exports POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage
+                     * @constructor
+                     * @param {POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage$Properties=} [properties] Properties to set
+                     */
+                    constructor(properties?: POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage$Properties);
+
+                    /**
+                     * OptOutPushNotificationCategoryMessage categories.
+                     * @type {Array.<string>}
+                     */
+                    public categories: string[];
+
+                    /**
+                     * Creates a new OptOutPushNotificationCategoryMessage instance using the specified properties.
+                     * @param {POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage$Properties=} [properties] Properties to set
+                     * @returns {POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage} OptOutPushNotificationCategoryMessage instance
+                     */
+                    public static create(properties?: POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage$Properties): POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage;
+
+                    /**
+                     * Encodes the specified OptOutPushNotificationCategoryMessage message. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage.verify|verify} messages.
+                     * @param {POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage$Properties} message OptOutPushNotificationCategoryMessage message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    public static encode(message: POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified OptOutPushNotificationCategoryMessage message, length delimited. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage.verify|verify} messages.
+                     * @param {POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage$Properties} message OptOutPushNotificationCategoryMessage message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes an OptOutPushNotificationCategoryMessage message from the specified reader or buffer.
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @param {number} [length] Message length if known beforehand
+                     * @returns {POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage} OptOutPushNotificationCategoryMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage;
+
+                    /**
+                     * Decodes an OptOutPushNotificationCategoryMessage message from the specified reader or buffer, length delimited.
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @returns {POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage} OptOutPushNotificationCategoryMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage;
+
+                    /**
+                     * Verifies an OptOutPushNotificationCategoryMessage message.
+                     * @param {Object.<string,*>} message Plain object to verify
+                     * @returns {?string} `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): string;
+
+                    /**
+                     * Creates an OptOutPushNotificationCategoryMessage message from a plain object. Also converts values to their respective internal types.
+                     * @param {Object.<string,*>} object Plain object
+                     * @returns {POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage} OptOutPushNotificationCategoryMessage
+                     */
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage;
+
+                    /**
+                     * Creates an OptOutPushNotificationCategoryMessage message from a plain object. Also converts values to their respective internal types.
+                     * This is an alias of {@link POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage.fromObject}.
+                     * @function
+                     * @param {Object.<string,*>} object Plain object
+                     * @returns {POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage} OptOutPushNotificationCategoryMessage
+                     */
+                    public static from(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage;
+
+                    /**
+                     * Creates a plain object from an OptOutPushNotificationCategoryMessage message. Also converts values to other types if specified.
+                     * @param {POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage} message OptOutPushNotificationCategoryMessage
+                     * @param {$protobuf.ConversionOptions} [options] Conversion options
+                     * @returns {Object.<string,*>} Plain object
+                     */
+                    public static toObject(message: POGOProtos.Networking.Requests.Messages.OptOutPushNotificationCategoryMessage, options?: $protobuf.ConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Creates a plain object from this OptOutPushNotificationCategoryMessage message. Also converts values to other types if specified.
+                     * @param {$protobuf.ConversionOptions} [options] Conversion options
+                     * @returns {Object.<string,*>} Plain object
+                     */
+                    public toObject(options?: $protobuf.ConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this OptOutPushNotificationCategoryMessage to JSON.
+                     * @returns {Object.<string,*>} JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
                 type PushNotificationRegistryMessage$Properties = {
                     apn_token?: POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.ApnToken$Properties;
                     gcm_token?: POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.GcmToken$Properties;
@@ -27294,6 +27913,10 @@ export namespace POGOProtos {
              * @property {number} GET_GYM_BADGE_DETAILS=812 GET_GYM_BADGE_DETAILS value
              * @property {number} USE_ITEM_MOVE_REROLL=813 USE_ITEM_MOVE_REROLL value
              * @property {number} USE_ITEM_RARE_CANDY=814 USE_ITEM_RARE_CANDY value
+             * @property {number} REGISTER_PUSH_NOTIFICATION=5000 REGISTER_PUSH_NOTIFICATION value
+             * @property {number} UNREGISTER_PUSH_NOTIFICATION=5001 UNREGISTER_PUSH_NOTIFICATION value
+             * @property {number} UPDATE_NOTIFICATION_STATUS=5002 UPDATE_NOTIFICATION_STATUS value
+             * @property {number} OPT_OUT_PUSH_NOTIFICATION_CATEGORY=5003 OPT_OUT_PUSH_NOTIFICATION_CATEGORY value
              */
             enum RequestType {
                 METHOD_UNSET = 0,
@@ -27377,7 +28000,11 @@ export namespace POGOProtos {
                 LIST_GYM_BADGES = 811,
                 GET_GYM_BADGE_DETAILS = 812,
                 USE_ITEM_MOVE_REROLL = 813,
-                USE_ITEM_RARE_CANDY = 814
+                USE_ITEM_RARE_CANDY = 814,
+                REGISTER_PUSH_NOTIFICATION = 5000,
+                UNREGISTER_PUSH_NOTIFICATION = 5001,
+                UPDATE_NOTIFICATION_STATUS = 5002,
+                OPT_OUT_PUSH_NOTIFICATION_CATEGORY = 5003
             }
         }
 
@@ -34340,6 +34967,385 @@ export namespace POGOProtos {
                     ERROR_POKEMON_NOT_FOUND = 3,
                     ERROR_POKEMON_IS_EGG = 4
                 }
+            }
+
+            type RegisterPushNotificationResponse$Properties = {
+                result?: POGOProtos.Networking.Responses.RegisterPushNotificationResponse.Result;
+            };
+
+            /**
+             * Constructs a new RegisterPushNotificationResponse.
+             * @exports POGOProtos.Networking.Responses.RegisterPushNotificationResponse
+             * @constructor
+             * @param {POGOProtos.Networking.Responses.RegisterPushNotificationResponse$Properties=} [properties] Properties to set
+             */
+            class RegisterPushNotificationResponse {
+
+                /**
+                 * Constructs a new RegisterPushNotificationResponse.
+                 * @exports POGOProtos.Networking.Responses.RegisterPushNotificationResponse
+                 * @constructor
+                 * @param {POGOProtos.Networking.Responses.RegisterPushNotificationResponse$Properties=} [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Networking.Responses.RegisterPushNotificationResponse$Properties);
+
+                /**
+                 * RegisterPushNotificationResponse result.
+                 * @type {POGOProtos.Networking.Responses.RegisterPushNotificationResponse.Result}
+                 */
+                public result: POGOProtos.Networking.Responses.RegisterPushNotificationResponse.Result;
+
+                /**
+                 * Creates a new RegisterPushNotificationResponse instance using the specified properties.
+                 * @param {POGOProtos.Networking.Responses.RegisterPushNotificationResponse$Properties=} [properties] Properties to set
+                 * @returns {POGOProtos.Networking.Responses.RegisterPushNotificationResponse} RegisterPushNotificationResponse instance
+                 */
+                public static create(properties?: POGOProtos.Networking.Responses.RegisterPushNotificationResponse$Properties): POGOProtos.Networking.Responses.RegisterPushNotificationResponse;
+
+                /**
+                 * Encodes the specified RegisterPushNotificationResponse message. Does not implicitly {@link POGOProtos.Networking.Responses.RegisterPushNotificationResponse.verify|verify} messages.
+                 * @param {POGOProtos.Networking.Responses.RegisterPushNotificationResponse$Properties} message RegisterPushNotificationResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                public static encode(message: POGOProtos.Networking.Responses.RegisterPushNotificationResponse$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified RegisterPushNotificationResponse message, length delimited. Does not implicitly {@link POGOProtos.Networking.Responses.RegisterPushNotificationResponse.verify|verify} messages.
+                 * @param {POGOProtos.Networking.Responses.RegisterPushNotificationResponse$Properties} message RegisterPushNotificationResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Networking.Responses.RegisterPushNotificationResponse$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a RegisterPushNotificationResponse message from the specified reader or buffer.
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {POGOProtos.Networking.Responses.RegisterPushNotificationResponse} RegisterPushNotificationResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Responses.RegisterPushNotificationResponse;
+
+                /**
+                 * Decodes a RegisterPushNotificationResponse message from the specified reader or buffer, length delimited.
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {POGOProtos.Networking.Responses.RegisterPushNotificationResponse} RegisterPushNotificationResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Responses.RegisterPushNotificationResponse;
+
+                /**
+                 * Verifies a RegisterPushNotificationResponse message.
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {?string} `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): string;
+
+                /**
+                 * Creates a RegisterPushNotificationResponse message from a plain object. Also converts values to their respective internal types.
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {POGOProtos.Networking.Responses.RegisterPushNotificationResponse} RegisterPushNotificationResponse
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Responses.RegisterPushNotificationResponse;
+
+                /**
+                 * Creates a RegisterPushNotificationResponse message from a plain object. Also converts values to their respective internal types.
+                 * This is an alias of {@link POGOProtos.Networking.Responses.RegisterPushNotificationResponse.fromObject}.
+                 * @function
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {POGOProtos.Networking.Responses.RegisterPushNotificationResponse} RegisterPushNotificationResponse
+                 */
+                public static from(object: { [k: string]: any }): POGOProtos.Networking.Responses.RegisterPushNotificationResponse;
+
+                /**
+                 * Creates a plain object from a RegisterPushNotificationResponse message. Also converts values to other types if specified.
+                 * @param {POGOProtos.Networking.Responses.RegisterPushNotificationResponse} message RegisterPushNotificationResponse
+                 * @param {$protobuf.ConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                public static toObject(message: POGOProtos.Networking.Responses.RegisterPushNotificationResponse, options?: $protobuf.ConversionOptions): { [k: string]: any };
+
+                /**
+                 * Creates a plain object from this RegisterPushNotificationResponse message. Also converts values to other types if specified.
+                 * @param {$protobuf.ConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                public toObject(options?: $protobuf.ConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this RegisterPushNotificationResponse to JSON.
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace RegisterPushNotificationResponse {
+
+                /**
+                 * Result enum.
+                 * @name Result
+                 * @memberof POGOProtos.Networking.Responses.RegisterPushNotificationResponse
+                 * @enum {number}
+                 * @property {number} UNSET=0 UNSET value
+                 * @property {number} SUCCESS=1 SUCCESS value
+                 * @property {number} NO_CHANGE=2 NO_CHANGE value
+                 */
+                enum Result {
+                    UNSET = 0,
+                    SUCCESS = 1,
+                    NO_CHANGE = 2
+                }
+            }
+
+            type UpdateNotificationStatusResponse$Properties = {
+                notification_ids?: string[];
+                create_timestamp_ms?: (number|Long)[];
+                state?: POGOProtos.Networking.Responses.UpdateNotificationStatusResponse.NotificationState;
+            };
+
+            /**
+             * Constructs a new UpdateNotificationStatusResponse.
+             * @exports POGOProtos.Networking.Responses.UpdateNotificationStatusResponse
+             * @constructor
+             * @param {POGOProtos.Networking.Responses.UpdateNotificationStatusResponse$Properties=} [properties] Properties to set
+             */
+            class UpdateNotificationStatusResponse {
+
+                /**
+                 * Constructs a new UpdateNotificationStatusResponse.
+                 * @exports POGOProtos.Networking.Responses.UpdateNotificationStatusResponse
+                 * @constructor
+                 * @param {POGOProtos.Networking.Responses.UpdateNotificationStatusResponse$Properties=} [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Networking.Responses.UpdateNotificationStatusResponse$Properties);
+
+                /**
+                 * UpdateNotificationStatusResponse notification_ids.
+                 * @type {Array.<string>}
+                 */
+                public notification_ids: string[];
+
+                /**
+                 * UpdateNotificationStatusResponse create_timestamp_ms.
+                 * @type {Array.<number|Long>}
+                 */
+                public create_timestamp_ms: (number|Long)[];
+
+                /**
+                 * UpdateNotificationStatusResponse state.
+                 * @type {POGOProtos.Networking.Responses.UpdateNotificationStatusResponse.NotificationState}
+                 */
+                public state: POGOProtos.Networking.Responses.UpdateNotificationStatusResponse.NotificationState;
+
+                /**
+                 * Creates a new UpdateNotificationStatusResponse instance using the specified properties.
+                 * @param {POGOProtos.Networking.Responses.UpdateNotificationStatusResponse$Properties=} [properties] Properties to set
+                 * @returns {POGOProtos.Networking.Responses.UpdateNotificationStatusResponse} UpdateNotificationStatusResponse instance
+                 */
+                public static create(properties?: POGOProtos.Networking.Responses.UpdateNotificationStatusResponse$Properties): POGOProtos.Networking.Responses.UpdateNotificationStatusResponse;
+
+                /**
+                 * Encodes the specified UpdateNotificationStatusResponse message. Does not implicitly {@link POGOProtos.Networking.Responses.UpdateNotificationStatusResponse.verify|verify} messages.
+                 * @param {POGOProtos.Networking.Responses.UpdateNotificationStatusResponse$Properties} message UpdateNotificationStatusResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                public static encode(message: POGOProtos.Networking.Responses.UpdateNotificationStatusResponse$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified UpdateNotificationStatusResponse message, length delimited. Does not implicitly {@link POGOProtos.Networking.Responses.UpdateNotificationStatusResponse.verify|verify} messages.
+                 * @param {POGOProtos.Networking.Responses.UpdateNotificationStatusResponse$Properties} message UpdateNotificationStatusResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Networking.Responses.UpdateNotificationStatusResponse$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes an UpdateNotificationStatusResponse message from the specified reader or buffer.
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {POGOProtos.Networking.Responses.UpdateNotificationStatusResponse} UpdateNotificationStatusResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Responses.UpdateNotificationStatusResponse;
+
+                /**
+                 * Decodes an UpdateNotificationStatusResponse message from the specified reader or buffer, length delimited.
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {POGOProtos.Networking.Responses.UpdateNotificationStatusResponse} UpdateNotificationStatusResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Responses.UpdateNotificationStatusResponse;
+
+                /**
+                 * Verifies an UpdateNotificationStatusResponse message.
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {?string} `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): string;
+
+                /**
+                 * Creates an UpdateNotificationStatusResponse message from a plain object. Also converts values to their respective internal types.
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {POGOProtos.Networking.Responses.UpdateNotificationStatusResponse} UpdateNotificationStatusResponse
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Responses.UpdateNotificationStatusResponse;
+
+                /**
+                 * Creates an UpdateNotificationStatusResponse message from a plain object. Also converts values to their respective internal types.
+                 * This is an alias of {@link POGOProtos.Networking.Responses.UpdateNotificationStatusResponse.fromObject}.
+                 * @function
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {POGOProtos.Networking.Responses.UpdateNotificationStatusResponse} UpdateNotificationStatusResponse
+                 */
+                public static from(object: { [k: string]: any }): POGOProtos.Networking.Responses.UpdateNotificationStatusResponse;
+
+                /**
+                 * Creates a plain object from an UpdateNotificationStatusResponse message. Also converts values to other types if specified.
+                 * @param {POGOProtos.Networking.Responses.UpdateNotificationStatusResponse} message UpdateNotificationStatusResponse
+                 * @param {$protobuf.ConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                public static toObject(message: POGOProtos.Networking.Responses.UpdateNotificationStatusResponse, options?: $protobuf.ConversionOptions): { [k: string]: any };
+
+                /**
+                 * Creates a plain object from this UpdateNotificationStatusResponse message. Also converts values to other types if specified.
+                 * @param {$protobuf.ConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                public toObject(options?: $protobuf.ConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this UpdateNotificationStatusResponse to JSON.
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace UpdateNotificationStatusResponse {
+
+                /**
+                 * NotificationState enum.
+                 * @name NotificationState
+                 * @memberof POGOProtos.Networking.Responses.UpdateNotificationStatusResponse
+                 * @enum {number}
+                 * @property {number} UNSET_STATE=0 UNSET_STATE value
+                 * @property {number} VIEWED=1 VIEWED value
+                 */
+                enum NotificationState {
+                    UNSET_STATE = 0,
+                    VIEWED = 1
+                }
+            }
+
+            type OptOutPushNotificationCategoryResponse$Properties = {};
+
+            /**
+             * Constructs a new OptOutPushNotificationCategoryResponse.
+             * @exports POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse
+             * @constructor
+             * @param {POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse$Properties=} [properties] Properties to set
+             */
+            class OptOutPushNotificationCategoryResponse {
+
+                /**
+                 * Constructs a new OptOutPushNotificationCategoryResponse.
+                 * @exports POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse
+                 * @constructor
+                 * @param {POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse$Properties=} [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse$Properties);
+
+                /**
+                 * Creates a new OptOutPushNotificationCategoryResponse instance using the specified properties.
+                 * @param {POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse$Properties=} [properties] Properties to set
+                 * @returns {POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse} OptOutPushNotificationCategoryResponse instance
+                 */
+                public static create(properties?: POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse$Properties): POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse;
+
+                /**
+                 * Encodes the specified OptOutPushNotificationCategoryResponse message. Does not implicitly {@link POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse.verify|verify} messages.
+                 * @param {POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse$Properties} message OptOutPushNotificationCategoryResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                public static encode(message: POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified OptOutPushNotificationCategoryResponse message, length delimited. Does not implicitly {@link POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse.verify|verify} messages.
+                 * @param {POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse$Properties} message OptOutPushNotificationCategoryResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes an OptOutPushNotificationCategoryResponse message from the specified reader or buffer.
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse} OptOutPushNotificationCategoryResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse;
+
+                /**
+                 * Decodes an OptOutPushNotificationCategoryResponse message from the specified reader or buffer, length delimited.
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse} OptOutPushNotificationCategoryResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse;
+
+                /**
+                 * Verifies an OptOutPushNotificationCategoryResponse message.
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {?string} `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): string;
+
+                /**
+                 * Creates an OptOutPushNotificationCategoryResponse message from a plain object. Also converts values to their respective internal types.
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse} OptOutPushNotificationCategoryResponse
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse;
+
+                /**
+                 * Creates an OptOutPushNotificationCategoryResponse message from a plain object. Also converts values to their respective internal types.
+                 * This is an alias of {@link POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse.fromObject}.
+                 * @function
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse} OptOutPushNotificationCategoryResponse
+                 */
+                public static from(object: { [k: string]: any }): POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse;
+
+                /**
+                 * Creates a plain object from an OptOutPushNotificationCategoryResponse message. Also converts values to other types if specified.
+                 * @param {POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse} message OptOutPushNotificationCategoryResponse
+                 * @param {$protobuf.ConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                public static toObject(message: POGOProtos.Networking.Responses.OptOutPushNotificationCategoryResponse, options?: $protobuf.ConversionOptions): { [k: string]: any };
+
+                /**
+                 * Creates a plain object from this OptOutPushNotificationCategoryResponse message. Also converts values to other types if specified.
+                 * @param {$protobuf.ConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                public toObject(options?: $protobuf.ConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this OptOutPushNotificationCategoryResponse to JSON.
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                public toJSON(): { [k: string]: any };
             }
 
             type PushNotificationRegistryResponse$Properties = {
