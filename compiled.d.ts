@@ -8217,11 +8217,13 @@ export namespace POGOProtos {
          * @property {number} COSTUME_UNSET=0 COSTUME_UNSET value
          * @property {number} HOLIDAY_2016=1 HOLIDAY_2016 value
          * @property {number} ANNIVERSARY=2 ANNIVERSARY value
+         * @property {number} ONE_YEAR_ANNIVERSARY=3 ONE_YEAR_ANNIVERSARY value
          */
         enum Costume {
             COSTUME_UNSET = 0,
             HOLIDAY_2016 = 1,
-            ANNIVERSARY = 2
+            ANNIVERSARY = 2,
+            ONE_YEAR_ANNIVERSARY = 3
         }
 
         /**
