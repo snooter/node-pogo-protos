@@ -63,7 +63,7 @@ enum RequestType {
 	GET_RAID_DETAILS = 163;              // Not yet released.
 	GYM_FEED_POKEMON = 164;              // Not yet released.
 	START_RAID_BATTLE = 165;             // Not yet released.
-	ATTACK_RAID = 166;                   // Not yet released.
+	ATTACK_RAID_BATTLE = 166;            // Not yet released.
 	GET_ASSET_DIGEST = 300;              // Implemented [R & M]
 	GET_DOWNLOAD_URLS = 301;             // Implemented [R & M]
 	CLAIM_CODENAME = 403;                // Implemented [R & M]
