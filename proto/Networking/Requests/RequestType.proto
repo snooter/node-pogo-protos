@@ -30,10 +30,10 @@ enum RequestType {
 	ENCOUNTER_TUTORIAL_COMPLETE = 127;   // Implemented [R & M]
 	LEVEL_UP_REWARDS = 128;              // Implemented [R & M]
 	CHECK_AWARDED_BADGES = 129;          // Implemented [R & M]
-	USE_ITEM_GYM = 133;                  // Implemented [R & M]
-	GET_GYM_DETAILS = 134;               // Implemented [R & M]
-	START_GYM_BATTLE = 135;              // Implemented [R & M]
-	ATTACK_GYM = 136;                    // Implemented [R & M]
+	USE_ITEM_GYM = 133;                  // Removed
+	GET_GYM_DETAILS = 134;               // Removed
+	START_GYM_BATTLE = 135;              // Removed
+	ATTACK_GYM = 136;                    // Removed
 	RECYCLE_INVENTORY_ITEM = 137;        // Implemented [R & M]
 	COLLECT_DAILY_BONUS = 138;           // Implemented [R & M]
 	USE_ITEM_XP_BOOST = 139;             // Implemented [R & M]
@@ -43,7 +43,7 @@ enum RequestType {
 	INCENSE_ENCOUNTER = 143;             // Implemented [R & M]
 	ADD_FORT_MODIFIER = 144;             // Implemented [R & M]
 	DISK_ENCOUNTER = 145;                // Implemented [R & M]
-	COLLECT_DAILY_DEFENDER_BONUS = 146;  // Implemented [R & M]
+	COLLECT_DAILY_DEFENDER_BONUS = 146;  // Removed
 	UPGRADE_POKEMON = 147;               // Implemented [R & M]
 	SET_FAVORITE_POKEMON = 148;          // Implemented [R & M]
 	NICKNAME_POKEMON = 149;              // Implemented [R & M]
@@ -52,7 +52,7 @@ enum RequestType {
 	SET_BUDDY_POKEMON = 152;             // Implemented [R & M]
 	GET_BUDDY_WALKED = 153;              // Implemented [R & M]
 	USE_ITEM_ENCOUNTER = 154;            // Implemented [R & M]
-	GYM_DEPLOY = 155;                    // Not yet released.
+	GYM_DEPLOY = 155;                    // Implemented [R & M]
 	GYM_GET_INFO = 156;                  // Implemented [R & M]
 	GYM_START_SESSION = 157;             // Not yet released.
 	GYM_BATTLE_ATTACK = 158;             // Not yet released.
@@ -61,7 +61,7 @@ enum RequestType {
 	SET_LOBBY_VISIBILITY = 161;          // Not yet released.
 	SET_LOBBY_POKEMON = 162;             // Not yet released.
 	GET_RAID_DETAILS = 163;              // Not yet released.
-	GYM_FEED_POKEMON = 164;              // Not yet released.
+	GYM_FEED_POKEMON = 164;              // Implemented [R & M]
 	START_RAID_BATTLE = 165;             // Not yet released.
 	ATTACK_RAID = 166;                   // Not yet released.
 	GET_ASSET_DIGEST = 300;              // Implemented [R & M]
@@ -85,10 +85,10 @@ enum RequestType {
 	GET_INBOX = 809;                     // Implemented [R & M]
 	LIST_GYM_BADGES = 811;               // Implemented [R & M]
 	GET_GYM_BADGE_DETAILS = 812;         // Implemented [R & M]
-	USE_ITEM_MOVE_REROLL = 813;          // Not yet released.
-	USE_ITEM_RARE_CANDY = 814;           // Not yet released.
-    REGISTER_PUSH_NOTIFICATION = 5000;
-    UNREGISTER_PUSH_NOTIFICATION = 5001;
-    UPDATE_NOTIFICATION_STATUS = 5002;
-    OPT_OUT_PUSH_NOTIFICATION_CATEGORY = 5003;
+	USE_ITEM_MOVE_REROLL = 813;          // Implemented [R & M]
+	USE_ITEM_RARE_CANDY = 814;           // Implemented [R & M]
+	REGISTER_PUSH_NOTIFICATION = 5000;
+	UNREGISTER_PUSH_NOTIFICATION = 5001;
+	UPDATE_NOTIFICATION_STATUS = 5002;
+	OPT_OUT_PUSH_NOTIFICATION_CATEGORY = 5003;
 }
