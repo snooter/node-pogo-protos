@@ -19187,6 +19187,108 @@ export namespace POGOProtos {
                     public toJSON(): { [k: string]: any };
                 }
 
+                /** Properties of a LeaveLobbyMessage. */
+                interface ILeaveLobbyMessage {
+
+                    /** LeaveLobbyMessage raid_seed */
+                    raid_seed?: (number|Long);
+
+                    /** LeaveLobbyMessage gym_id */
+                    gym_id?: string;
+
+                    /** LeaveLobbyMessage lobby_id */
+                    lobby_id?: number[];
+                }
+
+                /** Represents a LeaveLobbyMessage. */
+                class LeaveLobbyMessage {
+
+                    /**
+                     * Constructs a new LeaveLobbyMessage.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: POGOProtos.Networking.Requests.Messages.ILeaveLobbyMessage);
+
+                    /** LeaveLobbyMessage raid_seed. */
+                    public raid_seed: (number|Long);
+
+                    /** LeaveLobbyMessage gym_id. */
+                    public gym_id: string;
+
+                    /** LeaveLobbyMessage lobby_id. */
+                    public lobby_id: number[];
+
+                    /**
+                     * Creates a new LeaveLobbyMessage instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns LeaveLobbyMessage instance
+                     */
+                    public static create(properties?: POGOProtos.Networking.Requests.Messages.ILeaveLobbyMessage): POGOProtos.Networking.Requests.Messages.LeaveLobbyMessage;
+
+                    /**
+                     * Encodes the specified LeaveLobbyMessage message. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.LeaveLobbyMessage.verify|verify} messages.
+                     * @param message LeaveLobbyMessage message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: POGOProtos.Networking.Requests.Messages.ILeaveLobbyMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified LeaveLobbyMessage message, length delimited. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.LeaveLobbyMessage.verify|verify} messages.
+                     * @param message LeaveLobbyMessage message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.ILeaveLobbyMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a LeaveLobbyMessage message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns LeaveLobbyMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.LeaveLobbyMessage;
+
+                    /**
+                     * Decodes a LeaveLobbyMessage message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns LeaveLobbyMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.LeaveLobbyMessage;
+
+                    /**
+                     * Verifies a LeaveLobbyMessage message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a LeaveLobbyMessage message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns LeaveLobbyMessage
+                     */
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.LeaveLobbyMessage;
+
+                    /**
+                     * Creates a plain object from a LeaveLobbyMessage message. Also converts values to other types if specified.
+                     * @param message LeaveLobbyMessage
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: POGOProtos.Networking.Requests.Messages.LeaveLobbyMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this LeaveLobbyMessage to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
                 /** Properties of a LevelUpRewardsMessage. */
                 interface ILevelUpRewardsMessage {
 
@@ -28857,6 +28959,113 @@ export namespace POGOProtos {
                     ERROR_POI_INACCESSIBLE = 7,
                     ERROR_GYM_LOCKOUT = 8,
                     ERROR_NO_TICKET = 9
+                }
+            }
+
+            /** Properties of a LeaveLobbyResponse. */
+            interface ILeaveLobbyResponse {
+
+                /** LeaveLobbyResponse result */
+                result?: POGOProtos.Networking.Responses.LeaveLobbyResponse.Result;
+
+                /** LeaveLobbyResponse lobby */
+                lobby?: POGOProtos.Data.Raid.ILobby;
+            }
+
+            /** Represents a LeaveLobbyResponse. */
+            class LeaveLobbyResponse {
+
+                /**
+                 * Constructs a new LeaveLobbyResponse.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Networking.Responses.ILeaveLobbyResponse);
+
+                /** LeaveLobbyResponse result. */
+                public result: POGOProtos.Networking.Responses.LeaveLobbyResponse.Result;
+
+                /** LeaveLobbyResponse lobby. */
+                public lobby?: (POGOProtos.Data.Raid.ILobby|null);
+
+                /**
+                 * Creates a new LeaveLobbyResponse instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns LeaveLobbyResponse instance
+                 */
+                public static create(properties?: POGOProtos.Networking.Responses.ILeaveLobbyResponse): POGOProtos.Networking.Responses.LeaveLobbyResponse;
+
+                /**
+                 * Encodes the specified LeaveLobbyResponse message. Does not implicitly {@link POGOProtos.Networking.Responses.LeaveLobbyResponse.verify|verify} messages.
+                 * @param message LeaveLobbyResponse message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: POGOProtos.Networking.Responses.ILeaveLobbyResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified LeaveLobbyResponse message, length delimited. Does not implicitly {@link POGOProtos.Networking.Responses.LeaveLobbyResponse.verify|verify} messages.
+                 * @param message LeaveLobbyResponse message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Networking.Responses.ILeaveLobbyResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a LeaveLobbyResponse message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns LeaveLobbyResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Responses.LeaveLobbyResponse;
+
+                /**
+                 * Decodes a LeaveLobbyResponse message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns LeaveLobbyResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Responses.LeaveLobbyResponse;
+
+                /**
+                 * Verifies a LeaveLobbyResponse message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a LeaveLobbyResponse message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns LeaveLobbyResponse
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Responses.LeaveLobbyResponse;
+
+                /**
+                 * Creates a plain object from a LeaveLobbyResponse message. Also converts values to other types if specified.
+                 * @param message LeaveLobbyResponse
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: POGOProtos.Networking.Responses.LeaveLobbyResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this LeaveLobbyResponse to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace LeaveLobbyResponse {
+
+                /** Result enum. */
+                enum Result {
+                    UNSET = 0,
+                    SUCCESS = 1,
+                    ERROR_RAID_UNAVAILABLE = 2,
+                    ERROR_LOBBY_NOT_FOUND = 3
                 }
             }
 
