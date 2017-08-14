@@ -13714,7 +13714,8 @@ export namespace POGOProtos {
                 BUY_ITEM_IOS = 4,
                 GET_STORE_ITEMS = 5,
                 SEND_ENCRYPTED_SIGNATURE = 6,
-                UNKNOWN_PTR_8 = 8
+                UNKNOWN_PTR_8 = 8,
+                JOIN_EVENT = 9
             }
 
             /** Namespace Requests. */
@@ -13979,6 +13980,96 @@ export namespace POGOProtos {
 
                     /**
                      * Converts this GetStoreItemsRequest to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of a JoinEventRequest. */
+                interface IJoinEventRequest {
+
+                    /** JoinEventRequest qrcode */
+                    qrcode?: string;
+                }
+
+                /** Represents a JoinEventRequest. */
+                class JoinEventRequest {
+
+                    /**
+                     * Constructs a new JoinEventRequest.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: POGOProtos.Networking.Platform.Requests.IJoinEventRequest);
+
+                    /** JoinEventRequest qrcode. */
+                    public qrcode: string;
+
+                    /**
+                     * Creates a new JoinEventRequest instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns JoinEventRequest instance
+                     */
+                    public static create(properties?: POGOProtos.Networking.Platform.Requests.IJoinEventRequest): POGOProtos.Networking.Platform.Requests.JoinEventRequest;
+
+                    /**
+                     * Encodes the specified JoinEventRequest message. Does not implicitly {@link POGOProtos.Networking.Platform.Requests.JoinEventRequest.verify|verify} messages.
+                     * @param message JoinEventRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: POGOProtos.Networking.Platform.Requests.IJoinEventRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified JoinEventRequest message, length delimited. Does not implicitly {@link POGOProtos.Networking.Platform.Requests.JoinEventRequest.verify|verify} messages.
+                     * @param message JoinEventRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: POGOProtos.Networking.Platform.Requests.IJoinEventRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a JoinEventRequest message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns JoinEventRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Platform.Requests.JoinEventRequest;
+
+                    /**
+                     * Decodes a JoinEventRequest message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns JoinEventRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Platform.Requests.JoinEventRequest;
+
+                    /**
+                     * Verifies a JoinEventRequest message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a JoinEventRequest message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns JoinEventRequest
+                     */
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Platform.Requests.JoinEventRequest;
+
+                    /**
+                     * Creates a plain object from a JoinEventRequest message. Also converts values to other types if specified.
+                     * @param message JoinEventRequest
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: POGOProtos.Networking.Platform.Requests.JoinEventRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this JoinEventRequest to JSON.
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
@@ -14805,6 +14896,112 @@ export namespace POGOProtos {
                     enum Status {
                         UNDEFINED = 0,
                         OKAY = 1
+                    }
+                }
+
+                /** Properties of a JoinEventResponse. */
+                interface IJoinEventResponse {
+
+                    /** JoinEventResponse status */
+                    status?: POGOProtos.Networking.Platform.Responses.JoinEventResponse.Status;
+
+                    /** JoinEventResponse qrcode */
+                    qrcode?: string;
+                }
+
+                /** Represents a JoinEventResponse. */
+                class JoinEventResponse {
+
+                    /**
+                     * Constructs a new JoinEventResponse.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: POGOProtos.Networking.Platform.Responses.IJoinEventResponse);
+
+                    /** JoinEventResponse status. */
+                    public status: POGOProtos.Networking.Platform.Responses.JoinEventResponse.Status;
+
+                    /** JoinEventResponse qrcode. */
+                    public qrcode: string;
+
+                    /**
+                     * Creates a new JoinEventResponse instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns JoinEventResponse instance
+                     */
+                    public static create(properties?: POGOProtos.Networking.Platform.Responses.IJoinEventResponse): POGOProtos.Networking.Platform.Responses.JoinEventResponse;
+
+                    /**
+                     * Encodes the specified JoinEventResponse message. Does not implicitly {@link POGOProtos.Networking.Platform.Responses.JoinEventResponse.verify|verify} messages.
+                     * @param message JoinEventResponse message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: POGOProtos.Networking.Platform.Responses.IJoinEventResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified JoinEventResponse message, length delimited. Does not implicitly {@link POGOProtos.Networking.Platform.Responses.JoinEventResponse.verify|verify} messages.
+                     * @param message JoinEventResponse message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: POGOProtos.Networking.Platform.Responses.IJoinEventResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a JoinEventResponse message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns JoinEventResponse
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Platform.Responses.JoinEventResponse;
+
+                    /**
+                     * Decodes a JoinEventResponse message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns JoinEventResponse
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Platform.Responses.JoinEventResponse;
+
+                    /**
+                     * Verifies a JoinEventResponse message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a JoinEventResponse message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns JoinEventResponse
+                     */
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Platform.Responses.JoinEventResponse;
+
+                    /**
+                     * Creates a plain object from a JoinEventResponse message. Also converts values to other types if specified.
+                     * @param message JoinEventResponse
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: POGOProtos.Networking.Platform.Responses.JoinEventResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this JoinEventResponse to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                namespace JoinEventResponse {
+
+                    /** Status enum. */
+                    enum Status {
+                        UNDEFINED = 0,
+                        SUCCESS = 1,
+                        INVALID = 2
                     }
                 }
 
