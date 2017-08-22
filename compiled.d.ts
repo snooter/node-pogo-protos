@@ -5836,6 +5836,9 @@ export namespace POGOProtos {
 
                 /** Raid finished_encounter */
                 finished_encounter?: boolean;
+
+                /** Raid received_default_rewards */
+                received_default_rewards?: boolean;
             }
 
             /** Represents a Raid. */
@@ -5867,6 +5870,9 @@ export namespace POGOProtos {
 
                 /** Raid finished_encounter. */
                 public finished_encounter: boolean;
+
+                /** Raid received_default_rewards. */
+                public received_default_rewards: boolean;
 
                 /**
                  * Creates a new Raid instance using the specified properties.
@@ -6908,7 +6914,80 @@ export namespace POGOProtos {
             FAMILY_LARVITAR = 246,
             FAMILY_LUGIA = 249,
             FAMILY_HO_OH = 250,
-            FAMILY_CELEBI = 251
+            FAMILY_CELEBI = 251,
+            FAMILY_TREECKO = 252,
+            FAMILY_TORCHIC = 255,
+            FAMILY_MUDKIP = 258,
+            FAMILY_POOCHYENA = 261,
+            FAMILY_ZIGZAGOON = 263,
+            FAMILY_WURMPLE = 265,
+            FAMILY_LOTAD = 270,
+            FAMILY_SEEDOT = 273,
+            FAMILY_TAILLOW = 276,
+            FAMILY_WINGULL = 278,
+            FAMILY_RALTS = 280,
+            FAMILY_SURSKIT = 283,
+            FAMILY_SHROOMISH = 285,
+            FAMILY_SLAKOTH = 287,
+            FAMILY_NINCADA = 290,
+            FAMILY_WHISMUR = 293,
+            FAMILY_MAKUHITA = 296,
+            FAMILY_NOSEPASS = 299,
+            FAMILY_SKITTY = 300,
+            FAMILY_SABLEYE = 302,
+            FAMILY_MAWILE = 303,
+            FAMILY_ARON = 304,
+            FAMILY_MEDITITE = 307,
+            FAMILY_ELECTRIKE = 309,
+            FAMILY_PLUSLE = 311,
+            FAMILY_MINUN = 312,
+            FAMILY_VOLBEAT = 313,
+            FAMILY_ILLUMISE = 314,
+            FAMILY_ROSELIA = 315,
+            FAMILY_GULPIN = 316,
+            FAMILY_CARVANHA = 318,
+            FAMILY_WAILMER = 320,
+            FAMILY_NUMEL = 322,
+            FAMILY_TORKOAL = 324,
+            FAMILY_SPOINK = 325,
+            FAMILY_SPINDA = 327,
+            FAMILY_TRAPINCH = 328,
+            FAMILY_CACNEA = 331,
+            FAMILY_SWABLU = 333,
+            FAMILY_ZANGOOSE = 335,
+            FAMILY_SEVIPER = 336,
+            FAMILY_LUNATONE = 337,
+            FAMILY_SOLROCK = 338,
+            FAMILY_BARBOACH = 339,
+            FAMILY_CORPHISH = 341,
+            FAMILY_BALTOY = 343,
+            FAMILY_LILEEP = 345,
+            FAMILY_ANORITH = 347,
+            FAMILY_FEEBAS = 349,
+            FAMILY_CASTFORM = 351,
+            FAMILY_KECLEON = 352,
+            FAMILY_SHUPPET = 353,
+            FAMILY_DUSKULL = 355,
+            FAMILY_TROPIUS = 357,
+            FAMILY_CHIMECHO = 358,
+            FAMILY_ABSOL = 359,
+            FAMILY_SNORUNT = 361,
+            FAMILY_SPHEAL = 363,
+            FAMILY_CLAMPERL = 366,
+            FAMILY_RELICANTH = 369,
+            FAMILY_LUVDISC = 370,
+            FAMILY_BAGON = 371,
+            FAMILY_BELDUM = 374,
+            FAMILY_REGIROCK = 377,
+            FAMILY_REGICE = 378,
+            FAMILY_REGISTEEL = 379,
+            FAMILY_LATIAS = 380,
+            FAMILY_LATIOS = 381,
+            FAMILY_KYOGRE = 382,
+            FAMILY_GROUDON = 383,
+            FAMILY_RAYQUAZA = 384,
+            FAMILY_JIRACHI = 385,
+            FAMILY_DEOXYS = 386
         }
 
         /** PokemonId enum. */
@@ -7164,7 +7243,142 @@ export namespace POGOProtos {
             TYRANITAR = 248,
             LUGIA = 249,
             HO_OH = 250,
-            CELEBI = 251
+            CELEBI = 251,
+            TREECKO = 252,
+            GROVYLE = 253,
+            SCEPTILE = 254,
+            TORCHIC = 255,
+            COMBUSKEN = 256,
+            BLAZIKEN = 257,
+            MUDKIP = 258,
+            MARSHTOMP = 259,
+            SWAMPERT = 260,
+            POOCHYENA = 261,
+            MIGHTYENA = 262,
+            ZIGZAGOON = 263,
+            LINOONE = 264,
+            WURMPLE = 265,
+            SILCOON = 266,
+            BEAUTIFLY = 267,
+            CASCOON = 268,
+            DUSTOX = 269,
+            LOTAD = 270,
+            LOMBRE = 271,
+            LUDICOLO = 272,
+            SEEDOT = 273,
+            NUZLEAF = 274,
+            SHIFTRY = 275,
+            TAILLOW = 276,
+            SWELLOW = 277,
+            WINGULL = 278,
+            PELIPPER = 279,
+            RALTS = 280,
+            KIRLIA = 281,
+            GARDEVOIR = 282,
+            SURSKIT = 283,
+            MASQUERAIN = 284,
+            SHROOMISH = 285,
+            BRELOOM = 286,
+            SLAKOTH = 287,
+            VIGOROTH = 288,
+            SLAKING = 289,
+            NINCADA = 290,
+            NINJASK = 291,
+            SHEDINJA = 292,
+            WHISMUR = 293,
+            LOUDRED = 294,
+            EXPLOUD = 295,
+            MAKUHITA = 296,
+            HARIYAMA = 297,
+            AZURILL = 298,
+            NOSEPASS = 299,
+            SKITTY = 300,
+            DELCATTY = 301,
+            SABLEYE = 302,
+            MAWILE = 303,
+            ARON = 304,
+            LAIRON = 305,
+            AGGRON = 306,
+            MEDITITE = 307,
+            MEDICHAM = 308,
+            ELECTRIKE = 309,
+            MANECTRIC = 310,
+            PLUSLE = 311,
+            MINUN = 312,
+            VOLBEAT = 313,
+            ILLUMISE = 314,
+            ROSELIA = 315,
+            GULPIN = 316,
+            SWALOT = 317,
+            CARVANHA = 318,
+            SHARPEDO = 319,
+            WAILMER = 320,
+            WAILORD = 321,
+            NUMEL = 322,
+            CAMERUPT = 323,
+            TORKOAL = 324,
+            SPOINK = 325,
+            GRUMPIG = 326,
+            SPINDA = 327,
+            TRAPINCH = 328,
+            VIBRAVA = 329,
+            FLYGON = 330,
+            CACNEA = 331,
+            CACTURNE = 332,
+            SWABLU = 333,
+            ALTARIA = 334,
+            ZANGOOSE = 335,
+            SEVIPER = 336,
+            LUNATONE = 337,
+            SOLROCK = 338,
+            BARBOACH = 339,
+            WHISCASH = 340,
+            CORPHISH = 341,
+            CRAWDAUNT = 342,
+            BALTOY = 343,
+            CLAYDOL = 344,
+            LILEEP = 345,
+            CRADILY = 346,
+            ANORITH = 347,
+            ARMALDO = 348,
+            FEEBAS = 349,
+            MILOTIC = 350,
+            CASTFORM = 351,
+            KECLEON = 352,
+            SHUPPET = 353,
+            BANETTE = 354,
+            DUSKULL = 355,
+            DUSCLOPS = 356,
+            TROPIUS = 357,
+            CHIMECHO = 358,
+            ABSOL = 359,
+            WYNAUT = 360,
+            SNORUNT = 361,
+            GLALIE = 362,
+            SPHEAL = 363,
+            SEALEO = 364,
+            WALREIN = 365,
+            CLAMPERL = 366,
+            HUNTAIL = 367,
+            GOREBYSS = 368,
+            RELICANTH = 369,
+            LUVDISC = 370,
+            BAGON = 371,
+            SHELGON = 372,
+            SALAMENCE = 373,
+            BELDUM = 374,
+            METANG = 375,
+            METAGROSS = 376,
+            REGIROCK = 377,
+            REGICE = 378,
+            REGISTEEL = 379,
+            LATIAS = 380,
+            LATIOS = 381,
+            KYOGRE = 382,
+            GROUDON = 383,
+            RAYQUAZA = 384,
+            JIRACHI = 385,
+            DEOXYS = 386
         }
 
         /** PokemonMove enum. */
@@ -8065,6 +8279,9 @@ export namespace POGOProtos {
 
             /** ExclusiveTicketInfo gym_name */
             gym_name?: string;
+
+            /** ExclusiveTicketInfo spawn_time_ms */
+            spawn_time_ms?: (number|Long);
         }
 
         /** Represents an ExclusiveTicketInfo. */
@@ -8099,6 +8316,9 @@ export namespace POGOProtos {
 
             /** ExclusiveTicketInfo gym_name. */
             public gym_name: string;
+
+            /** ExclusiveTicketInfo spawn_time_ms. */
+            public spawn_time_ms: (number|Long);
 
             /**
              * Creates a new ExclusiveTicketInfo instance using the specified properties.
@@ -9232,6 +9452,7 @@ export namespace POGOProtos {
                 ITEM_SPECIAL_CAMERA = 801,
                 ITEM_INCUBATOR_BASIC_UNLIMITED = 901,
                 ITEM_INCUBATOR_BASIC = 902,
+                ITEM_INCUBATOR_SUPER = 903,
                 ITEM_POKEMON_STORAGE_UPGRADE = 1001,
                 ITEM_ITEM_STORAGE_UPGRADE = 1002,
                 ITEM_SUN_STONE = 1101,
@@ -9752,6 +9973,9 @@ export namespace POGOProtos {
 
                 /** FortData in_event */
                 in_event?: boolean;
+
+                /** FortData banner_url */
+                banner_url?: string;
             }
 
             /** Represents a FortData. */
@@ -9840,6 +10064,9 @@ export namespace POGOProtos {
 
                 /** FortData in_event. */
                 public in_event: boolean;
+
+                /** FortData banner_url. */
+                public banner_url: string;
 
                 /**
                  * Creates a new FortData instance using the specified properties.
@@ -22233,6 +22460,7 @@ export namespace POGOProtos {
                 GET_GYM_BADGE_DETAILS = 812,
                 USE_ITEM_MOVE_REROLL = 813,
                 USE_ITEM_RARE_CANDY = 814,
+                AWARD_FREE_RAID_TICKET = 815,
                 REGISTER_PUSH_NOTIFICATION = 5000,
                 UNREGISTER_PUSH_NOTIFICATION = 5001,
                 UPDATE_NOTIFICATION_STATUS = 5002,
