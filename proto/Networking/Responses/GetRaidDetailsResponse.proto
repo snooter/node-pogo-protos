@@ -15,6 +15,7 @@ message GetRaidDetailsResponse {
 	bool free_ticket_available = 7;
 	int32 throws_remaining = 8;
 	bool received_rewards = 9;
+	int32 num_players_in_lobby = 10;
 
 	enum Result
 	{
