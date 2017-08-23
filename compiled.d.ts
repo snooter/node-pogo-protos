@@ -19161,6 +19161,132 @@ export namespace POGOProtos {
                     public toJSON(): { [k: string]: any };
                 }
 
+                /** Properties of a GymBattleAttackMessage. */
+                interface IGymBattleAttackMessage {
+
+                    /** GymBattleAttackMessage gym_id */
+                    gym_id?: string;
+
+                    /** GymBattleAttackMessage battle_id */
+                    battle_id?: string;
+
+                    /** GymBattleAttackMessage attacker_actions */
+                    attacker_actions?: POGOProtos.Data.Battle.IBattleAction[];
+
+                    /** GymBattleAttackMessage last_retrieved_action */
+                    last_retrieved_action?: POGOProtos.Data.Battle.IBattleAction;
+
+                    /** GymBattleAttackMessage player_lat_degrees */
+                    player_lat_degrees?: number;
+
+                    /** GymBattleAttackMessage player_lng_degrees */
+                    player_lng_degrees?: number;
+
+                    /** GymBattleAttackMessage timestamp_ms */
+                    timestamp_ms?: (number|Long);
+                }
+
+                /** Represents a GymBattleAttackMessage. */
+                class GymBattleAttackMessage {
+
+                    /**
+                     * Constructs a new GymBattleAttackMessage.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: POGOProtos.Networking.Requests.Messages.IGymBattleAttackMessage);
+
+                    /** GymBattleAttackMessage gym_id. */
+                    public gym_id: string;
+
+                    /** GymBattleAttackMessage battle_id. */
+                    public battle_id: string;
+
+                    /** GymBattleAttackMessage attacker_actions. */
+                    public attacker_actions: POGOProtos.Data.Battle.IBattleAction[];
+
+                    /** GymBattleAttackMessage last_retrieved_action. */
+                    public last_retrieved_action?: (POGOProtos.Data.Battle.IBattleAction|null);
+
+                    /** GymBattleAttackMessage player_lat_degrees. */
+                    public player_lat_degrees: number;
+
+                    /** GymBattleAttackMessage player_lng_degrees. */
+                    public player_lng_degrees: number;
+
+                    /** GymBattleAttackMessage timestamp_ms. */
+                    public timestamp_ms: (number|Long);
+
+                    /**
+                     * Creates a new GymBattleAttackMessage instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns GymBattleAttackMessage instance
+                     */
+                    public static create(properties?: POGOProtos.Networking.Requests.Messages.IGymBattleAttackMessage): POGOProtos.Networking.Requests.Messages.GymBattleAttackMessage;
+
+                    /**
+                     * Encodes the specified GymBattleAttackMessage message. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.GymBattleAttackMessage.verify|verify} messages.
+                     * @param message GymBattleAttackMessage message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: POGOProtos.Networking.Requests.Messages.IGymBattleAttackMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified GymBattleAttackMessage message, length delimited. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.GymBattleAttackMessage.verify|verify} messages.
+                     * @param message GymBattleAttackMessage message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.IGymBattleAttackMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a GymBattleAttackMessage message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns GymBattleAttackMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.GymBattleAttackMessage;
+
+                    /**
+                     * Decodes a GymBattleAttackMessage message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns GymBattleAttackMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.GymBattleAttackMessage;
+
+                    /**
+                     * Verifies a GymBattleAttackMessage message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a GymBattleAttackMessage message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns GymBattleAttackMessage
+                     */
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.GymBattleAttackMessage;
+
+                    /**
+                     * Creates a plain object from a GymBattleAttackMessage message. Also converts values to other types if specified.
+                     * @param message GymBattleAttackMessage
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: POGOProtos.Networking.Requests.Messages.GymBattleAttackMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this GymBattleAttackMessage to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
                 /** Properties of a GymDeployMessage. */
                 interface IGymDeployMessage {
 
@@ -19498,6 +19624,120 @@ export namespace POGOProtos {
 
                     /**
                      * Converts this GymGetInfoMessage to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of a GymStartSessionMessage. */
+                interface IGymStartSessionMessage {
+
+                    /** GymStartSessionMessage gym_id */
+                    gym_id?: string;
+
+                    /** GymStartSessionMessage attacking_pokemon_id */
+                    attacking_pokemon_id?: (number|Long)[];
+
+                    /** GymStartSessionMessage defending_pokemon_id */
+                    defending_pokemon_id?: (number|Long);
+
+                    /** GymStartSessionMessage player_lat_degrees */
+                    player_lat_degrees?: number;
+
+                    /** GymStartSessionMessage player_lng_degrees */
+                    player_lng_degrees?: number;
+                }
+
+                /** Represents a GymStartSessionMessage. */
+                class GymStartSessionMessage {
+
+                    /**
+                     * Constructs a new GymStartSessionMessage.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: POGOProtos.Networking.Requests.Messages.IGymStartSessionMessage);
+
+                    /** GymStartSessionMessage gym_id. */
+                    public gym_id: string;
+
+                    /** GymStartSessionMessage attacking_pokemon_id. */
+                    public attacking_pokemon_id: (number|Long)[];
+
+                    /** GymStartSessionMessage defending_pokemon_id. */
+                    public defending_pokemon_id: (number|Long);
+
+                    /** GymStartSessionMessage player_lat_degrees. */
+                    public player_lat_degrees: number;
+
+                    /** GymStartSessionMessage player_lng_degrees. */
+                    public player_lng_degrees: number;
+
+                    /**
+                     * Creates a new GymStartSessionMessage instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns GymStartSessionMessage instance
+                     */
+                    public static create(properties?: POGOProtos.Networking.Requests.Messages.IGymStartSessionMessage): POGOProtos.Networking.Requests.Messages.GymStartSessionMessage;
+
+                    /**
+                     * Encodes the specified GymStartSessionMessage message. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.GymStartSessionMessage.verify|verify} messages.
+                     * @param message GymStartSessionMessage message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: POGOProtos.Networking.Requests.Messages.IGymStartSessionMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified GymStartSessionMessage message, length delimited. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.GymStartSessionMessage.verify|verify} messages.
+                     * @param message GymStartSessionMessage message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.IGymStartSessionMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a GymStartSessionMessage message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns GymStartSessionMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.GymStartSessionMessage;
+
+                    /**
+                     * Decodes a GymStartSessionMessage message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns GymStartSessionMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.GymStartSessionMessage;
+
+                    /**
+                     * Verifies a GymStartSessionMessage message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a GymStartSessionMessage message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns GymStartSessionMessage
+                     */
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.GymStartSessionMessage;
+
+                    /**
+                     * Creates a plain object from a GymStartSessionMessage message. Also converts values to other types if specified.
+                     * @param message GymStartSessionMessage
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: POGOProtos.Networking.Requests.Messages.GymStartSessionMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this GymStartSessionMessage to JSON.
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
@@ -28934,6 +29174,121 @@ export namespace POGOProtos {
                 }
             }
 
+            /** Properties of a GymBattleAttackResponse. */
+            interface IGymBattleAttackResponse {
+
+                /** GymBattleAttackResponse result */
+                result?: POGOProtos.Networking.Responses.GymBattleAttackResponse.Result;
+
+                /** GymBattleAttackResponse battle_update */
+                battle_update?: POGOProtos.Data.Battle.IBattleUpdate;
+
+                /** GymBattleAttackResponse gym_badge */
+                gym_badge?: POGOProtos.Data.Badge.IAwardedGymBadge;
+            }
+
+            /** Represents a GymBattleAttackResponse. */
+            class GymBattleAttackResponse {
+
+                /**
+                 * Constructs a new GymBattleAttackResponse.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Networking.Responses.IGymBattleAttackResponse);
+
+                /** GymBattleAttackResponse result. */
+                public result: POGOProtos.Networking.Responses.GymBattleAttackResponse.Result;
+
+                /** GymBattleAttackResponse battle_update. */
+                public battle_update?: (POGOProtos.Data.Battle.IBattleUpdate|null);
+
+                /** GymBattleAttackResponse gym_badge. */
+                public gym_badge?: (POGOProtos.Data.Badge.IAwardedGymBadge|null);
+
+                /**
+                 * Creates a new GymBattleAttackResponse instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns GymBattleAttackResponse instance
+                 */
+                public static create(properties?: POGOProtos.Networking.Responses.IGymBattleAttackResponse): POGOProtos.Networking.Responses.GymBattleAttackResponse;
+
+                /**
+                 * Encodes the specified GymBattleAttackResponse message. Does not implicitly {@link POGOProtos.Networking.Responses.GymBattleAttackResponse.verify|verify} messages.
+                 * @param message GymBattleAttackResponse message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: POGOProtos.Networking.Responses.IGymBattleAttackResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified GymBattleAttackResponse message, length delimited. Does not implicitly {@link POGOProtos.Networking.Responses.GymBattleAttackResponse.verify|verify} messages.
+                 * @param message GymBattleAttackResponse message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Networking.Responses.IGymBattleAttackResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a GymBattleAttackResponse message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns GymBattleAttackResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Responses.GymBattleAttackResponse;
+
+                /**
+                 * Decodes a GymBattleAttackResponse message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns GymBattleAttackResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Responses.GymBattleAttackResponse;
+
+                /**
+                 * Verifies a GymBattleAttackResponse message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a GymBattleAttackResponse message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns GymBattleAttackResponse
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Responses.GymBattleAttackResponse;
+
+                /**
+                 * Creates a plain object from a GymBattleAttackResponse message. Also converts values to other types if specified.
+                 * @param message GymBattleAttackResponse
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: POGOProtos.Networking.Responses.GymBattleAttackResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this GymBattleAttackResponse to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace GymBattleAttackResponse {
+
+                /** Result enum. */
+                enum Result {
+                    UNSET = 0,
+                    SUCCESS = 1,
+                    ERROR_INVALID_ATTACK_ACTIONS = 2,
+                    ERROR_NOT_IN_RANGE = 3,
+                    ERROR_WRONG_BATTLE_TYPE = 4,
+                    ERROR_RAID_ACTIVE = 5
+                }
+            }
+
             /** Properties of a GymDeployResponse. */
             interface IGymDeployResponse {
 
@@ -29368,6 +29723,125 @@ export namespace POGOProtos {
                     SUCCESS = 1,
                     ERROR_NOT_IN_RANGE = 2,
                     ERROR_GYM_DISABLED = 3
+                }
+            }
+
+            /** Properties of a GymStartSessionResponse. */
+            interface IGymStartSessionResponse {
+
+                /** GymStartSessionResponse result */
+                result?: POGOProtos.Networking.Responses.GymStartSessionResponse.Result;
+
+                /** GymStartSessionResponse battle */
+                battle?: POGOProtos.Data.Battle.IBattle;
+            }
+
+            /** Represents a GymStartSessionResponse. */
+            class GymStartSessionResponse {
+
+                /**
+                 * Constructs a new GymStartSessionResponse.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Networking.Responses.IGymStartSessionResponse);
+
+                /** GymStartSessionResponse result. */
+                public result: POGOProtos.Networking.Responses.GymStartSessionResponse.Result;
+
+                /** GymStartSessionResponse battle. */
+                public battle?: (POGOProtos.Data.Battle.IBattle|null);
+
+                /**
+                 * Creates a new GymStartSessionResponse instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns GymStartSessionResponse instance
+                 */
+                public static create(properties?: POGOProtos.Networking.Responses.IGymStartSessionResponse): POGOProtos.Networking.Responses.GymStartSessionResponse;
+
+                /**
+                 * Encodes the specified GymStartSessionResponse message. Does not implicitly {@link POGOProtos.Networking.Responses.GymStartSessionResponse.verify|verify} messages.
+                 * @param message GymStartSessionResponse message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: POGOProtos.Networking.Responses.IGymStartSessionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified GymStartSessionResponse message, length delimited. Does not implicitly {@link POGOProtos.Networking.Responses.GymStartSessionResponse.verify|verify} messages.
+                 * @param message GymStartSessionResponse message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Networking.Responses.IGymStartSessionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a GymStartSessionResponse message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns GymStartSessionResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Responses.GymStartSessionResponse;
+
+                /**
+                 * Decodes a GymStartSessionResponse message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns GymStartSessionResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Responses.GymStartSessionResponse;
+
+                /**
+                 * Verifies a GymStartSessionResponse message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a GymStartSessionResponse message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns GymStartSessionResponse
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Responses.GymStartSessionResponse;
+
+                /**
+                 * Creates a plain object from a GymStartSessionResponse message. Also converts values to other types if specified.
+                 * @param message GymStartSessionResponse
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: POGOProtos.Networking.Responses.GymStartSessionResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this GymStartSessionResponse to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace GymStartSessionResponse {
+
+                /** Result enum. */
+                enum Result {
+                    UNSET = 0,
+                    SUCCESS = 1,
+                    ERROR_GYM_NOT_FOUND = 2,
+                    ERROR_GYM_NEUTRAL = 3,
+                    ERROR_GYM_WRONG_TEAM = 4,
+                    ERROR_GYM_EMPTY = 5,
+                    ERROR_INVALID_DEFENDER = 6,
+                    ERROR_TRAINING_INVALID_ATTACKER_COUNT = 7,
+                    ERROR_ALL_POKEMON_FAINTED = 8,
+                    ERROR_TOO_MANY_BATTLES = 9,
+                    ERROR_TOO_MANY_PLAYERS = 10,
+                    ERROR_GYM_BATTLE_LOCKOUT = 11,
+                    ERROR_PLAYER_BELOW_MINIMUM_LEVEL = 12,
+                    ERROR_NOT_IN_RANGE = 13,
+                    ERROR_POI_INACCESSIBLE = 14,
+                    ERROR_RAID_ACTIVE = 15
                 }
             }
 
