@@ -5711,6 +5711,150 @@ export namespace POGOProtos {
                 public toJSON(): { [k: string]: any };
             }
 
+            /** Properties of a Lobby. */
+            interface ILobby {
+
+                /** Lobby lobby_id */
+                lobby_id?: number[];
+
+                /** Lobby players */
+                players?: POGOProtos.Data.Battle.IBattleParticipant[];
+
+                /** Lobby player_join_end_ms */
+                player_join_end_ms?: (number|Long);
+
+                /** Lobby pokemon_selection_end_ms */
+                pokemon_selection_end_ms?: (number|Long);
+
+                /** Lobby raid_battle_start_ms */
+                raid_battle_start_ms?: (number|Long);
+
+                /** Lobby raid_battle_end_ms */
+                raid_battle_end_ms?: (number|Long);
+
+                /** Lobby raid_battle_id */
+                raid_battle_id?: string;
+
+                /** Lobby owner_nickname */
+                owner_nickname?: string;
+
+                /** Lobby private */
+                "private"?: boolean;
+
+                /** Lobby creation_ms */
+                creation_ms?: (number|Long);
+            }
+
+            /** Represents a Lobby. */
+            class Lobby {
+
+                /**
+                 * Constructs a new Lobby.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Data.Raid.ILobby);
+
+                /** Lobby lobby_id. */
+                public lobby_id: number[];
+
+                /** Lobby players. */
+                public players: POGOProtos.Data.Battle.IBattleParticipant[];
+
+                /** Lobby player_join_end_ms. */
+                public player_join_end_ms: (number|Long);
+
+                /** Lobby pokemon_selection_end_ms. */
+                public pokemon_selection_end_ms: (number|Long);
+
+                /** Lobby raid_battle_start_ms. */
+                public raid_battle_start_ms: (number|Long);
+
+                /** Lobby raid_battle_end_ms. */
+                public raid_battle_end_ms: (number|Long);
+
+                /** Lobby raid_battle_id. */
+                public raid_battle_id: string;
+
+                /** Lobby owner_nickname. */
+                public owner_nickname: string;
+
+                /** Lobby private. */
+                public private_: boolean;
+
+                /** Lobby creation_ms. */
+                public creation_ms: (number|Long);
+
+                /**
+                 * Creates a new Lobby instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns Lobby instance
+                 */
+                public static create(properties?: POGOProtos.Data.Raid.ILobby): POGOProtos.Data.Raid.Lobby;
+
+                /**
+                 * Encodes the specified Lobby message. Does not implicitly {@link POGOProtos.Data.Raid.Lobby.verify|verify} messages.
+                 * @param message Lobby message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: POGOProtos.Data.Raid.ILobby, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified Lobby message, length delimited. Does not implicitly {@link POGOProtos.Data.Raid.Lobby.verify|verify} messages.
+                 * @param message Lobby message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Data.Raid.ILobby, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a Lobby message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns Lobby
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.Raid.Lobby;
+
+                /**
+                 * Decodes a Lobby message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns Lobby
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.Raid.Lobby;
+
+                /**
+                 * Verifies a Lobby message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a Lobby message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns Lobby
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Raid.Lobby;
+
+                /**
+                 * Creates a plain object from a Lobby message. Also converts values to other types if specified.
+                 * @param message Lobby
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: POGOProtos.Data.Raid.Lobby, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this Lobby to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
             /** Properties of a PlayerRaidInfo. */
             interface IPlayerRaidInfo {
 
@@ -18196,6 +18340,120 @@ export namespace POGOProtos {
                     public toJSON(): { [k: string]: any };
                 }
 
+                /** Properties of a GetRaidDetailsMessage. */
+                interface IGetRaidDetailsMessage {
+
+                    /** GetRaidDetailsMessage raid_seed */
+                    raid_seed?: (number|Long);
+
+                    /** GetRaidDetailsMessage gym_id */
+                    gym_id?: string;
+
+                    /** GetRaidDetailsMessage lobby_id */
+                    lobby_id?: number[];
+
+                    /** GetRaidDetailsMessage player_lat_degrees */
+                    player_lat_degrees?: number;
+
+                    /** GetRaidDetailsMessage player_lng_degrees */
+                    player_lng_degrees?: number;
+                }
+
+                /** Represents a GetRaidDetailsMessage. */
+                class GetRaidDetailsMessage {
+
+                    /**
+                     * Constructs a new GetRaidDetailsMessage.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: POGOProtos.Networking.Requests.Messages.IGetRaidDetailsMessage);
+
+                    /** GetRaidDetailsMessage raid_seed. */
+                    public raid_seed: (number|Long);
+
+                    /** GetRaidDetailsMessage gym_id. */
+                    public gym_id: string;
+
+                    /** GetRaidDetailsMessage lobby_id. */
+                    public lobby_id: number[];
+
+                    /** GetRaidDetailsMessage player_lat_degrees. */
+                    public player_lat_degrees: number;
+
+                    /** GetRaidDetailsMessage player_lng_degrees. */
+                    public player_lng_degrees: number;
+
+                    /**
+                     * Creates a new GetRaidDetailsMessage instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns GetRaidDetailsMessage instance
+                     */
+                    public static create(properties?: POGOProtos.Networking.Requests.Messages.IGetRaidDetailsMessage): POGOProtos.Networking.Requests.Messages.GetRaidDetailsMessage;
+
+                    /**
+                     * Encodes the specified GetRaidDetailsMessage message. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.GetRaidDetailsMessage.verify|verify} messages.
+                     * @param message GetRaidDetailsMessage message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: POGOProtos.Networking.Requests.Messages.IGetRaidDetailsMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified GetRaidDetailsMessage message, length delimited. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.GetRaidDetailsMessage.verify|verify} messages.
+                     * @param message GetRaidDetailsMessage message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.IGetRaidDetailsMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a GetRaidDetailsMessage message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns GetRaidDetailsMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.GetRaidDetailsMessage;
+
+                    /**
+                     * Decodes a GetRaidDetailsMessage message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns GetRaidDetailsMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.GetRaidDetailsMessage;
+
+                    /**
+                     * Verifies a GetRaidDetailsMessage message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a GetRaidDetailsMessage message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns GetRaidDetailsMessage
+                     */
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.GetRaidDetailsMessage;
+
+                    /**
+                     * Creates a plain object from a GetRaidDetailsMessage message. Also converts values to other types if specified.
+                     * @param message GetRaidDetailsMessage
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: POGOProtos.Networking.Requests.Messages.GetRaidDetailsMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this GetRaidDetailsMessage to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
                 /** Properties of a GymDeployMessage. */
                 interface IGymDeployMessage {
 
@@ -27147,6 +27405,164 @@ export namespace POGOProtos {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a GetRaidDetailsResponse. */
+            interface IGetRaidDetailsResponse {
+
+                /** GetRaidDetailsResponse lobby */
+                lobby?: POGOProtos.Data.Raid.ILobby;
+
+                /** GetRaidDetailsResponse raid_battle */
+                raid_battle?: POGOProtos.Data.Battle.IBattle;
+
+                /** GetRaidDetailsResponse player_can_join_lobby */
+                player_can_join_lobby?: boolean;
+
+                /** GetRaidDetailsResponse result */
+                result?: POGOProtos.Networking.Responses.GetRaidDetailsResponse.Result;
+
+                /** GetRaidDetailsResponse raid_info */
+                raid_info?: POGOProtos.Data.Raid.IRaidInfo;
+
+                /** GetRaidDetailsResponse ticket_used */
+                ticket_used?: boolean;
+
+                /** GetRaidDetailsResponse free_ticket_available */
+                free_ticket_available?: boolean;
+
+                /** GetRaidDetailsResponse throws_remaining */
+                throws_remaining?: number;
+
+                /** GetRaidDetailsResponse received_rewards */
+                received_rewards?: boolean;
+
+                /** GetRaidDetailsResponse num_players_in_lobby */
+                num_players_in_lobby?: number;
+            }
+
+            /** Represents a GetRaidDetailsResponse. */
+            class GetRaidDetailsResponse {
+
+                /**
+                 * Constructs a new GetRaidDetailsResponse.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Networking.Responses.IGetRaidDetailsResponse);
+
+                /** GetRaidDetailsResponse lobby. */
+                public lobby?: (POGOProtos.Data.Raid.ILobby|null);
+
+                /** GetRaidDetailsResponse raid_battle. */
+                public raid_battle?: (POGOProtos.Data.Battle.IBattle|null);
+
+                /** GetRaidDetailsResponse player_can_join_lobby. */
+                public player_can_join_lobby: boolean;
+
+                /** GetRaidDetailsResponse result. */
+                public result: POGOProtos.Networking.Responses.GetRaidDetailsResponse.Result;
+
+                /** GetRaidDetailsResponse raid_info. */
+                public raid_info?: (POGOProtos.Data.Raid.IRaidInfo|null);
+
+                /** GetRaidDetailsResponse ticket_used. */
+                public ticket_used: boolean;
+
+                /** GetRaidDetailsResponse free_ticket_available. */
+                public free_ticket_available: boolean;
+
+                /** GetRaidDetailsResponse throws_remaining. */
+                public throws_remaining: number;
+
+                /** GetRaidDetailsResponse received_rewards. */
+                public received_rewards: boolean;
+
+                /** GetRaidDetailsResponse num_players_in_lobby. */
+                public num_players_in_lobby: number;
+
+                /**
+                 * Creates a new GetRaidDetailsResponse instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns GetRaidDetailsResponse instance
+                 */
+                public static create(properties?: POGOProtos.Networking.Responses.IGetRaidDetailsResponse): POGOProtos.Networking.Responses.GetRaidDetailsResponse;
+
+                /**
+                 * Encodes the specified GetRaidDetailsResponse message. Does not implicitly {@link POGOProtos.Networking.Responses.GetRaidDetailsResponse.verify|verify} messages.
+                 * @param message GetRaidDetailsResponse message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: POGOProtos.Networking.Responses.IGetRaidDetailsResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified GetRaidDetailsResponse message, length delimited. Does not implicitly {@link POGOProtos.Networking.Responses.GetRaidDetailsResponse.verify|verify} messages.
+                 * @param message GetRaidDetailsResponse message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Networking.Responses.IGetRaidDetailsResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a GetRaidDetailsResponse message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns GetRaidDetailsResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Responses.GetRaidDetailsResponse;
+
+                /**
+                 * Decodes a GetRaidDetailsResponse message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns GetRaidDetailsResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Responses.GetRaidDetailsResponse;
+
+                /**
+                 * Verifies a GetRaidDetailsResponse message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a GetRaidDetailsResponse message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns GetRaidDetailsResponse
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Responses.GetRaidDetailsResponse;
+
+                /**
+                 * Creates a plain object from a GetRaidDetailsResponse message. Also converts values to other types if specified.
+                 * @param message GetRaidDetailsResponse
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: POGOProtos.Networking.Responses.GetRaidDetailsResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this GetRaidDetailsResponse to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace GetRaidDetailsResponse {
+
+                /** Result enum. */
+                enum Result {
+                    UNSET = 0,
+                    SUCCESS = 1,
+                    ERROR_NOT_IN_RANGE = 2,
+                    ERROR_RAID_COMPLETED = 3,
+                    ERROR_RAID_UNAVAILABLE = 4,
+                    ERROR_PLAYER_BELOW_MINIMUM_LEVEL = 5,
+                    ERROR_POI_INACCESSIBLE = 6
+                }
             }
 
             /** Properties of a GymDeployResponse. */
