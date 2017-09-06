@@ -1486,14 +1486,32 @@ export namespace POGOProtos {
                 /** BattleResults attackers */
                 attackers?: POGOProtos.Data.Battle.IBattleParticipant[];
 
-                /** BattleResults player_experience_awarded */
-                player_experience_awarded?: number[];
+                /** BattleResults player_xp_awarded */
+                player_xp_awarded?: number[];
 
                 /** BattleResults next_defender_pokemon_id */
                 next_defender_pokemon_id?: (number|Long);
 
                 /** BattleResults gym_points_delta */
                 gym_points_delta?: number;
+
+                /** BattleResults gym_status */
+                gym_status?: POGOProtos.Data.Gym.IGymStatusAndDefenders;
+
+                /** BattleResults participation */
+                participation?: POGOProtos.Data.Raid.IParticipation[];
+
+                /** BattleResults raid_item_rewards */
+                raid_item_rewards?: POGOProtos.Inventory.ILoot[];
+
+                /** BattleResults post_raid_encounter */
+                post_raid_encounter?: POGOProtos.Data.Raid.IRaidEncounter[];
+
+                /** BattleResults gym_badge */
+                gym_badge?: POGOProtos.Data.Badge.IAwardedGymBadge[];
+
+                /** BattleResults default_raid_item_rewards */
+                default_raid_item_rewards?: POGOProtos.Inventory.ILoot[];
             }
 
             /** Represents a BattleResults. */
@@ -1511,14 +1529,32 @@ export namespace POGOProtos {
                 /** BattleResults attackers. */
                 public attackers: POGOProtos.Data.Battle.IBattleParticipant[];
 
-                /** BattleResults player_experience_awarded. */
-                public player_experience_awarded: number[];
+                /** BattleResults player_xp_awarded. */
+                public player_xp_awarded: number[];
 
                 /** BattleResults next_defender_pokemon_id. */
                 public next_defender_pokemon_id: (number|Long);
 
                 /** BattleResults gym_points_delta. */
                 public gym_points_delta: number;
+
+                /** BattleResults gym_status. */
+                public gym_status?: (POGOProtos.Data.Gym.IGymStatusAndDefenders|null);
+
+                /** BattleResults participation. */
+                public participation: POGOProtos.Data.Raid.IParticipation[];
+
+                /** BattleResults raid_item_rewards. */
+                public raid_item_rewards: POGOProtos.Inventory.ILoot[];
+
+                /** BattleResults post_raid_encounter. */
+                public post_raid_encounter: POGOProtos.Data.Raid.IRaidEncounter[];
+
+                /** BattleResults gym_badge. */
+                public gym_badge: POGOProtos.Data.Badge.IAwardedGymBadge[];
+
+                /** BattleResults default_raid_item_rewards. */
+                public default_raid_item_rewards: POGOProtos.Inventory.ILoot[];
 
                 /**
                  * Creates a new BattleResults instance using the specified properties.
@@ -5855,6 +5891,138 @@ export namespace POGOProtos {
                 public toJSON(): { [k: string]: any };
             }
 
+            /** Properties of a Participation. */
+            interface IParticipation {
+
+                /** Participation individual_damage_pokeballs */
+                individual_damage_pokeballs?: number;
+
+                /** Participation team_damage_pokeballs */
+                team_damage_pokeballs?: number;
+
+                /** Participation gym_ownership_pokeballs */
+                gym_ownership_pokeballs?: number;
+
+                /** Participation base_pokeballs */
+                base_pokeballs?: number;
+
+                /** Participation blue_percentage */
+                blue_percentage?: number;
+
+                /** Participation red_percentage */
+                red_percentage?: number;
+
+                /** Participation yellow_percentage */
+                yellow_percentage?: number;
+
+                /** Participation bonus_item_multiplier */
+                bonus_item_multiplier?: number;
+            }
+
+            /** Represents a Participation. */
+            class Participation {
+
+                /**
+                 * Constructs a new Participation.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Data.Raid.IParticipation);
+
+                /** Participation individual_damage_pokeballs. */
+                public individual_damage_pokeballs: number;
+
+                /** Participation team_damage_pokeballs. */
+                public team_damage_pokeballs: number;
+
+                /** Participation gym_ownership_pokeballs. */
+                public gym_ownership_pokeballs: number;
+
+                /** Participation base_pokeballs. */
+                public base_pokeballs: number;
+
+                /** Participation blue_percentage. */
+                public blue_percentage: number;
+
+                /** Participation red_percentage. */
+                public red_percentage: number;
+
+                /** Participation yellow_percentage. */
+                public yellow_percentage: number;
+
+                /** Participation bonus_item_multiplier. */
+                public bonus_item_multiplier: number;
+
+                /**
+                 * Creates a new Participation instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns Participation instance
+                 */
+                public static create(properties?: POGOProtos.Data.Raid.IParticipation): POGOProtos.Data.Raid.Participation;
+
+                /**
+                 * Encodes the specified Participation message. Does not implicitly {@link POGOProtos.Data.Raid.Participation.verify|verify} messages.
+                 * @param message Participation message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: POGOProtos.Data.Raid.IParticipation, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified Participation message, length delimited. Does not implicitly {@link POGOProtos.Data.Raid.Participation.verify|verify} messages.
+                 * @param message Participation message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Data.Raid.IParticipation, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a Participation message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns Participation
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.Raid.Participation;
+
+                /**
+                 * Decodes a Participation message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns Participation
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.Raid.Participation;
+
+                /**
+                 * Verifies a Participation message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a Participation message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns Participation
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Raid.Participation;
+
+                /**
+                 * Creates a plain object from a Participation message. Also converts values to other types if specified.
+                 * @param message Participation
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: POGOProtos.Data.Raid.Participation, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this Participation to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
             /** Properties of a PlayerRaidInfo. */
             interface IPlayerRaidInfo {
 
@@ -6084,6 +6252,132 @@ export namespace POGOProtos {
 
                 /**
                  * Converts this Raid to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a RaidEncounter. */
+            interface IRaidEncounter {
+
+                /** RaidEncounter pokemon */
+                pokemon?: POGOProtos.Data.IPokemonData;
+
+                /** RaidEncounter encounter_id */
+                encounter_id?: (number|Long);
+
+                /** RaidEncounter spawnpoint_id */
+                spawnpoint_id?: string;
+
+                /** RaidEncounter capture_probabilities */
+                capture_probabilities?: POGOProtos.Data.Capture.ICaptureProbability;
+
+                /** RaidEncounter throws_remaining */
+                throws_remaining?: number;
+
+                /** RaidEncounter raid_level */
+                raid_level?: POGOProtos.Enums.RaidLevel;
+
+                /** RaidEncounter fort_id */
+                fort_id?: string;
+            }
+
+            /** Represents a RaidEncounter. */
+            class RaidEncounter {
+
+                /**
+                 * Constructs a new RaidEncounter.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Data.Raid.IRaidEncounter);
+
+                /** RaidEncounter pokemon. */
+                public pokemon?: (POGOProtos.Data.IPokemonData|null);
+
+                /** RaidEncounter encounter_id. */
+                public encounter_id: (number|Long);
+
+                /** RaidEncounter spawnpoint_id. */
+                public spawnpoint_id: string;
+
+                /** RaidEncounter capture_probabilities. */
+                public capture_probabilities?: (POGOProtos.Data.Capture.ICaptureProbability|null);
+
+                /** RaidEncounter throws_remaining. */
+                public throws_remaining: number;
+
+                /** RaidEncounter raid_level. */
+                public raid_level: POGOProtos.Enums.RaidLevel;
+
+                /** RaidEncounter fort_id. */
+                public fort_id: string;
+
+                /**
+                 * Creates a new RaidEncounter instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns RaidEncounter instance
+                 */
+                public static create(properties?: POGOProtos.Data.Raid.IRaidEncounter): POGOProtos.Data.Raid.RaidEncounter;
+
+                /**
+                 * Encodes the specified RaidEncounter message. Does not implicitly {@link POGOProtos.Data.Raid.RaidEncounter.verify|verify} messages.
+                 * @param message RaidEncounter message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: POGOProtos.Data.Raid.IRaidEncounter, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified RaidEncounter message, length delimited. Does not implicitly {@link POGOProtos.Data.Raid.RaidEncounter.verify|verify} messages.
+                 * @param message RaidEncounter message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Data.Raid.IRaidEncounter, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a RaidEncounter message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns RaidEncounter
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.Raid.RaidEncounter;
+
+                /**
+                 * Decodes a RaidEncounter message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns RaidEncounter
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.Raid.RaidEncounter;
+
+                /**
+                 * Verifies a RaidEncounter message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a RaidEncounter message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns RaidEncounter
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Raid.RaidEncounter;
+
+                /**
+                 * Creates a plain object from a RaidEncounter message. Also converts values to other types if specified.
+                 * @param message RaidEncounter
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: POGOProtos.Data.Raid.RaidEncounter, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this RaidEncounter to JSON.
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
@@ -6741,7 +7035,8 @@ export namespace POGOProtos {
             BADGE_PLACE_HOLDER = 44,
             BADGE_EVENT_MIN = 2000,
             BADGE_CHICAGO_FEST_JULY_2017 = 2001,
-            BADGE_PIKACHU_OUTBREAK_YOKOHAMA_2017 = 2002
+            BADGE_PIKACHU_OUTBREAK_YOKOHAMA_2017 = 2002,
+            BADGE_SAFARI_ZONE_EUROPE_2017 = 2003
         }
 
         /** CameraInterpolation enum. */
@@ -15835,6 +16130,108 @@ export namespace POGOProtos {
                     public toJSON(): { [k: string]: any };
                 }
 
+                /** Properties of a DownloadGmTemplatesMessage. */
+                interface IDownloadGmTemplatesMessage {
+
+                    /** DownloadGmTemplatesMessage basis_batch_id */
+                    basis_batch_id?: (number|Long);
+
+                    /** DownloadGmTemplatesMessage batch_id */
+                    batch_id?: (number|Long);
+
+                    /** DownloadGmTemplatesMessage page_offset */
+                    page_offset?: number;
+                }
+
+                /** Represents a DownloadGmTemplatesMessage. */
+                class DownloadGmTemplatesMessage {
+
+                    /**
+                     * Constructs a new DownloadGmTemplatesMessage.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: POGOProtos.Networking.Requests.Messages.IDownloadGmTemplatesMessage);
+
+                    /** DownloadGmTemplatesMessage basis_batch_id. */
+                    public basis_batch_id: (number|Long);
+
+                    /** DownloadGmTemplatesMessage batch_id. */
+                    public batch_id: (number|Long);
+
+                    /** DownloadGmTemplatesMessage page_offset. */
+                    public page_offset: number;
+
+                    /**
+                     * Creates a new DownloadGmTemplatesMessage instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns DownloadGmTemplatesMessage instance
+                     */
+                    public static create(properties?: POGOProtos.Networking.Requests.Messages.IDownloadGmTemplatesMessage): POGOProtos.Networking.Requests.Messages.DownloadGmTemplatesMessage;
+
+                    /**
+                     * Encodes the specified DownloadGmTemplatesMessage message. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.DownloadGmTemplatesMessage.verify|verify} messages.
+                     * @param message DownloadGmTemplatesMessage message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: POGOProtos.Networking.Requests.Messages.IDownloadGmTemplatesMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified DownloadGmTemplatesMessage message, length delimited. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.DownloadGmTemplatesMessage.verify|verify} messages.
+                     * @param message DownloadGmTemplatesMessage message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.IDownloadGmTemplatesMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a DownloadGmTemplatesMessage message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns DownloadGmTemplatesMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.DownloadGmTemplatesMessage;
+
+                    /**
+                     * Decodes a DownloadGmTemplatesMessage message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns DownloadGmTemplatesMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.DownloadGmTemplatesMessage;
+
+                    /**
+                     * Verifies a DownloadGmTemplatesMessage message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a DownloadGmTemplatesMessage message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns DownloadGmTemplatesMessage
+                     */
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.DownloadGmTemplatesMessage;
+
+                    /**
+                     * Creates a plain object from a DownloadGmTemplatesMessage message. Also converts values to other types if specified.
+                     * @param message DownloadGmTemplatesMessage
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: POGOProtos.Networking.Requests.Messages.DownloadGmTemplatesMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this DownloadGmTemplatesMessage to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
                 /** Properties of a DownloadItemTemplatesMessage. */
                 interface IDownloadItemTemplatesMessage {
 
@@ -17653,6 +18050,102 @@ export namespace POGOProtos {
                     public toJSON(): { [k: string]: any };
                 }
 
+                /** Properties of a GetHoloInventoryMessage. */
+                interface IGetHoloInventoryMessage {
+
+                    /** GetHoloInventoryMessage last_timestamp_ms */
+                    last_timestamp_ms?: (number|Long);
+
+                    /** GetHoloInventoryMessage item_been_seen */
+                    item_been_seen?: number;
+                }
+
+                /** Represents a GetHoloInventoryMessage. */
+                class GetHoloInventoryMessage {
+
+                    /**
+                     * Constructs a new GetHoloInventoryMessage.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: POGOProtos.Networking.Requests.Messages.IGetHoloInventoryMessage);
+
+                    /** GetHoloInventoryMessage last_timestamp_ms. */
+                    public last_timestamp_ms: (number|Long);
+
+                    /** GetHoloInventoryMessage item_been_seen. */
+                    public item_been_seen: number;
+
+                    /**
+                     * Creates a new GetHoloInventoryMessage instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns GetHoloInventoryMessage instance
+                     */
+                    public static create(properties?: POGOProtos.Networking.Requests.Messages.IGetHoloInventoryMessage): POGOProtos.Networking.Requests.Messages.GetHoloInventoryMessage;
+
+                    /**
+                     * Encodes the specified GetHoloInventoryMessage message. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.GetHoloInventoryMessage.verify|verify} messages.
+                     * @param message GetHoloInventoryMessage message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: POGOProtos.Networking.Requests.Messages.IGetHoloInventoryMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified GetHoloInventoryMessage message, length delimited. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.GetHoloInventoryMessage.verify|verify} messages.
+                     * @param message GetHoloInventoryMessage message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.IGetHoloInventoryMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a GetHoloInventoryMessage message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns GetHoloInventoryMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.GetHoloInventoryMessage;
+
+                    /**
+                     * Decodes a GetHoloInventoryMessage message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns GetHoloInventoryMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.GetHoloInventoryMessage;
+
+                    /**
+                     * Verifies a GetHoloInventoryMessage message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a GetHoloInventoryMessage message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns GetHoloInventoryMessage
+                     */
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.GetHoloInventoryMessage;
+
+                    /**
+                     * Creates a plain object from a GetHoloInventoryMessage message. Also converts values to other types if specified.
+                     * @param message GetHoloInventoryMessage
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: POGOProtos.Networking.Requests.Messages.GetHoloInventoryMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this GetHoloInventoryMessage to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
                 /** Properties of a GetInboxMessage. */
                 interface IGetInboxMessage {
 
@@ -17856,9 +18349,6 @@ export namespace POGOProtos {
 
                     /** GetInventoryMessage last_timestamp_ms */
                     last_timestamp_ms?: (number|Long);
-
-                    /** GetInventoryMessage item_been_seen */
-                    item_been_seen?: number;
                 }
 
                 /** Represents a GetInventoryMessage. */
@@ -17872,9 +18362,6 @@ export namespace POGOProtos {
 
                     /** GetInventoryMessage last_timestamp_ms. */
                     public last_timestamp_ms: (number|Long);
-
-                    /** GetInventoryMessage item_been_seen. */
-                    public item_been_seen: number;
 
                     /**
                      * Creates a new GetInventoryMessage instance using the specified properties.
@@ -22638,7 +23125,7 @@ export namespace POGOProtos {
             enum RequestType {
                 METHOD_UNSET = 0,
                 GET_PLAYER = 2,
-                GET_INVENTORY = 4,
+                GET_HOLO_INVENTORY = 4,
                 DOWNLOAD_SETTINGS = 5,
                 DOWNLOAD_ITEM_TEMPLATES = 6,
                 DOWNLOAD_REMOTE_CONFIG_VERSION = 7,
@@ -22722,7 +23209,9 @@ export namespace POGOProtos {
                 REGISTER_PUSH_NOTIFICATION = 5000,
                 UNREGISTER_PUSH_NOTIFICATION = 5001,
                 UPDATE_NOTIFICATION_STATUS = 5002,
-                OPT_OUT_PUSH_NOTIFICATION_CATEGORY = 5003
+                OPT_OUT_PUSH_NOTIFICATION_CATEGORY = 5003,
+                DOWNLOAD_GAME_MASTER_TEMPLATES = 5004,
+                GET_INVENTORY = 5005
             }
         }
 
@@ -23906,6 +24395,228 @@ export namespace POGOProtos {
                     NOT_IN_RANGE = 3,
                     ENCOUNTER_ALREADY_FINISHED = 4,
                     POKEMON_INVENTORY_FULL = 5
+                }
+            }
+
+            /** Properties of a DownloadGmTemplatesResponse. */
+            interface IDownloadGmTemplatesResponse {
+
+                /** DownloadGmTemplatesResponse result */
+                result?: POGOProtos.Networking.Responses.DownloadGmTemplatesResponse.Result;
+
+                /** DownloadGmTemplatesResponse template */
+                template?: POGOProtos.Networking.Responses.DownloadGmTemplatesResponse.IClientGameMasterTemplate[];
+
+                /** DownloadGmTemplatesResponse deleted_template */
+                deleted_template?: string[];
+
+                /** DownloadGmTemplatesResponse batch_id */
+                batch_id?: (number|Long);
+
+                /** DownloadGmTemplatesResponse page_offset */
+                page_offset?: number;
+            }
+
+            /** Represents a DownloadGmTemplatesResponse. */
+            class DownloadGmTemplatesResponse {
+
+                /**
+                 * Constructs a new DownloadGmTemplatesResponse.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Networking.Responses.IDownloadGmTemplatesResponse);
+
+                /** DownloadGmTemplatesResponse result. */
+                public result: POGOProtos.Networking.Responses.DownloadGmTemplatesResponse.Result;
+
+                /** DownloadGmTemplatesResponse template. */
+                public template: POGOProtos.Networking.Responses.DownloadGmTemplatesResponse.IClientGameMasterTemplate[];
+
+                /** DownloadGmTemplatesResponse deleted_template. */
+                public deleted_template: string[];
+
+                /** DownloadGmTemplatesResponse batch_id. */
+                public batch_id: (number|Long);
+
+                /** DownloadGmTemplatesResponse page_offset. */
+                public page_offset: number;
+
+                /**
+                 * Creates a new DownloadGmTemplatesResponse instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns DownloadGmTemplatesResponse instance
+                 */
+                public static create(properties?: POGOProtos.Networking.Responses.IDownloadGmTemplatesResponse): POGOProtos.Networking.Responses.DownloadGmTemplatesResponse;
+
+                /**
+                 * Encodes the specified DownloadGmTemplatesResponse message. Does not implicitly {@link POGOProtos.Networking.Responses.DownloadGmTemplatesResponse.verify|verify} messages.
+                 * @param message DownloadGmTemplatesResponse message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: POGOProtos.Networking.Responses.IDownloadGmTemplatesResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified DownloadGmTemplatesResponse message, length delimited. Does not implicitly {@link POGOProtos.Networking.Responses.DownloadGmTemplatesResponse.verify|verify} messages.
+                 * @param message DownloadGmTemplatesResponse message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Networking.Responses.IDownloadGmTemplatesResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a DownloadGmTemplatesResponse message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns DownloadGmTemplatesResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Responses.DownloadGmTemplatesResponse;
+
+                /**
+                 * Decodes a DownloadGmTemplatesResponse message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns DownloadGmTemplatesResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Responses.DownloadGmTemplatesResponse;
+
+                /**
+                 * Verifies a DownloadGmTemplatesResponse message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a DownloadGmTemplatesResponse message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns DownloadGmTemplatesResponse
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Responses.DownloadGmTemplatesResponse;
+
+                /**
+                 * Creates a plain object from a DownloadGmTemplatesResponse message. Also converts values to other types if specified.
+                 * @param message DownloadGmTemplatesResponse
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: POGOProtos.Networking.Responses.DownloadGmTemplatesResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this DownloadGmTemplatesResponse to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace DownloadGmTemplatesResponse {
+
+                /** Result enum. */
+                enum Result {
+                    UNSET = 0,
+                    COMPLETE = 1,
+                    MORE_RESULTS = 2,
+                    BATCH_ID_NOT_LIVE = 3,
+                    INVALID_BASIS_BATCH_ID = 4
+                }
+
+                /** Properties of a ClientGameMasterTemplate. */
+                interface IClientGameMasterTemplate {
+
+                    /** ClientGameMasterTemplate template_id */
+                    template_id?: string;
+
+                    /** ClientGameMasterTemplate data */
+                    data?: Uint8Array;
+                }
+
+                /** Represents a ClientGameMasterTemplate. */
+                class ClientGameMasterTemplate {
+
+                    /**
+                     * Constructs a new ClientGameMasterTemplate.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: POGOProtos.Networking.Responses.DownloadGmTemplatesResponse.IClientGameMasterTemplate);
+
+                    /** ClientGameMasterTemplate template_id. */
+                    public template_id: string;
+
+                    /** ClientGameMasterTemplate data. */
+                    public data: Uint8Array;
+
+                    /**
+                     * Creates a new ClientGameMasterTemplate instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns ClientGameMasterTemplate instance
+                     */
+                    public static create(properties?: POGOProtos.Networking.Responses.DownloadGmTemplatesResponse.IClientGameMasterTemplate): POGOProtos.Networking.Responses.DownloadGmTemplatesResponse.ClientGameMasterTemplate;
+
+                    /**
+                     * Encodes the specified ClientGameMasterTemplate message. Does not implicitly {@link POGOProtos.Networking.Responses.DownloadGmTemplatesResponse.ClientGameMasterTemplate.verify|verify} messages.
+                     * @param message ClientGameMasterTemplate message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: POGOProtos.Networking.Responses.DownloadGmTemplatesResponse.IClientGameMasterTemplate, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified ClientGameMasterTemplate message, length delimited. Does not implicitly {@link POGOProtos.Networking.Responses.DownloadGmTemplatesResponse.ClientGameMasterTemplate.verify|verify} messages.
+                     * @param message ClientGameMasterTemplate message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: POGOProtos.Networking.Responses.DownloadGmTemplatesResponse.IClientGameMasterTemplate, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a ClientGameMasterTemplate message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns ClientGameMasterTemplate
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Responses.DownloadGmTemplatesResponse.ClientGameMasterTemplate;
+
+                    /**
+                     * Decodes a ClientGameMasterTemplate message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns ClientGameMasterTemplate
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Responses.DownloadGmTemplatesResponse.ClientGameMasterTemplate;
+
+                    /**
+                     * Verifies a ClientGameMasterTemplate message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a ClientGameMasterTemplate message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns ClientGameMasterTemplate
+                     */
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Responses.DownloadGmTemplatesResponse.ClientGameMasterTemplate;
+
+                    /**
+                     * Creates a plain object from a ClientGameMasterTemplate message. Also converts values to other types if specified.
+                     * @param message ClientGameMasterTemplate
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: POGOProtos.Networking.Responses.DownloadGmTemplatesResponse.ClientGameMasterTemplate, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this ClientGameMasterTemplate to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
                 }
             }
 
@@ -26286,6 +26997,102 @@ export namespace POGOProtos {
                 public toJSON(): { [k: string]: any };
             }
 
+            /** Properties of a GetHoloInventoryResponse. */
+            interface IGetHoloInventoryResponse {
+
+                /** GetHoloInventoryResponse success */
+                success?: boolean;
+
+                /** GetHoloInventoryResponse inventory_delta */
+                inventory_delta?: POGOProtos.Inventory.IInventoryDelta;
+            }
+
+            /** Represents a GetHoloInventoryResponse. */
+            class GetHoloInventoryResponse {
+
+                /**
+                 * Constructs a new GetHoloInventoryResponse.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Networking.Responses.IGetHoloInventoryResponse);
+
+                /** GetHoloInventoryResponse success. */
+                public success: boolean;
+
+                /** GetHoloInventoryResponse inventory_delta. */
+                public inventory_delta?: (POGOProtos.Inventory.IInventoryDelta|null);
+
+                /**
+                 * Creates a new GetHoloInventoryResponse instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns GetHoloInventoryResponse instance
+                 */
+                public static create(properties?: POGOProtos.Networking.Responses.IGetHoloInventoryResponse): POGOProtos.Networking.Responses.GetHoloInventoryResponse;
+
+                /**
+                 * Encodes the specified GetHoloInventoryResponse message. Does not implicitly {@link POGOProtos.Networking.Responses.GetHoloInventoryResponse.verify|verify} messages.
+                 * @param message GetHoloInventoryResponse message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: POGOProtos.Networking.Responses.IGetHoloInventoryResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified GetHoloInventoryResponse message, length delimited. Does not implicitly {@link POGOProtos.Networking.Responses.GetHoloInventoryResponse.verify|verify} messages.
+                 * @param message GetHoloInventoryResponse message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Networking.Responses.IGetHoloInventoryResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a GetHoloInventoryResponse message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns GetHoloInventoryResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Responses.GetHoloInventoryResponse;
+
+                /**
+                 * Decodes a GetHoloInventoryResponse message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns GetHoloInventoryResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Responses.GetHoloInventoryResponse;
+
+                /**
+                 * Verifies a GetHoloInventoryResponse message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a GetHoloInventoryResponse message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns GetHoloInventoryResponse
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Responses.GetHoloInventoryResponse;
+
+                /**
+                 * Creates a plain object from a GetHoloInventoryResponse message. Also converts values to other types if specified.
+                 * @param message GetHoloInventoryResponse
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: POGOProtos.Networking.Responses.GetHoloInventoryResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this GetHoloInventoryResponse to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
             /** Properties of a GetInboxResponse. */
             interface IGetInboxResponse {
 
@@ -26502,6 +27309,9 @@ export namespace POGOProtos {
 
                         /** Notification labels */
                         labels?: POGOProtos.Networking.Responses.GetInboxResponse.ClientInbox.Notification.Label[];
+
+                        /** Notification expire_time_ms */
+                        expire_time_ms?: (number|Long);
                     }
 
                     /** Represents a Notification. */
@@ -26530,6 +27340,9 @@ export namespace POGOProtos {
 
                         /** Notification labels. */
                         public labels: POGOProtos.Networking.Responses.GetInboxResponse.ClientInbox.Notification.Label[];
+
+                        /** Notification expire_time_ms. */
+                        public expire_time_ms: (number|Long);
 
                         /**
                          * Creates a new Notification instance using the specified properties.
