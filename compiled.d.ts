@@ -12912,6 +12912,9 @@ export namespace POGOProtos {
 
                 /** Signature unknown25 */
                 unknown25?: (number|Long);
+
+                /** Signature unknown27 */
+                unknown27?: number;
             }
 
             /** Represents a Signature. */
@@ -12997,6 +13000,9 @@ export namespace POGOProtos {
 
                 /** Signature unknown25. */
                 public unknown25: (number|Long);
+
+                /** Signature unknown27. */
+                public unknown27: number;
 
                 /**
                  * Creates a new Signature instance using the specified properties.
