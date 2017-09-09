@@ -13954,7 +13954,8 @@ export namespace POGOProtos {
                 BUY_ITEM_IOS = 4,
                 GET_STORE_ITEMS = 5,
                 SEND_ENCRYPTED_SIGNATURE = 6,
-                UNKNOWN_PTR_8 = 8
+                UNKNOWN_PTR_8 = 8,
+                JOIN_EVENT = 9
             }
 
             /** Namespace Requests. */
@@ -15459,6 +15460,108 @@ export namespace POGOProtos {
 
                     /**
                      * Converts this AttackGymMessage to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of an AwardFreeRaidTicketMessage. */
+                interface IAwardFreeRaidTicketMessage {
+
+                    /** AwardFreeRaidTicketMessage gym_id */
+                    gym_id?: string;
+
+                    /** AwardFreeRaidTicketMessage player_lat_degrees */
+                    player_lat_degrees?: number;
+
+                    /** AwardFreeRaidTicketMessage player_lng_degrees */
+                    player_lng_degrees?: number;
+                }
+
+                /** Represents an AwardFreeRaidTicketMessage. */
+                class AwardFreeRaidTicketMessage {
+
+                    /**
+                     * Constructs a new AwardFreeRaidTicketMessage.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: POGOProtos.Networking.Requests.Messages.IAwardFreeRaidTicketMessage);
+
+                    /** AwardFreeRaidTicketMessage gym_id. */
+                    public gym_id: string;
+
+                    /** AwardFreeRaidTicketMessage player_lat_degrees. */
+                    public player_lat_degrees: number;
+
+                    /** AwardFreeRaidTicketMessage player_lng_degrees. */
+                    public player_lng_degrees: number;
+
+                    /**
+                     * Creates a new AwardFreeRaidTicketMessage instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns AwardFreeRaidTicketMessage instance
+                     */
+                    public static create(properties?: POGOProtos.Networking.Requests.Messages.IAwardFreeRaidTicketMessage): POGOProtos.Networking.Requests.Messages.AwardFreeRaidTicketMessage;
+
+                    /**
+                     * Encodes the specified AwardFreeRaidTicketMessage message. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.AwardFreeRaidTicketMessage.verify|verify} messages.
+                     * @param message AwardFreeRaidTicketMessage message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: POGOProtos.Networking.Requests.Messages.IAwardFreeRaidTicketMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified AwardFreeRaidTicketMessage message, length delimited. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.AwardFreeRaidTicketMessage.verify|verify} messages.
+                     * @param message AwardFreeRaidTicketMessage message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.IAwardFreeRaidTicketMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes an AwardFreeRaidTicketMessage message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns AwardFreeRaidTicketMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.AwardFreeRaidTicketMessage;
+
+                    /**
+                     * Decodes an AwardFreeRaidTicketMessage message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns AwardFreeRaidTicketMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.AwardFreeRaidTicketMessage;
+
+                    /**
+                     * Verifies an AwardFreeRaidTicketMessage message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates an AwardFreeRaidTicketMessage message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns AwardFreeRaidTicketMessage
+                     */
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.AwardFreeRaidTicketMessage;
+
+                    /**
+                     * Creates a plain object from an AwardFreeRaidTicketMessage message. Also converts values to other types if specified.
+                     * @param message AwardFreeRaidTicketMessage
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: POGOProtos.Networking.Requests.Messages.AwardFreeRaidTicketMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this AwardFreeRaidTicketMessage to JSON.
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
@@ -23461,6 +23564,108 @@ export namespace POGOProtos {
                     SUCCESS = 1,
                     ERROR_INVALID_ATTACK_ACTIONS = 2,
                     ERROR_NOT_IN_RANGE = 3
+                }
+            }
+
+            /** Properties of an AwardFreeRaidTicketResponse. */
+            interface IAwardFreeRaidTicketResponse {
+
+                /** AwardFreeRaidTicketResponse result */
+                result?: POGOProtos.Networking.Responses.AwardFreeRaidTicketResponse.Result;
+            }
+
+            /** Represents an AwardFreeRaidTicketResponse. */
+            class AwardFreeRaidTicketResponse {
+
+                /**
+                 * Constructs a new AwardFreeRaidTicketResponse.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Networking.Responses.IAwardFreeRaidTicketResponse);
+
+                /** AwardFreeRaidTicketResponse result. */
+                public result: POGOProtos.Networking.Responses.AwardFreeRaidTicketResponse.Result;
+
+                /**
+                 * Creates a new AwardFreeRaidTicketResponse instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns AwardFreeRaidTicketResponse instance
+                 */
+                public static create(properties?: POGOProtos.Networking.Responses.IAwardFreeRaidTicketResponse): POGOProtos.Networking.Responses.AwardFreeRaidTicketResponse;
+
+                /**
+                 * Encodes the specified AwardFreeRaidTicketResponse message. Does not implicitly {@link POGOProtos.Networking.Responses.AwardFreeRaidTicketResponse.verify|verify} messages.
+                 * @param message AwardFreeRaidTicketResponse message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: POGOProtos.Networking.Responses.IAwardFreeRaidTicketResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified AwardFreeRaidTicketResponse message, length delimited. Does not implicitly {@link POGOProtos.Networking.Responses.AwardFreeRaidTicketResponse.verify|verify} messages.
+                 * @param message AwardFreeRaidTicketResponse message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Networking.Responses.IAwardFreeRaidTicketResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes an AwardFreeRaidTicketResponse message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns AwardFreeRaidTicketResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Responses.AwardFreeRaidTicketResponse;
+
+                /**
+                 * Decodes an AwardFreeRaidTicketResponse message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns AwardFreeRaidTicketResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Responses.AwardFreeRaidTicketResponse;
+
+                /**
+                 * Verifies an AwardFreeRaidTicketResponse message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates an AwardFreeRaidTicketResponse message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns AwardFreeRaidTicketResponse
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Responses.AwardFreeRaidTicketResponse;
+
+                /**
+                 * Creates a plain object from an AwardFreeRaidTicketResponse message. Also converts values to other types if specified.
+                 * @param message AwardFreeRaidTicketResponse
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: POGOProtos.Networking.Responses.AwardFreeRaidTicketResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this AwardFreeRaidTicketResponse to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace AwardFreeRaidTicketResponse {
+
+                /** Result enum. */
+                enum Result {
+                    NO_RESULT_SET = 0,
+                    SUCCESS = 1,
+                    ERROR_PLAYER_DOES_NOT_MEET_MIN_LEVEL = 2,
+                    ERROR_DAILY_TICKET_ALREADY_AWARDED = 3,
+                    ERROR_PLAYER_OUT_OF_RANGE = 4
                 }
             }
 
