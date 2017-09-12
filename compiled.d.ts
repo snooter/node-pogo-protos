@@ -2906,6 +2906,9 @@ export namespace POGOProtos {
 
                 /** ActionLogEntry buddy_pokemon */
                 buddy_pokemon?: POGOProtos.Data.Logs.IBuddyPokemonLogEntry;
+
+                /** ActionLogEntry raid_rewards */
+                raid_rewards?: POGOProtos.Data.Logs.IRaidRewardsLogEntry;
             }
 
             /** Represents an ActionLogEntry. */
@@ -2931,6 +2934,9 @@ export namespace POGOProtos {
 
                 /** ActionLogEntry buddy_pokemon. */
                 public buddy_pokemon?: (POGOProtos.Data.Logs.IBuddyPokemonLogEntry|null);
+
+                /** ActionLogEntry raid_rewards. */
+                public raid_rewards?: (POGOProtos.Data.Logs.IRaidRewardsLogEntry|null);
 
                 /** ActionLogEntry Action. */
                 public Action?: string;
@@ -3271,6 +3277,18 @@ export namespace POGOProtos {
 
                 /** FortSearchLogEntry pokemon_eggs */
                 pokemon_eggs?: POGOProtos.Data.IPokemonData[];
+
+                /** FortSearchLogEntry fort_type */
+                fort_type?: POGOProtos.Map.Fort.FortType;
+
+                /** FortSearchLogEntry awarded_items */
+                awarded_items?: POGOProtos.Inventory.Item.IItemData[];
+
+                /** FortSearchLogEntry bonus_items */
+                bonus_items?: POGOProtos.Inventory.Item.IItemData[];
+
+                /** FortSearchLogEntry team_bonus_items */
+                team_bonus_items?: POGOProtos.Inventory.Item.IItemData[];
             }
 
             /** Represents a FortSearchLogEntry. */
@@ -3296,6 +3314,18 @@ export namespace POGOProtos {
 
                 /** FortSearchLogEntry pokemon_eggs. */
                 public pokemon_eggs: POGOProtos.Data.IPokemonData[];
+
+                /** FortSearchLogEntry fort_type. */
+                public fort_type: POGOProtos.Map.Fort.FortType;
+
+                /** FortSearchLogEntry awarded_items. */
+                public awarded_items: POGOProtos.Inventory.Item.IItemData[];
+
+                /** FortSearchLogEntry bonus_items. */
+                public bonus_items: POGOProtos.Inventory.Item.IItemData[];
+
+                /** FortSearchLogEntry team_bonus_items. */
+                public team_bonus_items: POGOProtos.Inventory.Item.IItemData[];
 
                 /**
                  * Creates a new FortSearchLogEntry instance using the specified properties.
@@ -3369,6 +3399,129 @@ export namespace POGOProtos {
             }
 
             namespace FortSearchLogEntry {
+
+                /** Result enum. */
+                enum Result {
+                    UNSET = 0,
+                    SUCCESS = 1
+                }
+            }
+
+            /** Properties of a RaidRewardsLogEntry. */
+            interface IRaidRewardsLogEntry {
+
+                /** RaidRewardsLogEntry result */
+                result?: POGOProtos.Data.Logs.RaidRewardsLogEntry.Result;
+
+                /** RaidRewardsLogEntry is_exclusive */
+                is_exclusive?: boolean;
+
+                /** RaidRewardsLogEntry items */
+                items?: POGOProtos.Inventory.Item.IItemData[];
+
+                /** RaidRewardsLogEntry default_rewards */
+                default_rewards?: POGOProtos.Inventory.Item.IItemData[];
+
+                /** RaidRewardsLogEntry stardust */
+                stardust?: number;
+            }
+
+            /** Represents a RaidRewardsLogEntry. */
+            class RaidRewardsLogEntry {
+
+                /**
+                 * Constructs a new RaidRewardsLogEntry.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Data.Logs.IRaidRewardsLogEntry);
+
+                /** RaidRewardsLogEntry result. */
+                public result: POGOProtos.Data.Logs.RaidRewardsLogEntry.Result;
+
+                /** RaidRewardsLogEntry is_exclusive. */
+                public is_exclusive: boolean;
+
+                /** RaidRewardsLogEntry items. */
+                public items: POGOProtos.Inventory.Item.IItemData[];
+
+                /** RaidRewardsLogEntry default_rewards. */
+                public default_rewards: POGOProtos.Inventory.Item.IItemData[];
+
+                /** RaidRewardsLogEntry stardust. */
+                public stardust: number;
+
+                /**
+                 * Creates a new RaidRewardsLogEntry instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns RaidRewardsLogEntry instance
+                 */
+                public static create(properties?: POGOProtos.Data.Logs.IRaidRewardsLogEntry): POGOProtos.Data.Logs.RaidRewardsLogEntry;
+
+                /**
+                 * Encodes the specified RaidRewardsLogEntry message. Does not implicitly {@link POGOProtos.Data.Logs.RaidRewardsLogEntry.verify|verify} messages.
+                 * @param message RaidRewardsLogEntry message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: POGOProtos.Data.Logs.IRaidRewardsLogEntry, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified RaidRewardsLogEntry message, length delimited. Does not implicitly {@link POGOProtos.Data.Logs.RaidRewardsLogEntry.verify|verify} messages.
+                 * @param message RaidRewardsLogEntry message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Data.Logs.IRaidRewardsLogEntry, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a RaidRewardsLogEntry message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns RaidRewardsLogEntry
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.Logs.RaidRewardsLogEntry;
+
+                /**
+                 * Decodes a RaidRewardsLogEntry message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns RaidRewardsLogEntry
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.Logs.RaidRewardsLogEntry;
+
+                /**
+                 * Verifies a RaidRewardsLogEntry message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a RaidRewardsLogEntry message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns RaidRewardsLogEntry
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Logs.RaidRewardsLogEntry;
+
+                /**
+                 * Creates a plain object from a RaidRewardsLogEntry message. Also converts values to other types if specified.
+                 * @param message RaidRewardsLogEntry
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: POGOProtos.Data.Logs.RaidRewardsLogEntry, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this RaidRewardsLogEntry to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace RaidRewardsLogEntry {
 
                 /** Result enum. */
                 enum Result {
@@ -7036,7 +7189,9 @@ export namespace POGOProtos {
             BADGE_EVENT_MIN = 2000,
             BADGE_CHICAGO_FEST_JULY_2017 = 2001,
             BADGE_PIKACHU_OUTBREAK_YOKOHAMA_2017 = 2002,
-            BADGE_SAFARI_ZONE_EUROPE_2017 = 2003
+            BADGE_SAFARI_ZONE_EUROPE_2017 = 2003,
+            BADGE_SAFARI_ZONE_EUROPE_2017_10_07 = 2004,
+            BADGE_SAFARI_ZONE_EUROPE_2017_10_14 = 2005
         }
 
         /** CameraInterpolation enum. */
@@ -25129,127 +25284,6 @@ export namespace POGOProtos {
                 public toJSON(): { [k: string]: any };
             }
 
-            /** Properties of a CheckCodenameAvailableResponse. */
-            interface ICheckCodenameAvailableResponse {
-
-                /** CheckCodenameAvailableResponse codename */
-                codename?: string;
-
-                /** CheckCodenameAvailableResponse user_message */
-                user_message?: string;
-
-                /** CheckCodenameAvailableResponse is_assignable */
-                is_assignable?: boolean;
-
-                /** CheckCodenameAvailableResponse status */
-                status?: POGOProtos.Networking.Responses.CheckCodenameAvailableResponse.Status;
-            }
-
-            /** Represents a CheckCodenameAvailableResponse. */
-            class CheckCodenameAvailableResponse {
-
-                /**
-                 * Constructs a new CheckCodenameAvailableResponse.
-                 * @param [properties] Properties to set
-                 */
-                constructor(properties?: POGOProtos.Networking.Responses.ICheckCodenameAvailableResponse);
-
-                /** CheckCodenameAvailableResponse codename. */
-                public codename: string;
-
-                /** CheckCodenameAvailableResponse user_message. */
-                public user_message: string;
-
-                /** CheckCodenameAvailableResponse is_assignable. */
-                public is_assignable: boolean;
-
-                /** CheckCodenameAvailableResponse status. */
-                public status: POGOProtos.Networking.Responses.CheckCodenameAvailableResponse.Status;
-
-                /**
-                 * Creates a new CheckCodenameAvailableResponse instance using the specified properties.
-                 * @param [properties] Properties to set
-                 * @returns CheckCodenameAvailableResponse instance
-                 */
-                public static create(properties?: POGOProtos.Networking.Responses.ICheckCodenameAvailableResponse): POGOProtos.Networking.Responses.CheckCodenameAvailableResponse;
-
-                /**
-                 * Encodes the specified CheckCodenameAvailableResponse message. Does not implicitly {@link POGOProtos.Networking.Responses.CheckCodenameAvailableResponse.verify|verify} messages.
-                 * @param message CheckCodenameAvailableResponse message or plain object to encode
-                 * @param [writer] Writer to encode to
-                 * @returns Writer
-                 */
-                public static encode(message: POGOProtos.Networking.Responses.ICheckCodenameAvailableResponse, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                /**
-                 * Encodes the specified CheckCodenameAvailableResponse message, length delimited. Does not implicitly {@link POGOProtos.Networking.Responses.CheckCodenameAvailableResponse.verify|verify} messages.
-                 * @param message CheckCodenameAvailableResponse message or plain object to encode
-                 * @param [writer] Writer to encode to
-                 * @returns Writer
-                 */
-                public static encodeDelimited(message: POGOProtos.Networking.Responses.ICheckCodenameAvailableResponse, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                /**
-                 * Decodes a CheckCodenameAvailableResponse message from the specified reader or buffer.
-                 * @param reader Reader or buffer to decode from
-                 * @param [length] Message length if known beforehand
-                 * @returns CheckCodenameAvailableResponse
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Responses.CheckCodenameAvailableResponse;
-
-                /**
-                 * Decodes a CheckCodenameAvailableResponse message from the specified reader or buffer, length delimited.
-                 * @param reader Reader or buffer to decode from
-                 * @returns CheckCodenameAvailableResponse
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Responses.CheckCodenameAvailableResponse;
-
-                /**
-                 * Verifies a CheckCodenameAvailableResponse message.
-                 * @param message Plain object to verify
-                 * @returns `null` if valid, otherwise the reason why it is not
-                 */
-                public static verify(message: { [k: string]: any }): (string|null);
-
-                /**
-                 * Creates a CheckCodenameAvailableResponse message from a plain object. Also converts values to their respective internal types.
-                 * @param object Plain object
-                 * @returns CheckCodenameAvailableResponse
-                 */
-                public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Responses.CheckCodenameAvailableResponse;
-
-                /**
-                 * Creates a plain object from a CheckCodenameAvailableResponse message. Also converts values to other types if specified.
-                 * @param message CheckCodenameAvailableResponse
-                 * @param [options] Conversion options
-                 * @returns Plain object
-                 */
-                public static toObject(message: POGOProtos.Networking.Responses.CheckCodenameAvailableResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                /**
-                 * Converts this CheckCodenameAvailableResponse to JSON.
-                 * @returns JSON object
-                 */
-                public toJSON(): { [k: string]: any };
-            }
-
-            namespace CheckCodenameAvailableResponse {
-
-                /** Status enum. */
-                enum Status {
-                    UNSET = 0,
-                    SUCCESS = 1,
-                    CODENAME_NOT_AVAILABLE = 2,
-                    CODENAME_NOT_VALID = 3,
-                    CURRENT_OWNER = 4,
-                    CODENAME_CHANGE_NOT_ALLOWED = 5
-                }
-            }
-
             /** Properties of a ClaimCodenameResponse. */
             interface IClaimCodenameResponse {
 
@@ -37266,6 +37300,15 @@ export namespace POGOProtos {
 
                     /** BattleAttributes sta_percent */
                     sta_percent?: number;
+
+                    /** BattleAttributes atk_percent */
+                    atk_percent?: number;
+
+                    /** BattleAttributes def_percent */
+                    def_percent?: number;
+
+                    /** BattleAttributes duration_s */
+                    duration_s?: number;
                 }
 
                 /** Represents a BattleAttributes. */
@@ -37279,6 +37322,15 @@ export namespace POGOProtos {
 
                     /** BattleAttributes sta_percent. */
                     public sta_percent: number;
+
+                    /** BattleAttributes atk_percent. */
+                    public atk_percent: number;
+
+                    /** BattleAttributes def_percent. */
+                    public def_percent: number;
+
+                    /** BattleAttributes duration_s. */
+                    public duration_s: number;
 
                     /**
                      * Creates a new BattleAttributes instance using the specified properties.

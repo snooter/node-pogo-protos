@@ -6,4 +6,3 @@ message AwardFreeRaidTicketMessage {
 	double player_lat_degrees = 2;
 	double player_lng_degrees = 3;
 }
-
