@@ -5298,6 +5298,15 @@ export namespace POGOProtos {
 
             /** PokemonData hatched_from_egg */
             hatched_from_egg?: boolean;
+
+            /** PokemonData coins_returned */
+            coins_returned?: number;
+
+            /** PokemonData deployed_duration_ms */
+            deployed_duration_ms?: (number|Long);
+
+            /** PokemonData deployed_returned_timestamp_ms */
+            deployed_returned_timestamp_ms?: (number|Long);
         }
 
         /** Represents a PokemonData. */
@@ -5419,6 +5428,15 @@ export namespace POGOProtos {
 
             /** PokemonData hatched_from_egg. */
             public hatched_from_egg: boolean;
+
+            /** PokemonData coins_returned. */
+            public coins_returned: number;
+
+            /** PokemonData deployed_duration_ms. */
+            public deployed_duration_ms: (number|Long);
+
+            /** PokemonData deployed_returned_timestamp_ms. */
+            public deployed_returned_timestamp_ms: (number|Long);
 
             /**
              * Creates a new PokemonData instance using the specified properties.
@@ -5932,6 +5950,9 @@ export namespace POGOProtos {
 
                 /** Lobby creation_ms */
                 creation_ms?: (number|Long);
+
+                /** Lobby battle_plfe_instance */
+                battle_plfe_instance?: number;
             }
 
             /** Represents a Lobby. */
@@ -5972,6 +5993,9 @@ export namespace POGOProtos {
 
                 /** Lobby creation_ms. */
                 public creation_ms: (number|Long);
+
+                /** Lobby battle_plfe_instance. */
+                public battle_plfe_instance: number;
 
                 /**
                  * Creates a new Lobby instance using the specified properties.
@@ -7278,7 +7302,15 @@ export namespace POGOProtos {
             UNOWN_Y = 25,
             UNOWN_Z = 26,
             UNOWN_EXCLAMATION_POINT = 27,
-            UNOWN_QUESTION_MARK = 28
+            UNOWN_QUESTION_MARK = 28,
+            CASTFORM_NORMAL = 29,
+            CASTFORM_SUNNY = 30,
+            CASTFORM_RAINY = 31,
+            CASTFORM_SNOWY = 32,
+            DEOXYS_NORMAL = 33,
+            DEOXYS_ATTACK = 34,
+            DEOXYS_DEFENSE = 35,
+            DEOXYS_SPEED = 36
         }
 
         /** Gender enum. */
@@ -23446,6 +23478,7 @@ export namespace POGOProtos {
                 GYM_FEED_POKEMON = 164,
                 START_RAID_BATTLE = 165,
                 ATTACK_RAID = 166,
+                AWARD_POKECOIN = 167,
                 GET_ASSET_DIGEST = 300,
                 GET_DOWNLOAD_URLS = 301,
                 CLAIM_CODENAME = 403,
@@ -26429,6 +26462,9 @@ export namespace POGOProtos {
 
                 /** FortSearchResponse team_bonus_loot */
                 team_bonus_loot?: POGOProtos.Inventory.ILoot;
+
+                /** FortSearchResponse fort_id */
+                fort_id?: string;
             }
 
             /** Represents a FortSearchResponse. */
@@ -26475,6 +26511,9 @@ export namespace POGOProtos {
 
                 /** FortSearchResponse team_bonus_loot. */
                 public team_bonus_loot?: (POGOProtos.Inventory.ILoot|null);
+
+                /** FortSearchResponse fort_id. */
+                public fort_id: string;
 
                 /**
                  * Creates a new FortSearchResponse instance using the specified properties.
@@ -28497,6 +28536,9 @@ export namespace POGOProtos {
 
                 /** GetRaidDetailsResponse num_players_in_lobby */
                 num_players_in_lobby?: number;
+
+                /** GetRaidDetailsResponse server_ms */
+                server_ms?: (number|Long);
             }
 
             /** Represents a GetRaidDetailsResponse. */
@@ -28537,6 +28579,9 @@ export namespace POGOProtos {
 
                 /** GetRaidDetailsResponse num_players_in_lobby. */
                 public num_players_in_lobby: number;
+
+                /** GetRaidDetailsResponse server_ms. */
+                public server_ms: (number|Long);
 
                 /**
                  * Creates a new GetRaidDetailsResponse instance using the specified properties.
