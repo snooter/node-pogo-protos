@@ -1,6 +1,6 @@
 {
   "name": "node-pogo-protos-vnext",
-  "version": "2.14.1",
+  "version": "2.14.3",
   "description": "Pokémon Go Protobuf files from POGOProtos, wrapped up in a Node module using protobuf.js",
   "main": "index.js",
   "repository": {
@@ -28,7 +28,7 @@
   },
   "typings": "./pogo-protos.d.ts",
   "devDependencies": {
-    "mz": "^2.6.0"
+    "mz": "^2.7.0"
   },
   "scripts": {
     "compile": "node proto/compile.js",
