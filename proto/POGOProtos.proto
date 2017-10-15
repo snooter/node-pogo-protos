@@ -32,6 +32,7 @@ import public "Data/Logs/ActionLogEntry.proto";
 import public "Data/Logs/BuddyPokemonLogEntry.proto";
 import public "Data/Logs/CatchPokemonLogEntry.proto";
 import public "Data/Logs/FortSearchLogEntry.proto";
+import public "Data/Logs/PasscodeRewardsLogEntry.proto";
 import public "Data/Logs/RaidRewardsLogEntry.proto";
 import public "Data/Player/ContactSettings.proto";
 import public "Data/Player/Currency.proto";

@@ -2909,6 +2909,9 @@ export namespace POGOProtos {
 
                 /** ActionLogEntry raid_rewards */
                 raid_rewards?: POGOProtos.Data.Logs.IRaidRewardsLogEntry;
+
+                /** ActionLogEntry passcode_rewards */
+                passcode_rewards?: POGOProtos.Data.Logs.IPasscodeRewardsLogEntry;
             }
 
             /** Represents an ActionLogEntry. */
@@ -2937,6 +2940,9 @@ export namespace POGOProtos {
 
                 /** ActionLogEntry raid_rewards. */
                 public raid_rewards?: (POGOProtos.Data.Logs.IRaidRewardsLogEntry|null);
+
+                /** ActionLogEntry passcode_rewards. */
+                public passcode_rewards?: (POGOProtos.Data.Logs.IPasscodeRewardsLogEntry|null);
 
                 /** ActionLogEntry Action. */
                 public Action?: string;
@@ -3399,6 +3405,117 @@ export namespace POGOProtos {
             }
 
             namespace FortSearchLogEntry {
+
+                /** Result enum. */
+                enum Result {
+                    UNSET = 0,
+                    SUCCESS = 1
+                }
+            }
+
+            /** Properties of a PasscodeRewardsLogEntry. */
+            interface IPasscodeRewardsLogEntry {
+
+                /** PasscodeRewardsLogEntry result */
+                result?: POGOProtos.Data.Logs.PasscodeRewardsLogEntry.Result;
+
+                /** PasscodeRewardsLogEntry passcode */
+                passcode?: string;
+
+                /** PasscodeRewardsLogEntry rewards */
+                rewards?: POGOProtos.Data.IRedeemPasscodeReward;
+            }
+
+            /** Represents a PasscodeRewardsLogEntry. */
+            class PasscodeRewardsLogEntry {
+
+                /**
+                 * Constructs a new PasscodeRewardsLogEntry.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Data.Logs.IPasscodeRewardsLogEntry);
+
+                /** PasscodeRewardsLogEntry result. */
+                public result: POGOProtos.Data.Logs.PasscodeRewardsLogEntry.Result;
+
+                /** PasscodeRewardsLogEntry passcode. */
+                public passcode: string;
+
+                /** PasscodeRewardsLogEntry rewards. */
+                public rewards?: (POGOProtos.Data.IRedeemPasscodeReward|null);
+
+                /**
+                 * Creates a new PasscodeRewardsLogEntry instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns PasscodeRewardsLogEntry instance
+                 */
+                public static create(properties?: POGOProtos.Data.Logs.IPasscodeRewardsLogEntry): POGOProtos.Data.Logs.PasscodeRewardsLogEntry;
+
+                /**
+                 * Encodes the specified PasscodeRewardsLogEntry message. Does not implicitly {@link POGOProtos.Data.Logs.PasscodeRewardsLogEntry.verify|verify} messages.
+                 * @param message PasscodeRewardsLogEntry message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: POGOProtos.Data.Logs.IPasscodeRewardsLogEntry, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified PasscodeRewardsLogEntry message, length delimited. Does not implicitly {@link POGOProtos.Data.Logs.PasscodeRewardsLogEntry.verify|verify} messages.
+                 * @param message PasscodeRewardsLogEntry message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Data.Logs.IPasscodeRewardsLogEntry, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a PasscodeRewardsLogEntry message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns PasscodeRewardsLogEntry
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.Logs.PasscodeRewardsLogEntry;
+
+                /**
+                 * Decodes a PasscodeRewardsLogEntry message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns PasscodeRewardsLogEntry
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.Logs.PasscodeRewardsLogEntry;
+
+                /**
+                 * Verifies a PasscodeRewardsLogEntry message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a PasscodeRewardsLogEntry message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns PasscodeRewardsLogEntry
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Data.Logs.PasscodeRewardsLogEntry;
+
+                /**
+                 * Creates a plain object from a PasscodeRewardsLogEntry message. Also converts values to other types if specified.
+                 * @param message PasscodeRewardsLogEntry
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: POGOProtos.Data.Logs.PasscodeRewardsLogEntry, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this PasscodeRewardsLogEntry to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace PasscodeRewardsLogEntry {
 
                 /** Result enum. */
                 enum Result {
@@ -7016,7 +7133,7 @@ export namespace POGOProtos {
             pokecoins?: number;
 
             /** RedeemPasscodeReward badges */
-            badges?: POGOProtos.Enums.GymBadgeType[];
+            badges?: POGOProtos.Enums.BadgeType[];
         }
 
         /** Represents a RedeemPasscodeReward. */
@@ -7050,7 +7167,7 @@ export namespace POGOProtos {
             public pokecoins: number;
 
             /** RedeemPasscodeReward badges. */
-            public badges: POGOProtos.Enums.GymBadgeType[];
+            public badges: POGOProtos.Enums.BadgeType[];
 
             /**
              * Creates a new RedeemPasscodeReward instance using the specified properties.
@@ -7210,6 +7327,7 @@ export namespace POGOProtos {
             BADGE_BERRIES_FED = 42,
             BADGE_HOURS_DEFENDED = 43,
             BADGE_PLACE_HOLDER = 44,
+            BADGE_POKEDEX_ENTRIES_GEN3 = 45,
             BADGE_EVENT_MIN = 2000,
             BADGE_CHICAGO_FEST_JULY_2017 = 2001,
             BADGE_PIKACHU_OUTBREAK_YOKOHAMA_2017 = 2002,
@@ -7250,7 +7368,8 @@ export namespace POGOProtos {
             COSTUME_UNSET = 0,
             HOLIDAY_2016 = 1,
             ANNIVERSARY = 2,
-            ONE_YEAR_ANNIVERSARY = 3
+            ONE_YEAR_ANNIVERSARY = 3,
+            HALLOWEEN_2017 = 4
         }
 
         /** EncounterType enum. */
@@ -7387,7 +7506,8 @@ export namespace POGOProtos {
             GYM_REMOVAL = 1,
             POKEMON_HUNGRY = 2,
             POKEMON_WON = 3,
-            EXCLUSIVE_RAID_INVITE = 4
+            EXCLUSIVE_RAID_INVITE = 4,
+            EXCLUSIVE_RAID_CANCELLATION = 5
         }
 
         /** NotificationState enum. */
@@ -8908,6 +9028,9 @@ export namespace POGOProtos {
 
             /** ExclusiveTicketInfo spawn_time_ms */
             spawn_time_ms?: (number|Long);
+
+            /** ExclusiveTicketInfo is_cancelled */
+            is_cancelled?: boolean;
         }
 
         /** Represents an ExclusiveTicketInfo. */
@@ -8945,6 +9068,9 @@ export namespace POGOProtos {
 
             /** ExclusiveTicketInfo spawn_time_ms. */
             public spawn_time_ms: (number|Long);
+
+            /** ExclusiveTicketInfo is_cancelled. */
+            public is_cancelled: boolean;
 
             /**
              * Creates a new ExclusiveTicketInfo instance using the specified properties.
@@ -33332,6 +33458,9 @@ export namespace POGOProtos {
 
             /** GlobalSettings notification_settings */
             notification_settings?: POGOProtos.Settings.INotificationSettings;
+
+            /** GlobalSettings client_app_blacklist */
+            client_app_blacklist?: string[];
         }
 
         /** Represents a GlobalSettings. */
@@ -33384,6 +33513,9 @@ export namespace POGOProtos {
 
             /** GlobalSettings notification_settings. */
             public notification_settings?: (POGOProtos.Settings.INotificationSettings|null);
+
+            /** GlobalSettings client_app_blacklist. */
+            public client_app_blacklist: string[];
 
             /**
              * Creates a new GlobalSettings instance using the specified properties.
