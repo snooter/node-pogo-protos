@@ -39385,6 +39385,9 @@ export namespace POGOProtos {
 
                     /** EvolutionBranch candy_cost */
                     candy_cost?: number;
+
+                    /** EvolutionBranch km_buddy_distance_requirement */
+                    km_buddy_distance_requirement?: number;
                 }
 
                 /** Represents an EvolutionBranch. */
@@ -39404,6 +39407,9 @@ export namespace POGOProtos {
 
                     /** EvolutionBranch candy_cost. */
                     public candy_cost: number;
+
+                    /** EvolutionBranch km_buddy_distance_requirement. */
+                    public km_buddy_distance_requirement: number;
 
                     /**
                      * Creates a new EvolutionBranch instance using the specified properties.
