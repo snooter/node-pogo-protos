@@ -9031,6 +9031,9 @@ export namespace POGOProtos {
 
             /** ExclusiveTicketInfo is_cancelled */
             is_cancelled?: boolean;
+
+            /** ExclusiveTicketInfo raid_pokemon */
+            raid_pokemon?: POGOProtos.Data.IPokemonData;
         }
 
         /** Represents an ExclusiveTicketInfo. */
@@ -9071,6 +9074,9 @@ export namespace POGOProtos {
 
             /** ExclusiveTicketInfo is_cancelled. */
             public is_cancelled: boolean;
+
+            /** ExclusiveTicketInfo raid_pokemon. */
+            public raid_pokemon?: (POGOProtos.Data.IPokemonData|null);
 
             /**
              * Creates a new ExclusiveTicketInfo instance using the specified properties.
@@ -21166,6 +21172,96 @@ export namespace POGOProtos {
                     public toJSON(): { [k: string]: any };
                 }
 
+                /** Properties of a RedeemPasscodeRequestMessage. */
+                interface IRedeemPasscodeRequestMessage {
+
+                    /** RedeemPasscodeRequestMessage passcode */
+                    passcode?: string;
+                }
+
+                /** Represents a RedeemPasscodeRequestMessage. */
+                class RedeemPasscodeRequestMessage {
+
+                    /**
+                     * Constructs a new RedeemPasscodeRequestMessage.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: POGOProtos.Networking.Requests.Messages.IRedeemPasscodeRequestMessage);
+
+                    /** RedeemPasscodeRequestMessage passcode. */
+                    public passcode: string;
+
+                    /**
+                     * Creates a new RedeemPasscodeRequestMessage instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns RedeemPasscodeRequestMessage instance
+                     */
+                    public static create(properties?: POGOProtos.Networking.Requests.Messages.IRedeemPasscodeRequestMessage): POGOProtos.Networking.Requests.Messages.RedeemPasscodeRequestMessage;
+
+                    /**
+                     * Encodes the specified RedeemPasscodeRequestMessage message. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.RedeemPasscodeRequestMessage.verify|verify} messages.
+                     * @param message RedeemPasscodeRequestMessage message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: POGOProtos.Networking.Requests.Messages.IRedeemPasscodeRequestMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified RedeemPasscodeRequestMessage message, length delimited. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.RedeemPasscodeRequestMessage.verify|verify} messages.
+                     * @param message RedeemPasscodeRequestMessage message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.IRedeemPasscodeRequestMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a RedeemPasscodeRequestMessage message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns RedeemPasscodeRequestMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.RedeemPasscodeRequestMessage;
+
+                    /**
+                     * Decodes a RedeemPasscodeRequestMessage message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns RedeemPasscodeRequestMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.RedeemPasscodeRequestMessage;
+
+                    /**
+                     * Verifies a RedeemPasscodeRequestMessage message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a RedeemPasscodeRequestMessage message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns RedeemPasscodeRequestMessage
+                     */
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.RedeemPasscodeRequestMessage;
+
+                    /**
+                     * Creates a plain object from a RedeemPasscodeRequestMessage message. Also converts values to other types if specified.
+                     * @param message RedeemPasscodeRequestMessage
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: POGOProtos.Networking.Requests.Messages.RedeemPasscodeRequestMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this RedeemPasscodeRequestMessage to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
                 /** Properties of a RegisterBackgroundDeviceMessage. */
                 interface IRegisterBackgroundDeviceMessage {
 
@@ -30364,6 +30460,222 @@ export namespace POGOProtos {
                 }
             }
 
+            /** Properties of a RedeemPasscodeResponse. */
+            interface IRedeemPasscodeResponse {
+
+                /** RedeemPasscodeResponse result */
+                result?: POGOProtos.Networking.Responses.RedeemPasscodeResponse.Result;
+
+                /** RedeemPasscodeResponse acquired_item */
+                acquired_item?: POGOProtos.Networking.Responses.RedeemPasscodeResponse.IAcquiredItem[];
+
+                /** RedeemPasscodeResponse acquired_items_proto */
+                acquired_items_proto?: Uint8Array;
+
+                /** RedeemPasscodeResponse passcode */
+                passcode?: string;
+            }
+
+            /** Represents a RedeemPasscodeResponse. */
+            class RedeemPasscodeResponse {
+
+                /**
+                 * Constructs a new RedeemPasscodeResponse.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Networking.Responses.IRedeemPasscodeResponse);
+
+                /** RedeemPasscodeResponse result. */
+                public result: POGOProtos.Networking.Responses.RedeemPasscodeResponse.Result;
+
+                /** RedeemPasscodeResponse acquired_item. */
+                public acquired_item: POGOProtos.Networking.Responses.RedeemPasscodeResponse.IAcquiredItem[];
+
+                /** RedeemPasscodeResponse acquired_items_proto. */
+                public acquired_items_proto: Uint8Array;
+
+                /** RedeemPasscodeResponse passcode. */
+                public passcode: string;
+
+                /**
+                 * Creates a new RedeemPasscodeResponse instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns RedeemPasscodeResponse instance
+                 */
+                public static create(properties?: POGOProtos.Networking.Responses.IRedeemPasscodeResponse): POGOProtos.Networking.Responses.RedeemPasscodeResponse;
+
+                /**
+                 * Encodes the specified RedeemPasscodeResponse message. Does not implicitly {@link POGOProtos.Networking.Responses.RedeemPasscodeResponse.verify|verify} messages.
+                 * @param message RedeemPasscodeResponse message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: POGOProtos.Networking.Responses.IRedeemPasscodeResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified RedeemPasscodeResponse message, length delimited. Does not implicitly {@link POGOProtos.Networking.Responses.RedeemPasscodeResponse.verify|verify} messages.
+                 * @param message RedeemPasscodeResponse message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Networking.Responses.IRedeemPasscodeResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a RedeemPasscodeResponse message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns RedeemPasscodeResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Responses.RedeemPasscodeResponse;
+
+                /**
+                 * Decodes a RedeemPasscodeResponse message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns RedeemPasscodeResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Responses.RedeemPasscodeResponse;
+
+                /**
+                 * Verifies a RedeemPasscodeResponse message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a RedeemPasscodeResponse message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns RedeemPasscodeResponse
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Responses.RedeemPasscodeResponse;
+
+                /**
+                 * Creates a plain object from a RedeemPasscodeResponse message. Also converts values to other types if specified.
+                 * @param message RedeemPasscodeResponse
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: POGOProtos.Networking.Responses.RedeemPasscodeResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this RedeemPasscodeResponse to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace RedeemPasscodeResponse {
+
+                /** Properties of an AcquiredItem. */
+                interface IAcquiredItem {
+
+                    /** AcquiredItem item */
+                    item?: string;
+
+                    /** AcquiredItem count */
+                    count?: (number|Long);
+                }
+
+                /** Represents an AcquiredItem. */
+                class AcquiredItem {
+
+                    /**
+                     * Constructs a new AcquiredItem.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: POGOProtos.Networking.Responses.RedeemPasscodeResponse.IAcquiredItem);
+
+                    /** AcquiredItem item. */
+                    public item: string;
+
+                    /** AcquiredItem count. */
+                    public count: (number|Long);
+
+                    /**
+                     * Creates a new AcquiredItem instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns AcquiredItem instance
+                     */
+                    public static create(properties?: POGOProtos.Networking.Responses.RedeemPasscodeResponse.IAcquiredItem): POGOProtos.Networking.Responses.RedeemPasscodeResponse.AcquiredItem;
+
+                    /**
+                     * Encodes the specified AcquiredItem message. Does not implicitly {@link POGOProtos.Networking.Responses.RedeemPasscodeResponse.AcquiredItem.verify|verify} messages.
+                     * @param message AcquiredItem message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: POGOProtos.Networking.Responses.RedeemPasscodeResponse.IAcquiredItem, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified AcquiredItem message, length delimited. Does not implicitly {@link POGOProtos.Networking.Responses.RedeemPasscodeResponse.AcquiredItem.verify|verify} messages.
+                     * @param message AcquiredItem message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: POGOProtos.Networking.Responses.RedeemPasscodeResponse.IAcquiredItem, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes an AcquiredItem message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns AcquiredItem
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Responses.RedeemPasscodeResponse.AcquiredItem;
+
+                    /**
+                     * Decodes an AcquiredItem message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns AcquiredItem
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Responses.RedeemPasscodeResponse.AcquiredItem;
+
+                    /**
+                     * Verifies an AcquiredItem message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates an AcquiredItem message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns AcquiredItem
+                     */
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Responses.RedeemPasscodeResponse.AcquiredItem;
+
+                    /**
+                     * Creates a plain object from an AcquiredItem message. Also converts values to other types if specified.
+                     * @param message AcquiredItem
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: POGOProtos.Networking.Responses.RedeemPasscodeResponse.AcquiredItem, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this AcquiredItem to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Result enum. */
+                enum Result {
+                    UNSET = 0,
+                    SUCCESS = 1,
+                    NOT_AVAILABLE = 2,
+                    OVER_INVENTORY_LIMIT = 3,
+                    ALREADY_REDEEMED = 4
+                }
+            }
+
             /** Properties of a RegisterBackgroundDeviceResponse. */
             interface IRegisterBackgroundDeviceResponse {
 
@@ -32984,6 +33296,102 @@ export namespace POGOProtos {
     /** Namespace Settings. */
     namespace Settings {
 
+        /** Properties of a ClientPerformanceSettings. */
+        interface IClientPerformanceSettings {
+
+            /** ClientPerformanceSettings enable_local_disk_caching */
+            enable_local_disk_caching?: boolean;
+
+            /** ClientPerformanceSettings max_number_local_battle_parties */
+            max_number_local_battle_parties?: number;
+        }
+
+        /** Represents a ClientPerformanceSettings. */
+        class ClientPerformanceSettings {
+
+            /**
+             * Constructs a new ClientPerformanceSettings.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: POGOProtos.Settings.IClientPerformanceSettings);
+
+            /** ClientPerformanceSettings enable_local_disk_caching. */
+            public enable_local_disk_caching: boolean;
+
+            /** ClientPerformanceSettings max_number_local_battle_parties. */
+            public max_number_local_battle_parties: number;
+
+            /**
+             * Creates a new ClientPerformanceSettings instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ClientPerformanceSettings instance
+             */
+            public static create(properties?: POGOProtos.Settings.IClientPerformanceSettings): POGOProtos.Settings.ClientPerformanceSettings;
+
+            /**
+             * Encodes the specified ClientPerformanceSettings message. Does not implicitly {@link POGOProtos.Settings.ClientPerformanceSettings.verify|verify} messages.
+             * @param message ClientPerformanceSettings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: POGOProtos.Settings.IClientPerformanceSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified ClientPerformanceSettings message, length delimited. Does not implicitly {@link POGOProtos.Settings.ClientPerformanceSettings.verify|verify} messages.
+             * @param message ClientPerformanceSettings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: POGOProtos.Settings.IClientPerformanceSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ClientPerformanceSettings message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ClientPerformanceSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Settings.ClientPerformanceSettings;
+
+            /**
+             * Decodes a ClientPerformanceSettings message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns ClientPerformanceSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Settings.ClientPerformanceSettings;
+
+            /**
+             * Verifies a ClientPerformanceSettings message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a ClientPerformanceSettings message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns ClientPerformanceSettings
+             */
+            public static fromObject(object: { [k: string]: any }): POGOProtos.Settings.ClientPerformanceSettings;
+
+            /**
+             * Creates a plain object from a ClientPerformanceSettings message. Also converts values to other types if specified.
+             * @param message ClientPerformanceSettings
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: POGOProtos.Settings.ClientPerformanceSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this ClientPerformanceSettings to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
         /** Properties of a DownloadSettingsAction. */
         interface IDownloadSettingsAction {
 
@@ -33461,6 +33869,9 @@ export namespace POGOProtos {
 
             /** GlobalSettings client_app_blacklist */
             client_app_blacklist?: string[];
+
+            /** GlobalSettings client_perf_settings */
+            client_perf_settings?: POGOProtos.Settings.IClientPerformanceSettings;
         }
 
         /** Represents a GlobalSettings. */
@@ -33516,6 +33927,9 @@ export namespace POGOProtos {
 
             /** GlobalSettings client_app_blacklist. */
             public client_app_blacklist: string[];
+
+            /** GlobalSettings client_perf_settings. */
+            public client_perf_settings?: (POGOProtos.Settings.IClientPerformanceSettings|null);
 
             /**
              * Creates a new GlobalSettings instance using the specified properties.

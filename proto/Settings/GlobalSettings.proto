@@ -13,7 +13,7 @@ import "POGOProtos/Settings/NotificationSettings.proto";
 import "POGOProtos/Settings/PasscodeSettings.proto";
 import "POGOProtos/Settings/SfidaSettings.proto";
 import "POGOProtos/Settings/TranslationSettings.proto";
-import "POGOProtos/Settings/ClientPerformanceSettings.proto"
+import "POGOProtos/Settings/ClientPerformanceSettings.proto";
 
 message GlobalSettings {
 	.POGOProtos.Settings.FortSettings fort_settings = 2;
