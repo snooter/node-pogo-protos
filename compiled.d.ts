@@ -858,6 +858,9 @@ export namespace POGOProtos {
 
                 /** Battle attacker */
                 attacker?: POGOProtos.Data.Battle.IBattleParticipant;
+
+                /** Battle weather_condition */
+                weather_condition?: POGOProtos.Enums.WeatherCondition;
             }
 
             /** Represents a Battle. */
@@ -886,6 +889,9 @@ export namespace POGOProtos {
 
                 /** Battle attacker. */
                 public attacker?: (POGOProtos.Data.Battle.IBattleParticipant|null);
+
+                /** Battle weather_condition. */
+                public weather_condition: POGOProtos.Enums.WeatherCondition;
 
                 /**
                  * Creates a new Battle instance using the specified properties.
@@ -5640,6 +5646,9 @@ export namespace POGOProtos {
 
             /** PokemonDisplay form */
             form?: POGOProtos.Enums.Form;
+
+            /** PokemonDisplay weather_boosted_condition */
+            weather_boosted_condition?: POGOProtos.Enums.WeatherCondition;
         }
 
         /** Represents a PokemonDisplay. */
@@ -5662,6 +5671,9 @@ export namespace POGOProtos {
 
             /** PokemonDisplay form. */
             public form: POGOProtos.Enums.Form;
+
+            /** PokemonDisplay weather_boosted_condition. */
+            public weather_boosted_condition: POGOProtos.Enums.WeatherCondition;
 
             /**
              * Creates a new PokemonDisplay instance using the specified properties.
@@ -6070,6 +6082,9 @@ export namespace POGOProtos {
 
                 /** Lobby battle_plfe_instance */
                 battle_plfe_instance?: number;
+
+                /** Lobby weather_condition */
+                weather_condition?: POGOProtos.Enums.WeatherCondition;
             }
 
             /** Represents a Lobby. */
@@ -6113,6 +6128,9 @@ export namespace POGOProtos {
 
                 /** Lobby battle_plfe_instance. */
                 public battle_plfe_instance: number;
+
+                /** Lobby weather_condition. */
+                public weather_condition: POGOProtos.Enums.WeatherCondition;
 
                 /**
                  * Creates a new Lobby instance using the specified properties.
@@ -7476,7 +7494,8 @@ export namespace POGOProtos {
             ITEM_CATEGORY_EVOLUTION_REQUIREMENT = 12,
             ITEM_CATEGORY_MOVE_REROLL = 13,
             ITEM_CATEGORY_CANDY = 14,
-            ITEM_CATEGORY_RAID_TICKET = 15
+            ITEM_CATEGORY_RAID_TICKET = 15,
+            ITEM_CATEGORY_STARDUST_BOOST = 16
         }
 
         /** ItemEffect enum. */
@@ -8348,7 +8367,17 @@ export namespace POGOProtos {
             SNARL_FAST = 278,
             CRUNCH = 279,
             FOUL_PLAY = 280,
-            HIDDEN_POWER_FAST = 281
+            HIDDEN_POWER_FAST = 281,
+            TAKE_DOWN_FAST = 282,
+            WATERFALL_FAST = 283,
+            SURF = 284,
+            DRACO_METEOR = 285,
+            DOOM_DESIRE = 286,
+            YAWN_FAST = 287,
+            PSYCHO_BOOST = 288,
+            ORIGIN_PULSE = 289,
+            PRECIPICE_BLADES = 290,
+            PRESENT_FAST = 291
         }
 
         /** PokemonMovementType enum. */
@@ -8477,6 +8506,18 @@ export namespace POGOProtos {
             BATTLES_LOST = 1015,
             DEPLOYED_MILLIS = 1016,
             RAID_SEED = 1017
+        }
+
+        /** WeatherCondition enum. */
+        enum WeatherCondition {
+            NONE = 0,
+            CLEAR = 1,
+            RAINY = 2,
+            PARTLY_CLOUDY = 3,
+            OVERCAST = 4,
+            WINDY = 5,
+            SNOW = 6,
+            FOG = 7
         }
     }
 
@@ -10223,7 +10264,8 @@ export namespace POGOProtos {
                 ITEM_RARE_CANDY = 1301,
                 ITEM_FREE_RAID_TICKET = 1401,
                 ITEM_PAID_RAID_TICKET = 1402,
-                ITEM_LEGENDARY_RAID_TICKET = 1403
+                ITEM_LEGENDARY_RAID_TICKET = 1403,
+                ITEM_STAR_PIECE = 1404
             }
 
             /** ItemType enum. */
@@ -10244,7 +10286,8 @@ export namespace POGOProtos {
                 ITEM_TYPE_EVOLUTION_REQUIREMENT = 13,
                 ITEM_TYPE_MOVE_REROLL = 14,
                 ITEM_TYPE_CANDY = 15,
-                ITEM_TYPE_RAID_TICKET = 16
+                ITEM_TYPE_RAID_TICKET = 16,
+                ITEM_TYPE_STARDUST_BOOST = 17
             }
         }
 
@@ -12367,6 +12410,460 @@ export namespace POGOProtos {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
+        }
+
+        /** Namespace Weather. */
+        namespace Weather {
+
+            /** Properties of a ClientWeather. */
+            interface IClientWeather {
+
+                /** ClientWeather s2_cell_id */
+                s2_cell_id?: (number|Long);
+
+                /** ClientWeather display_weather */
+                display_weather?: POGOProtos.Map.Weather.IDisplayWeather;
+
+                /** ClientWeather gameplay_weather */
+                gameplay_weather?: POGOProtos.Map.Weather.IGameplayWeather;
+
+                /** ClientWeather alerts */
+                alerts?: POGOProtos.Map.Weather.IWeatherAlert[];
+            }
+
+            /** Represents a ClientWeather. */
+            class ClientWeather {
+
+                /**
+                 * Constructs a new ClientWeather.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Map.Weather.IClientWeather);
+
+                /** ClientWeather s2_cell_id. */
+                public s2_cell_id: (number|Long);
+
+                /** ClientWeather display_weather. */
+                public display_weather?: (POGOProtos.Map.Weather.IDisplayWeather|null);
+
+                /** ClientWeather gameplay_weather. */
+                public gameplay_weather?: (POGOProtos.Map.Weather.IGameplayWeather|null);
+
+                /** ClientWeather alerts. */
+                public alerts: POGOProtos.Map.Weather.IWeatherAlert[];
+
+                /**
+                 * Creates a new ClientWeather instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns ClientWeather instance
+                 */
+                public static create(properties?: POGOProtos.Map.Weather.IClientWeather): POGOProtos.Map.Weather.ClientWeather;
+
+                /**
+                 * Encodes the specified ClientWeather message. Does not implicitly {@link POGOProtos.Map.Weather.ClientWeather.verify|verify} messages.
+                 * @param message ClientWeather message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: POGOProtos.Map.Weather.IClientWeather, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified ClientWeather message, length delimited. Does not implicitly {@link POGOProtos.Map.Weather.ClientWeather.verify|verify} messages.
+                 * @param message ClientWeather message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Map.Weather.IClientWeather, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a ClientWeather message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns ClientWeather
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Map.Weather.ClientWeather;
+
+                /**
+                 * Decodes a ClientWeather message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns ClientWeather
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Map.Weather.ClientWeather;
+
+                /**
+                 * Verifies a ClientWeather message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a ClientWeather message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns ClientWeather
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Map.Weather.ClientWeather;
+
+                /**
+                 * Creates a plain object from a ClientWeather message. Also converts values to other types if specified.
+                 * @param message ClientWeather
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: POGOProtos.Map.Weather.ClientWeather, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this ClientWeather to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a DisplayWeather. */
+            interface IDisplayWeather {
+
+                /** DisplayWeather cloud_level */
+                cloud_level?: POGOProtos.Map.Weather.DisplayWeather.DisplayLevel;
+
+                /** DisplayWeather rain_level */
+                rain_level?: POGOProtos.Map.Weather.DisplayWeather.DisplayLevel;
+
+                /** DisplayWeather wind_level */
+                wind_level?: POGOProtos.Map.Weather.DisplayWeather.DisplayLevel;
+
+                /** DisplayWeather snow_level */
+                snow_level?: POGOProtos.Map.Weather.DisplayWeather.DisplayLevel;
+
+                /** DisplayWeather fog_level */
+                fog_level?: POGOProtos.Map.Weather.DisplayWeather.DisplayLevel;
+
+                /** DisplayWeather wind_direction */
+                wind_direction?: number;
+            }
+
+            /** Represents a DisplayWeather. */
+            class DisplayWeather {
+
+                /**
+                 * Constructs a new DisplayWeather.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Map.Weather.IDisplayWeather);
+
+                /** DisplayWeather cloud_level. */
+                public cloud_level: POGOProtos.Map.Weather.DisplayWeather.DisplayLevel;
+
+                /** DisplayWeather rain_level. */
+                public rain_level: POGOProtos.Map.Weather.DisplayWeather.DisplayLevel;
+
+                /** DisplayWeather wind_level. */
+                public wind_level: POGOProtos.Map.Weather.DisplayWeather.DisplayLevel;
+
+                /** DisplayWeather snow_level. */
+                public snow_level: POGOProtos.Map.Weather.DisplayWeather.DisplayLevel;
+
+                /** DisplayWeather fog_level. */
+                public fog_level: POGOProtos.Map.Weather.DisplayWeather.DisplayLevel;
+
+                /** DisplayWeather wind_direction. */
+                public wind_direction: number;
+
+                /**
+                 * Creates a new DisplayWeather instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns DisplayWeather instance
+                 */
+                public static create(properties?: POGOProtos.Map.Weather.IDisplayWeather): POGOProtos.Map.Weather.DisplayWeather;
+
+                /**
+                 * Encodes the specified DisplayWeather message. Does not implicitly {@link POGOProtos.Map.Weather.DisplayWeather.verify|verify} messages.
+                 * @param message DisplayWeather message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: POGOProtos.Map.Weather.IDisplayWeather, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified DisplayWeather message, length delimited. Does not implicitly {@link POGOProtos.Map.Weather.DisplayWeather.verify|verify} messages.
+                 * @param message DisplayWeather message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Map.Weather.IDisplayWeather, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a DisplayWeather message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns DisplayWeather
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Map.Weather.DisplayWeather;
+
+                /**
+                 * Decodes a DisplayWeather message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns DisplayWeather
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Map.Weather.DisplayWeather;
+
+                /**
+                 * Verifies a DisplayWeather message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a DisplayWeather message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns DisplayWeather
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Map.Weather.DisplayWeather;
+
+                /**
+                 * Creates a plain object from a DisplayWeather message. Also converts values to other types if specified.
+                 * @param message DisplayWeather
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: POGOProtos.Map.Weather.DisplayWeather, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this DisplayWeather to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace DisplayWeather {
+
+                /** DisplayLevel enum. */
+                enum DisplayLevel {
+                    LEVEL_0 = 0,
+                    LEVEL_1 = 1,
+                    LEVEL_2 = 2,
+                    LEVEL_3 = 3
+                }
+            }
+
+            /** Properties of a GameplayWeather. */
+            interface IGameplayWeather {
+
+                /** GameplayWeather gameplay_condition */
+                gameplay_condition?: POGOProtos.Map.Weather.GameplayWeather.WeatherCondition;
+            }
+
+            /** Represents a GameplayWeather. */
+            class GameplayWeather {
+
+                /**
+                 * Constructs a new GameplayWeather.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Map.Weather.IGameplayWeather);
+
+                /** GameplayWeather gameplay_condition. */
+                public gameplay_condition: POGOProtos.Map.Weather.GameplayWeather.WeatherCondition;
+
+                /**
+                 * Creates a new GameplayWeather instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns GameplayWeather instance
+                 */
+                public static create(properties?: POGOProtos.Map.Weather.IGameplayWeather): POGOProtos.Map.Weather.GameplayWeather;
+
+                /**
+                 * Encodes the specified GameplayWeather message. Does not implicitly {@link POGOProtos.Map.Weather.GameplayWeather.verify|verify} messages.
+                 * @param message GameplayWeather message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: POGOProtos.Map.Weather.IGameplayWeather, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified GameplayWeather message, length delimited. Does not implicitly {@link POGOProtos.Map.Weather.GameplayWeather.verify|verify} messages.
+                 * @param message GameplayWeather message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Map.Weather.IGameplayWeather, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a GameplayWeather message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns GameplayWeather
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Map.Weather.GameplayWeather;
+
+                /**
+                 * Decodes a GameplayWeather message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns GameplayWeather
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Map.Weather.GameplayWeather;
+
+                /**
+                 * Verifies a GameplayWeather message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a GameplayWeather message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns GameplayWeather
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Map.Weather.GameplayWeather;
+
+                /**
+                 * Creates a plain object from a GameplayWeather message. Also converts values to other types if specified.
+                 * @param message GameplayWeather
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: POGOProtos.Map.Weather.GameplayWeather, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this GameplayWeather to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace GameplayWeather {
+
+                /** WeatherCondition enum. */
+                enum WeatherCondition {
+                    NONE = 0,
+                    CLEAR = 1,
+                    RAINY = 2,
+                    PARTLY_CLOUDY = 3,
+                    OVERCAST = 4,
+                    WINDY = 5,
+                    SNOW = 6,
+                    FOG = 7
+                }
+            }
+
+            /** Properties of a WeatherAlert. */
+            interface IWeatherAlert {
+
+                /** WeatherAlert severity */
+                severity?: POGOProtos.Map.Weather.WeatherAlert.Severity;
+
+                /** WeatherAlert warn_weather */
+                warn_weather?: boolean;
+            }
+
+            /** Represents a WeatherAlert. */
+            class WeatherAlert {
+
+                /**
+                 * Constructs a new WeatherAlert.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Map.Weather.IWeatherAlert);
+
+                /** WeatherAlert severity. */
+                public severity: POGOProtos.Map.Weather.WeatherAlert.Severity;
+
+                /** WeatherAlert warn_weather. */
+                public warn_weather: boolean;
+
+                /**
+                 * Creates a new WeatherAlert instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns WeatherAlert instance
+                 */
+                public static create(properties?: POGOProtos.Map.Weather.IWeatherAlert): POGOProtos.Map.Weather.WeatherAlert;
+
+                /**
+                 * Encodes the specified WeatherAlert message. Does not implicitly {@link POGOProtos.Map.Weather.WeatherAlert.verify|verify} messages.
+                 * @param message WeatherAlert message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: POGOProtos.Map.Weather.IWeatherAlert, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified WeatherAlert message, length delimited. Does not implicitly {@link POGOProtos.Map.Weather.WeatherAlert.verify|verify} messages.
+                 * @param message WeatherAlert message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Map.Weather.IWeatherAlert, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a WeatherAlert message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns WeatherAlert
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Map.Weather.WeatherAlert;
+
+                /**
+                 * Decodes a WeatherAlert message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns WeatherAlert
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Map.Weather.WeatherAlert;
+
+                /**
+                 * Verifies a WeatherAlert message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a WeatherAlert message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns WeatherAlert
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Map.Weather.WeatherAlert;
+
+                /**
+                 * Creates a plain object from a WeatherAlert message. Also converts values to other types if specified.
+                 * @param message WeatherAlert
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: POGOProtos.Map.Weather.WeatherAlert, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this WeatherAlert to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace WeatherAlert {
+
+                /** Severity enum. */
+                enum Severity {
+                    NONE = 0,
+                    MODERATE = 1,
+                    EXTREME = 2
+                }
+            }
         }
     }
 
@@ -23362,6 +23859,96 @@ export namespace POGOProtos {
                     public toJSON(): { [k: string]: any };
                 }
 
+                /** Properties of a UseItemStardustBoostMessage. */
+                interface IUseItemStardustBoostMessage {
+
+                    /** UseItemStardustBoostMessage item */
+                    item?: POGOProtos.Inventory.Item.ItemId;
+                }
+
+                /** Represents a UseItemStardustBoostMessage. */
+                class UseItemStardustBoostMessage {
+
+                    /**
+                     * Constructs a new UseItemStardustBoostMessage.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: POGOProtos.Networking.Requests.Messages.IUseItemStardustBoostMessage);
+
+                    /** UseItemStardustBoostMessage item. */
+                    public item: POGOProtos.Inventory.Item.ItemId;
+
+                    /**
+                     * Creates a new UseItemStardustBoostMessage instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns UseItemStardustBoostMessage instance
+                     */
+                    public static create(properties?: POGOProtos.Networking.Requests.Messages.IUseItemStardustBoostMessage): POGOProtos.Networking.Requests.Messages.UseItemStardustBoostMessage;
+
+                    /**
+                     * Encodes the specified UseItemStardustBoostMessage message. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.UseItemStardustBoostMessage.verify|verify} messages.
+                     * @param message UseItemStardustBoostMessage message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: POGOProtos.Networking.Requests.Messages.IUseItemStardustBoostMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified UseItemStardustBoostMessage message, length delimited. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.UseItemStardustBoostMessage.verify|verify} messages.
+                     * @param message UseItemStardustBoostMessage message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.IUseItemStardustBoostMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a UseItemStardustBoostMessage message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns UseItemStardustBoostMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.UseItemStardustBoostMessage;
+
+                    /**
+                     * Decodes a UseItemStardustBoostMessage message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns UseItemStardustBoostMessage
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.UseItemStardustBoostMessage;
+
+                    /**
+                     * Verifies a UseItemStardustBoostMessage message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a UseItemStardustBoostMessage message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns UseItemStardustBoostMessage
+                     */
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.UseItemStardustBoostMessage;
+
+                    /**
+                     * Creates a plain object from a UseItemStardustBoostMessage message. Also converts values to other types if specified.
+                     * @param message UseItemStardustBoostMessage
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: POGOProtos.Networking.Requests.Messages.UseItemStardustBoostMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this UseItemStardustBoostMessage to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
                 /** Properties of a UseItemXpBoostMessage. */
                 interface IUseItemXpBoostMessage {
 
@@ -23701,6 +24288,7 @@ export namespace POGOProtos {
                 START_RAID_BATTLE = 165,
                 ATTACK_RAID = 166,
                 AWARD_POKECOIN = 167,
+                USE_ITEM_STARDUST_BOOST = 168,
                 GET_ASSET_DIGEST = 300,
                 GET_DOWNLOAD_URLS = 301,
                 CLAIM_CODENAME = 403,
@@ -25295,6 +25883,12 @@ export namespace POGOProtos {
 
                     /** ItemTemplate gym_badge_settings */
                     gym_badge_settings?: POGOProtos.Settings.Master.IGymBadgeGmtSettings;
+
+                    /** ItemTemplate weather_affinities */
+                    weather_affinities?: POGOProtos.Settings.Master.IWeatherAffinity;
+
+                    /** ItemTemplate weather_bonus_settings */
+                    weather_bonus_settings?: POGOProtos.Settings.Master.IWeatherBonus;
                 }
 
                 /** Represents an ItemTemplate. */
@@ -25368,6 +25962,12 @@ export namespace POGOProtos {
 
                     /** ItemTemplate gym_badge_settings. */
                     public gym_badge_settings?: (POGOProtos.Settings.Master.IGymBadgeGmtSettings|null);
+
+                    /** ItemTemplate weather_affinities. */
+                    public weather_affinities?: (POGOProtos.Settings.Master.IWeatherAffinity|null);
+
+                    /** ItemTemplate weather_bonus_settings. */
+                    public weather_bonus_settings?: (POGOProtos.Settings.Master.IWeatherBonus|null);
 
                     /**
                      * Creates a new ItemTemplate instance using the specified properties.
@@ -28304,6 +28904,9 @@ export namespace POGOProtos {
 
                 /** GetMapObjectsResponse time_of_day */
                 time_of_day?: POGOProtos.Networking.Responses.GetMapObjectsResponse.TimeOfDay;
+
+                /** GetMapObjectsResponse client_weather */
+                client_weather?: POGOProtos.Map.Weather.IClientWeather[];
             }
 
             /** Represents a GetMapObjectsResponse. */
@@ -28323,6 +28926,9 @@ export namespace POGOProtos {
 
                 /** GetMapObjectsResponse time_of_day. */
                 public time_of_day: POGOProtos.Networking.Responses.GetMapObjectsResponse.TimeOfDay;
+
+                /** GetMapObjectsResponse client_weather. */
+                public client_weather: POGOProtos.Map.Weather.IClientWeather[];
 
                 /**
                  * Creates a new GetMapObjectsResponse instance using the specified properties.
@@ -33092,6 +33698,115 @@ export namespace POGOProtos {
                 }
             }
 
+            /** Properties of a UseItemStardustBoostResponse. */
+            interface IUseItemStardustBoostResponse {
+
+                /** UseItemStardustBoostResponse result */
+                result?: POGOProtos.Networking.Responses.UseItemStardustBoostResponse.Result;
+
+                /** UseItemStardustBoostResponse applied_items */
+                applied_items?: POGOProtos.Inventory.IAppliedItems;
+            }
+
+            /** Represents a UseItemStardustBoostResponse. */
+            class UseItemStardustBoostResponse {
+
+                /**
+                 * Constructs a new UseItemStardustBoostResponse.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Networking.Responses.IUseItemStardustBoostResponse);
+
+                /** UseItemStardustBoostResponse result. */
+                public result: POGOProtos.Networking.Responses.UseItemStardustBoostResponse.Result;
+
+                /** UseItemStardustBoostResponse applied_items. */
+                public applied_items?: (POGOProtos.Inventory.IAppliedItems|null);
+
+                /**
+                 * Creates a new UseItemStardustBoostResponse instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns UseItemStardustBoostResponse instance
+                 */
+                public static create(properties?: POGOProtos.Networking.Responses.IUseItemStardustBoostResponse): POGOProtos.Networking.Responses.UseItemStardustBoostResponse;
+
+                /**
+                 * Encodes the specified UseItemStardustBoostResponse message. Does not implicitly {@link POGOProtos.Networking.Responses.UseItemStardustBoostResponse.verify|verify} messages.
+                 * @param message UseItemStardustBoostResponse message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: POGOProtos.Networking.Responses.IUseItemStardustBoostResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified UseItemStardustBoostResponse message, length delimited. Does not implicitly {@link POGOProtos.Networking.Responses.UseItemStardustBoostResponse.verify|verify} messages.
+                 * @param message UseItemStardustBoostResponse message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Networking.Responses.IUseItemStardustBoostResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a UseItemStardustBoostResponse message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns UseItemStardustBoostResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Responses.UseItemStardustBoostResponse;
+
+                /**
+                 * Decodes a UseItemStardustBoostResponse message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns UseItemStardustBoostResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Responses.UseItemStardustBoostResponse;
+
+                /**
+                 * Verifies a UseItemStardustBoostResponse message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a UseItemStardustBoostResponse message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns UseItemStardustBoostResponse
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Responses.UseItemStardustBoostResponse;
+
+                /**
+                 * Creates a plain object from a UseItemStardustBoostResponse message. Also converts values to other types if specified.
+                 * @param message UseItemStardustBoostResponse
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: POGOProtos.Networking.Responses.UseItemStardustBoostResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this UseItemStardustBoostResponse to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace UseItemStardustBoostResponse {
+
+                /** Result enum. */
+                enum Result {
+                    UNSET = 0,
+                    SUCCESS = 1,
+                    ERROR_INVALID_ITEM_TYPE = 2,
+                    ERROR_STARDUST_BOOST_ALREADY_ACTIVE = 3,
+                    ERROR_NO_ITEMS_REMAINING = 4,
+                    ERROR_LOCATION_UNSET = 5
+                }
+            }
+
             /** Properties of a UseItemXpBoostResponse. */
             interface IUseItemXpBoostResponse {
 
@@ -37131,6 +37846,102 @@ export namespace POGOProtos {
                      */
                     public toJSON(): { [k: string]: any };
                 }
+
+                /** Properties of a StardustBoostAttributes. */
+                interface IStardustBoostAttributes {
+
+                    /** StardustBoostAttributes stardust_multiplier */
+                    stardust_multiplier?: number;
+
+                    /** StardustBoostAttributes boost_duration_ms */
+                    boost_duration_ms?: number;
+                }
+
+                /** Represents a StardustBoostAttributes. */
+                class StardustBoostAttributes {
+
+                    /**
+                     * Constructs a new StardustBoostAttributes.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: POGOProtos.Settings.Master.Item.IStardustBoostAttributes);
+
+                    /** StardustBoostAttributes stardust_multiplier. */
+                    public stardust_multiplier: number;
+
+                    /** StardustBoostAttributes boost_duration_ms. */
+                    public boost_duration_ms: number;
+
+                    /**
+                     * Creates a new StardustBoostAttributes instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns StardustBoostAttributes instance
+                     */
+                    public static create(properties?: POGOProtos.Settings.Master.Item.IStardustBoostAttributes): POGOProtos.Settings.Master.Item.StardustBoostAttributes;
+
+                    /**
+                     * Encodes the specified StardustBoostAttributes message. Does not implicitly {@link POGOProtos.Settings.Master.Item.StardustBoostAttributes.verify|verify} messages.
+                     * @param message StardustBoostAttributes message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: POGOProtos.Settings.Master.Item.IStardustBoostAttributes, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified StardustBoostAttributes message, length delimited. Does not implicitly {@link POGOProtos.Settings.Master.Item.StardustBoostAttributes.verify|verify} messages.
+                     * @param message StardustBoostAttributes message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: POGOProtos.Settings.Master.Item.IStardustBoostAttributes, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a StardustBoostAttributes message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns StardustBoostAttributes
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Settings.Master.Item.StardustBoostAttributes;
+
+                    /**
+                     * Decodes a StardustBoostAttributes message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns StardustBoostAttributes
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Settings.Master.Item.StardustBoostAttributes;
+
+                    /**
+                     * Verifies a StardustBoostAttributes message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a StardustBoostAttributes message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns StardustBoostAttributes
+                     */
+                    public static fromObject(object: { [k: string]: any }): POGOProtos.Settings.Master.Item.StardustBoostAttributes;
+
+                    /**
+                     * Creates a plain object from a StardustBoostAttributes message. Also converts values to other types if specified.
+                     * @param message StardustBoostAttributes
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: POGOProtos.Settings.Master.Item.StardustBoostAttributes, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this StardustBoostAttributes to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
             }
 
             /** Properties of an ItemSettings. */
@@ -37180,6 +37991,9 @@ export namespace POGOProtos {
 
                 /** ItemSettings fort_modifier */
                 fort_modifier?: POGOProtos.Settings.Master.Item.IFortModifierAttributes;
+
+                /** ItemSettings stardust_boost */
+                stardust_boost?: POGOProtos.Settings.Master.Item.IStardustBoostAttributes;
             }
 
             /** Represents an ItemSettings. */
@@ -37235,6 +38049,9 @@ export namespace POGOProtos {
 
                 /** ItemSettings fort_modifier. */
                 public fort_modifier?: (POGOProtos.Settings.Master.Item.IFortModifierAttributes|null);
+
+                /** ItemSettings stardust_boost. */
+                public stardust_boost?: (POGOProtos.Settings.Master.Item.IStardustBoostAttributes|null);
 
                 /**
                  * Creates a new ItemSettings instance using the specified properties.
@@ -38972,6 +39789,222 @@ export namespace POGOProtos {
 
                 /**
                  * Converts this TypeEffectiveSettings to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a WeatherAffinity. */
+            interface IWeatherAffinity {
+
+                /** WeatherAffinity weather_condition */
+                weather_condition?: POGOProtos.Enums.WeatherCondition;
+
+                /** WeatherAffinity pokemon_type */
+                pokemon_type?: POGOProtos.Enums.PokemonType[];
+            }
+
+            /** Represents a WeatherAffinity. */
+            class WeatherAffinity {
+
+                /**
+                 * Constructs a new WeatherAffinity.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Settings.Master.IWeatherAffinity);
+
+                /** WeatherAffinity weather_condition. */
+                public weather_condition: POGOProtos.Enums.WeatherCondition;
+
+                /** WeatherAffinity pokemon_type. */
+                public pokemon_type: POGOProtos.Enums.PokemonType[];
+
+                /**
+                 * Creates a new WeatherAffinity instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns WeatherAffinity instance
+                 */
+                public static create(properties?: POGOProtos.Settings.Master.IWeatherAffinity): POGOProtos.Settings.Master.WeatherAffinity;
+
+                /**
+                 * Encodes the specified WeatherAffinity message. Does not implicitly {@link POGOProtos.Settings.Master.WeatherAffinity.verify|verify} messages.
+                 * @param message WeatherAffinity message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: POGOProtos.Settings.Master.IWeatherAffinity, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified WeatherAffinity message, length delimited. Does not implicitly {@link POGOProtos.Settings.Master.WeatherAffinity.verify|verify} messages.
+                 * @param message WeatherAffinity message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Settings.Master.IWeatherAffinity, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a WeatherAffinity message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns WeatherAffinity
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Settings.Master.WeatherAffinity;
+
+                /**
+                 * Decodes a WeatherAffinity message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns WeatherAffinity
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Settings.Master.WeatherAffinity;
+
+                /**
+                 * Verifies a WeatherAffinity message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a WeatherAffinity message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns WeatherAffinity
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Settings.Master.WeatherAffinity;
+
+                /**
+                 * Creates a plain object from a WeatherAffinity message. Also converts values to other types if specified.
+                 * @param message WeatherAffinity
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: POGOProtos.Settings.Master.WeatherAffinity, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this WeatherAffinity to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a WeatherBonus. */
+            interface IWeatherBonus {
+
+                /** WeatherBonus cp_base_level_bonus */
+                cp_base_level_bonus?: number;
+
+                /** WeatherBonus guaranteed_individual_values */
+                guaranteed_individual_values?: number;
+
+                /** WeatherBonus stardust_bonus_multiplier */
+                stardust_bonus_multiplier?: number;
+
+                /** WeatherBonus attack_bonus_multiplier */
+                attack_bonus_multiplier?: number;
+
+                /** WeatherBonus raid_encounter_cp_base_level_bonus */
+                raid_encounter_cp_base_level_bonus?: number;
+
+                /** WeatherBonus raid_encounter_guaranteed_individual_values */
+                raid_encounter_guaranteed_individual_values?: number;
+            }
+
+            /** Represents a WeatherBonus. */
+            class WeatherBonus {
+
+                /**
+                 * Constructs a new WeatherBonus.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Settings.Master.IWeatherBonus);
+
+                /** WeatherBonus cp_base_level_bonus. */
+                public cp_base_level_bonus: number;
+
+                /** WeatherBonus guaranteed_individual_values. */
+                public guaranteed_individual_values: number;
+
+                /** WeatherBonus stardust_bonus_multiplier. */
+                public stardust_bonus_multiplier: number;
+
+                /** WeatherBonus attack_bonus_multiplier. */
+                public attack_bonus_multiplier: number;
+
+                /** WeatherBonus raid_encounter_cp_base_level_bonus. */
+                public raid_encounter_cp_base_level_bonus: number;
+
+                /** WeatherBonus raid_encounter_guaranteed_individual_values. */
+                public raid_encounter_guaranteed_individual_values: number;
+
+                /**
+                 * Creates a new WeatherBonus instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns WeatherBonus instance
+                 */
+                public static create(properties?: POGOProtos.Settings.Master.IWeatherBonus): POGOProtos.Settings.Master.WeatherBonus;
+
+                /**
+                 * Encodes the specified WeatherBonus message. Does not implicitly {@link POGOProtos.Settings.Master.WeatherBonus.verify|verify} messages.
+                 * @param message WeatherBonus message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: POGOProtos.Settings.Master.IWeatherBonus, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified WeatherBonus message, length delimited. Does not implicitly {@link POGOProtos.Settings.Master.WeatherBonus.verify|verify} messages.
+                 * @param message WeatherBonus message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Settings.Master.IWeatherBonus, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a WeatherBonus message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns WeatherBonus
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Settings.Master.WeatherBonus;
+
+                /**
+                 * Decodes a WeatherBonus message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns WeatherBonus
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Settings.Master.WeatherBonus;
+
+                /**
+                 * Verifies a WeatherBonus message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a WeatherBonus message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns WeatherBonus
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Settings.Master.WeatherBonus;
+
+                /**
+                 * Creates a plain object from a WeatherBonus message. Also converts values to other types if specified.
+                 * @param message WeatherBonus
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: POGOProtos.Settings.Master.WeatherBonus, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this WeatherBonus to JSON.
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
