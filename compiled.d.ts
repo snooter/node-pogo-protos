@@ -6,6 +6,108 @@ export namespace POGOProtos {
     /** Namespace Data. */
     namespace Data {
 
+        /** Properties of a ARPlusEncounterValues. */
+        interface IARPlusEncounterValues {
+
+            /** ARPlusEncounterValues proximity */
+            proximity?: number;
+
+            /** ARPlusEncounterValues awareness */
+            awareness?: number;
+
+            /** ARPlusEncounterValues pokemon_frightened */
+            pokemon_frightened?: boolean;
+        }
+
+        /** Represents a ARPlusEncounterValues. */
+        class ARPlusEncounterValues {
+
+            /**
+             * Constructs a new ARPlusEncounterValues.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: POGOProtos.Data.IARPlusEncounterValues);
+
+            /** ARPlusEncounterValues proximity. */
+            public proximity: number;
+
+            /** ARPlusEncounterValues awareness. */
+            public awareness: number;
+
+            /** ARPlusEncounterValues pokemon_frightened. */
+            public pokemon_frightened: boolean;
+
+            /**
+             * Creates a new ARPlusEncounterValues instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ARPlusEncounterValues instance
+             */
+            public static create(properties?: POGOProtos.Data.IARPlusEncounterValues): POGOProtos.Data.ARPlusEncounterValues;
+
+            /**
+             * Encodes the specified ARPlusEncounterValues message. Does not implicitly {@link POGOProtos.Data.ARPlusEncounterValues.verify|verify} messages.
+             * @param message ARPlusEncounterValues message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: POGOProtos.Data.IARPlusEncounterValues, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified ARPlusEncounterValues message, length delimited. Does not implicitly {@link POGOProtos.Data.ARPlusEncounterValues.verify|verify} messages.
+             * @param message ARPlusEncounterValues message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: POGOProtos.Data.IARPlusEncounterValues, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ARPlusEncounterValues message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ARPlusEncounterValues
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Data.ARPlusEncounterValues;
+
+            /**
+             * Decodes a ARPlusEncounterValues message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns ARPlusEncounterValues
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Data.ARPlusEncounterValues;
+
+            /**
+             * Verifies a ARPlusEncounterValues message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a ARPlusEncounterValues message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns ARPlusEncounterValues
+             */
+            public static fromObject(object: { [k: string]: any }): POGOProtos.Data.ARPlusEncounterValues;
+
+            /**
+             * Creates a plain object from a ARPlusEncounterValues message. Also converts values to other types if specified.
+             * @param message ARPlusEncounterValues
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: POGOProtos.Data.ARPlusEncounterValues, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this ARPlusEncounterValues to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
         /** Properties of an AssetDigestEntry. */
         interface IAssetDigestEntry {
 
@@ -7295,7 +7397,8 @@ export namespace POGOProtos {
             ACTIVITY_FEED_BERRY = 28,
             ACTIVITY_SEARCH_GYM = 29,
             ACTIVITY_NEW_POKESTOP = 30,
-            ACTIVITY_GYM_BATTLE_LOSS = 31
+            ACTIVITY_GYM_BATTLE_LOSS = 31,
+            ACTIVITY_CATCH_AR_PLUS_BONUS = 32
         }
 
         /** BadgeType enum. */
@@ -16716,6 +16819,9 @@ export namespace POGOProtos {
 
                     /** CatchPokemonMessage normalized_hit_position */
                     normalized_hit_position?: number;
+
+                    /** CatchPokemonMessage ar_plus_values */
+                    ar_plus_values?: POGOProtos.Data.IARPlusEncounterValues;
                 }
 
                 /** Represents a CatchPokemonMessage. */
@@ -16747,6 +16853,9 @@ export namespace POGOProtos {
 
                     /** CatchPokemonMessage normalized_hit_position. */
                     public normalized_hit_position: number;
+
+                    /** CatchPokemonMessage ar_plus_values. */
+                    public ar_plus_values?: (POGOProtos.Data.IARPlusEncounterValues|null);
 
                     /**
                      * Creates a new CatchPokemonMessage instance using the specified properties.
@@ -17271,6 +17380,12 @@ export namespace POGOProtos {
 
                     /** DiskEncounterMessage player_longitude */
                     player_longitude?: number;
+
+                    /** DiskEncounterMessage gym_lat_degrees */
+                    gym_lat_degrees?: number;
+
+                    /** DiskEncounterMessage gym_lng_degrees */
+                    gym_lng_degrees?: number;
                 }
 
                 /** Represents a DiskEncounterMessage. */
@@ -17293,6 +17408,12 @@ export namespace POGOProtos {
 
                     /** DiskEncounterMessage player_longitude. */
                     public player_longitude: number;
+
+                    /** DiskEncounterMessage gym_lat_degrees. */
+                    public gym_lat_degrees: number;
+
+                    /** DiskEncounterMessage gym_lng_degrees. */
+                    public gym_lng_degrees: number;
 
                     /**
                      * Creates a new DiskEncounterMessage instance using the specified properties.
@@ -20874,6 +20995,12 @@ export namespace POGOProtos {
 
                     /** JoinLobbyMessage player_lng_degrees */
                     player_lng_degrees?: number;
+
+                    /** JoinLobbyMessage gym_lat_degrees */
+                    gym_lat_degrees?: number;
+
+                    /** JoinLobbyMessage gym_lng_degrees */
+                    gym_lng_degrees?: number;
                 }
 
                 /** Represents a JoinLobbyMessage. */
@@ -20902,6 +21029,12 @@ export namespace POGOProtos {
 
                     /** JoinLobbyMessage player_lng_degrees. */
                     public player_lng_degrees: number;
+
+                    /** JoinLobbyMessage gym_lat_degrees. */
+                    public gym_lat_degrees: number;
+
+                    /** JoinLobbyMessage gym_lng_degrees. */
+                    public gym_lng_degrees: number;
 
                     /**
                      * Creates a new JoinLobbyMessage instance using the specified properties.
@@ -22052,297 +22185,6 @@ export namespace POGOProtos {
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
-                }
-
-                /** Properties of a PushNotificationRegistryMessage. */
-                interface IPushNotificationRegistryMessage {
-
-                    /** PushNotificationRegistryMessage apn_token */
-                    apn_token?: POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.IApnToken;
-
-                    /** PushNotificationRegistryMessage gcm_token */
-                    gcm_token?: POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.IGcmToken;
-                }
-
-                /** Represents a PushNotificationRegistryMessage. */
-                class PushNotificationRegistryMessage {
-
-                    /**
-                     * Constructs a new PushNotificationRegistryMessage.
-                     * @param [properties] Properties to set
-                     */
-                    constructor(properties?: POGOProtos.Networking.Requests.Messages.IPushNotificationRegistryMessage);
-
-                    /** PushNotificationRegistryMessage apn_token. */
-                    public apn_token?: (POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.IApnToken|null);
-
-                    /** PushNotificationRegistryMessage gcm_token. */
-                    public gcm_token?: (POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.IGcmToken|null);
-
-                    /**
-                     * Creates a new PushNotificationRegistryMessage instance using the specified properties.
-                     * @param [properties] Properties to set
-                     * @returns PushNotificationRegistryMessage instance
-                     */
-                    public static create(properties?: POGOProtos.Networking.Requests.Messages.IPushNotificationRegistryMessage): POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage;
-
-                    /**
-                     * Encodes the specified PushNotificationRegistryMessage message. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.verify|verify} messages.
-                     * @param message PushNotificationRegistryMessage message or plain object to encode
-                     * @param [writer] Writer to encode to
-                     * @returns Writer
-                     */
-                    public static encode(message: POGOProtos.Networking.Requests.Messages.IPushNotificationRegistryMessage, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                    /**
-                     * Encodes the specified PushNotificationRegistryMessage message, length delimited. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.verify|verify} messages.
-                     * @param message PushNotificationRegistryMessage message or plain object to encode
-                     * @param [writer] Writer to encode to
-                     * @returns Writer
-                     */
-                    public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.IPushNotificationRegistryMessage, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                    /**
-                     * Decodes a PushNotificationRegistryMessage message from the specified reader or buffer.
-                     * @param reader Reader or buffer to decode from
-                     * @param [length] Message length if known beforehand
-                     * @returns PushNotificationRegistryMessage
-                     * @throws {Error} If the payload is not a reader or valid buffer
-                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                     */
-                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage;
-
-                    /**
-                     * Decodes a PushNotificationRegistryMessage message from the specified reader or buffer, length delimited.
-                     * @param reader Reader or buffer to decode from
-                     * @returns PushNotificationRegistryMessage
-                     * @throws {Error} If the payload is not a reader or valid buffer
-                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                     */
-                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage;
-
-                    /**
-                     * Verifies a PushNotificationRegistryMessage message.
-                     * @param message Plain object to verify
-                     * @returns `null` if valid, otherwise the reason why it is not
-                     */
-                    public static verify(message: { [k: string]: any }): (string|null);
-
-                    /**
-                     * Creates a PushNotificationRegistryMessage message from a plain object. Also converts values to their respective internal types.
-                     * @param object Plain object
-                     * @returns PushNotificationRegistryMessage
-                     */
-                    public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage;
-
-                    /**
-                     * Creates a plain object from a PushNotificationRegistryMessage message. Also converts values to other types if specified.
-                     * @param message PushNotificationRegistryMessage
-                     * @param [options] Conversion options
-                     * @returns Plain object
-                     */
-                    public static toObject(message: POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                    /**
-                     * Converts this PushNotificationRegistryMessage to JSON.
-                     * @returns JSON object
-                     */
-                    public toJSON(): { [k: string]: any };
-                }
-
-                namespace PushNotificationRegistryMessage {
-
-                    /** Properties of an ApnToken. */
-                    interface IApnToken {
-
-                        /** ApnToken registration_id */
-                        registration_id?: string;
-
-                        /** ApnToken bundle_identifier */
-                        bundle_identifier?: string;
-
-                        /** ApnToken payload_byte_size */
-                        payload_byte_size?: number;
-                    }
-
-                    /** Represents an ApnToken. */
-                    class ApnToken {
-
-                        /**
-                         * Constructs a new ApnToken.
-                         * @param [properties] Properties to set
-                         */
-                        constructor(properties?: POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.IApnToken);
-
-                        /** ApnToken registration_id. */
-                        public registration_id: string;
-
-                        /** ApnToken bundle_identifier. */
-                        public bundle_identifier: string;
-
-                        /** ApnToken payload_byte_size. */
-                        public payload_byte_size: number;
-
-                        /**
-                         * Creates a new ApnToken instance using the specified properties.
-                         * @param [properties] Properties to set
-                         * @returns ApnToken instance
-                         */
-                        public static create(properties?: POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.IApnToken): POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.ApnToken;
-
-                        /**
-                         * Encodes the specified ApnToken message. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.ApnToken.verify|verify} messages.
-                         * @param message ApnToken message or plain object to encode
-                         * @param [writer] Writer to encode to
-                         * @returns Writer
-                         */
-                        public static encode(message: POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.IApnToken, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                        /**
-                         * Encodes the specified ApnToken message, length delimited. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.ApnToken.verify|verify} messages.
-                         * @param message ApnToken message or plain object to encode
-                         * @param [writer] Writer to encode to
-                         * @returns Writer
-                         */
-                        public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.IApnToken, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                        /**
-                         * Decodes an ApnToken message from the specified reader or buffer.
-                         * @param reader Reader or buffer to decode from
-                         * @param [length] Message length if known beforehand
-                         * @returns ApnToken
-                         * @throws {Error} If the payload is not a reader or valid buffer
-                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                         */
-                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.ApnToken;
-
-                        /**
-                         * Decodes an ApnToken message from the specified reader or buffer, length delimited.
-                         * @param reader Reader or buffer to decode from
-                         * @returns ApnToken
-                         * @throws {Error} If the payload is not a reader or valid buffer
-                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                         */
-                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.ApnToken;
-
-                        /**
-                         * Verifies an ApnToken message.
-                         * @param message Plain object to verify
-                         * @returns `null` if valid, otherwise the reason why it is not
-                         */
-                        public static verify(message: { [k: string]: any }): (string|null);
-
-                        /**
-                         * Creates an ApnToken message from a plain object. Also converts values to their respective internal types.
-                         * @param object Plain object
-                         * @returns ApnToken
-                         */
-                        public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.ApnToken;
-
-                        /**
-                         * Creates a plain object from an ApnToken message. Also converts values to other types if specified.
-                         * @param message ApnToken
-                         * @param [options] Conversion options
-                         * @returns Plain object
-                         */
-                        public static toObject(message: POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.ApnToken, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                        /**
-                         * Converts this ApnToken to JSON.
-                         * @returns JSON object
-                         */
-                        public toJSON(): { [k: string]: any };
-                    }
-
-                    /** Properties of a GcmToken. */
-                    interface IGcmToken {
-
-                        /** GcmToken registration_id */
-                        registration_id?: string;
-                    }
-
-                    /** Represents a GcmToken. */
-                    class GcmToken {
-
-                        /**
-                         * Constructs a new GcmToken.
-                         * @param [properties] Properties to set
-                         */
-                        constructor(properties?: POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.IGcmToken);
-
-                        /** GcmToken registration_id. */
-                        public registration_id: string;
-
-                        /**
-                         * Creates a new GcmToken instance using the specified properties.
-                         * @param [properties] Properties to set
-                         * @returns GcmToken instance
-                         */
-                        public static create(properties?: POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.IGcmToken): POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.GcmToken;
-
-                        /**
-                         * Encodes the specified GcmToken message. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.GcmToken.verify|verify} messages.
-                         * @param message GcmToken message or plain object to encode
-                         * @param [writer] Writer to encode to
-                         * @returns Writer
-                         */
-                        public static encode(message: POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.IGcmToken, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                        /**
-                         * Encodes the specified GcmToken message, length delimited. Does not implicitly {@link POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.GcmToken.verify|verify} messages.
-                         * @param message GcmToken message or plain object to encode
-                         * @param [writer] Writer to encode to
-                         * @returns Writer
-                         */
-                        public static encodeDelimited(message: POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.IGcmToken, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                        /**
-                         * Decodes a GcmToken message from the specified reader or buffer.
-                         * @param reader Reader or buffer to decode from
-                         * @param [length] Message length if known beforehand
-                         * @returns GcmToken
-                         * @throws {Error} If the payload is not a reader or valid buffer
-                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                         */
-                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.GcmToken;
-
-                        /**
-                         * Decodes a GcmToken message from the specified reader or buffer, length delimited.
-                         * @param reader Reader or buffer to decode from
-                         * @returns GcmToken
-                         * @throws {Error} If the payload is not a reader or valid buffer
-                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                         */
-                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.GcmToken;
-
-                        /**
-                         * Verifies a GcmToken message.
-                         * @param message Plain object to verify
-                         * @returns `null` if valid, otherwise the reason why it is not
-                         */
-                        public static verify(message: { [k: string]: any }): (string|null);
-
-                        /**
-                         * Creates a GcmToken message from a plain object. Also converts values to their respective internal types.
-                         * @param object Plain object
-                         * @returns GcmToken
-                         */
-                        public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.GcmToken;
-
-                        /**
-                         * Creates a plain object from a GcmToken message. Also converts values to other types if specified.
-                         * @param message GcmToken
-                         * @param [options] Conversion options
-                         * @returns Plain object
-                         */
-                        public static toObject(message: POGOProtos.Networking.Requests.Messages.PushNotificationRegistryMessage.GcmToken, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                        /**
-                         * Converts this GcmToken to JSON.
-                         * @returns JSON object
-                         */
-                        public toJSON(): { [k: string]: any };
-                    }
                 }
 
                 /** Properties of a RecycleInventoryItemMessage. */
@@ -23685,6 +23527,12 @@ export namespace POGOProtos {
 
                     /** StartRaidBattleMessage player_lng_degrees */
                     player_lng_degrees?: number;
+
+                    /** StartRaidBattleMessage gym_lat_degrees */
+                    gym_lat_degrees?: number;
+
+                    /** StartRaidBattleMessage gym_lng_degrees */
+                    gym_lng_degrees?: number;
                 }
 
                 /** Represents a StartRaidBattleMessage. */
@@ -23713,6 +23561,12 @@ export namespace POGOProtos {
 
                     /** StartRaidBattleMessage player_lng_degrees. */
                     public player_lng_degrees: number;
+
+                    /** StartRaidBattleMessage gym_lat_degrees. */
+                    public gym_lat_degrees: number;
+
+                    /** StartRaidBattleMessage gym_lng_degrees. */
+                    public gym_lng_degrees: number;
 
                     /**
                      * Creates a new StartRaidBattleMessage instance using the specified properties.
@@ -26489,6 +26343,9 @@ export namespace POGOProtos {
 
                 /** DiskEncounterResponse active_item */
                 active_item?: POGOProtos.Inventory.Item.ItemId;
+
+                /** DiskEncounterResponse arplus_attempts_until_flee */
+                arplus_attempts_until_flee?: number;
             }
 
             /** Represents a DiskEncounterResponse. */
@@ -26511,6 +26368,9 @@ export namespace POGOProtos {
 
                 /** DiskEncounterResponse active_item. */
                 public active_item: POGOProtos.Inventory.Item.ItemId;
+
+                /** DiskEncounterResponse arplus_attempts_until_flee. */
+                public arplus_attempts_until_flee: number;
 
                 /**
                  * Creates a new DiskEncounterResponse instance using the specified properties.
@@ -26999,6 +26859,9 @@ export namespace POGOProtos {
 
                     /** ItemTemplate weather_bonus_settings */
                     weather_bonus_settings?: POGOProtos.Settings.Master.IWeatherBonus;
+
+                    /** ItemTemplate pokemon_scale_settings */
+                    pokemon_scale_settings?: POGOProtos.Settings.Master.IPokemonScaleSetting;
                 }
 
                 /** Represents an ItemTemplate. */
@@ -27078,6 +26941,9 @@ export namespace POGOProtos {
 
                     /** ItemTemplate weather_bonus_settings. */
                     public weather_bonus_settings?: (POGOProtos.Settings.Master.IWeatherBonus|null);
+
+                    /** ItemTemplate pokemon_scale_settings. */
+                    public pokemon_scale_settings?: (POGOProtos.Settings.Master.IPokemonScaleSetting|null);
 
                     /**
                      * Creates a new ItemTemplate instance using the specified properties.
@@ -27479,6 +27345,9 @@ export namespace POGOProtos {
 
                 /** EncounterResponse active_item */
                 active_item?: POGOProtos.Inventory.Item.ItemId;
+
+                /** EncounterResponse arplus_attempts_until_flee */
+                arplus_attempts_until_flee?: number;
             }
 
             /** Represents an EncounterResponse. */
@@ -27504,6 +27373,9 @@ export namespace POGOProtos {
 
                 /** EncounterResponse active_item. */
                 public active_item: POGOProtos.Inventory.Item.ItemId;
+
+                /** EncounterResponse arplus_attempts_until_flee. */
+                public arplus_attempts_until_flee: number;
 
                 /**
                  * Creates a new EncounterResponse instance using the specified properties.
@@ -31038,6 +30910,9 @@ export namespace POGOProtos {
 
                 /** GymGetInfoResponse event_info */
                 event_info?: POGOProtos.Data.Raid.IEventInfo;
+
+                /** GymGetInfoResponse display_weather */
+                display_weather?: POGOProtos.Map.Weather.IDisplayWeather;
             }
 
             /** Represents a GymGetInfoResponse. */
@@ -31075,6 +30950,9 @@ export namespace POGOProtos {
 
                 /** GymGetInfoResponse event_info. */
                 public event_info?: (POGOProtos.Data.Raid.IEventInfo|null);
+
+                /** GymGetInfoResponse display_weather. */
+                public display_weather?: (POGOProtos.Map.Weather.IDisplayWeather|null);
 
                 /**
                  * Creates a new GymGetInfoResponse instance using the specified properties.
@@ -31291,6 +31169,9 @@ export namespace POGOProtos {
 
                 /** IncenseEncounterResponse active_item */
                 active_item?: POGOProtos.Inventory.Item.ItemId;
+
+                /** IncenseEncounterResponse arplus_attempts_until_flee */
+                arplus_attempts_until_flee?: number;
             }
 
             /** Represents an IncenseEncounterResponse. */
@@ -31313,6 +31194,9 @@ export namespace POGOProtos {
 
                 /** IncenseEncounterResponse active_item. */
                 public active_item: POGOProtos.Inventory.Item.ItemId;
+
+                /** IncenseEncounterResponse arplus_attempts_until_flee. */
+                public arplus_attempts_until_flee: number;
 
                 /**
                  * Creates a new IncenseEncounterResponse instance using the specified properties.
@@ -32421,106 +32305,6 @@ export namespace POGOProtos {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-            }
-
-            /** Properties of a PushNotificationRegistryResponse. */
-            interface IPushNotificationRegistryResponse {
-
-                /** PushNotificationRegistryResponse result */
-                result?: POGOProtos.Networking.Responses.PushNotificationRegistryResponse.Result;
-            }
-
-            /** Represents a PushNotificationRegistryResponse. */
-            class PushNotificationRegistryResponse {
-
-                /**
-                 * Constructs a new PushNotificationRegistryResponse.
-                 * @param [properties] Properties to set
-                 */
-                constructor(properties?: POGOProtos.Networking.Responses.IPushNotificationRegistryResponse);
-
-                /** PushNotificationRegistryResponse result. */
-                public result: POGOProtos.Networking.Responses.PushNotificationRegistryResponse.Result;
-
-                /**
-                 * Creates a new PushNotificationRegistryResponse instance using the specified properties.
-                 * @param [properties] Properties to set
-                 * @returns PushNotificationRegistryResponse instance
-                 */
-                public static create(properties?: POGOProtos.Networking.Responses.IPushNotificationRegistryResponse): POGOProtos.Networking.Responses.PushNotificationRegistryResponse;
-
-                /**
-                 * Encodes the specified PushNotificationRegistryResponse message. Does not implicitly {@link POGOProtos.Networking.Responses.PushNotificationRegistryResponse.verify|verify} messages.
-                 * @param message PushNotificationRegistryResponse message or plain object to encode
-                 * @param [writer] Writer to encode to
-                 * @returns Writer
-                 */
-                public static encode(message: POGOProtos.Networking.Responses.IPushNotificationRegistryResponse, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                /**
-                 * Encodes the specified PushNotificationRegistryResponse message, length delimited. Does not implicitly {@link POGOProtos.Networking.Responses.PushNotificationRegistryResponse.verify|verify} messages.
-                 * @param message PushNotificationRegistryResponse message or plain object to encode
-                 * @param [writer] Writer to encode to
-                 * @returns Writer
-                 */
-                public static encodeDelimited(message: POGOProtos.Networking.Responses.IPushNotificationRegistryResponse, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                /**
-                 * Decodes a PushNotificationRegistryResponse message from the specified reader or buffer.
-                 * @param reader Reader or buffer to decode from
-                 * @param [length] Message length if known beforehand
-                 * @returns PushNotificationRegistryResponse
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Networking.Responses.PushNotificationRegistryResponse;
-
-                /**
-                 * Decodes a PushNotificationRegistryResponse message from the specified reader or buffer, length delimited.
-                 * @param reader Reader or buffer to decode from
-                 * @returns PushNotificationRegistryResponse
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Networking.Responses.PushNotificationRegistryResponse;
-
-                /**
-                 * Verifies a PushNotificationRegistryResponse message.
-                 * @param message Plain object to verify
-                 * @returns `null` if valid, otherwise the reason why it is not
-                 */
-                public static verify(message: { [k: string]: any }): (string|null);
-
-                /**
-                 * Creates a PushNotificationRegistryResponse message from a plain object. Also converts values to their respective internal types.
-                 * @param object Plain object
-                 * @returns PushNotificationRegistryResponse
-                 */
-                public static fromObject(object: { [k: string]: any }): POGOProtos.Networking.Responses.PushNotificationRegistryResponse;
-
-                /**
-                 * Creates a plain object from a PushNotificationRegistryResponse message. Also converts values to other types if specified.
-                 * @param message PushNotificationRegistryResponse
-                 * @param [options] Conversion options
-                 * @returns Plain object
-                 */
-                public static toObject(message: POGOProtos.Networking.Responses.PushNotificationRegistryResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                /**
-                 * Converts this PushNotificationRegistryResponse to JSON.
-                 * @returns JSON object
-                 */
-                public toJSON(): { [k: string]: any };
-            }
-
-            namespace PushNotificationRegistryResponse {
-
-                /** Result enum. */
-                enum Result {
-                    UNSET = 0,
-                    SUCCESS = 1,
-                    NO_CHANGE = 2
-                }
             }
 
             /** Properties of a RecycleInventoryItemResponse. */
@@ -37456,6 +37240,33 @@ export namespace POGOProtos {
 
                 /** EncounterSettings milestone_threshold */
                 milestone_threshold?: number;
+
+                /** EncounterSettings ar_plus_mode_enabled */
+                ar_plus_mode_enabled?: boolean;
+
+                /** EncounterSettings ar_close_proximity_threshold */
+                ar_close_proximity_threshold?: number;
+
+                /** EncounterSettings ar_low_awareness_threshold */
+                ar_low_awareness_threshold?: number;
+
+                /** EncounterSettings ar_close_proximity_multiplier */
+                ar_close_proximity_multiplier?: number;
+
+                /** EncounterSettings ar_awareness_penalty_threshold */
+                ar_awareness_penalty_threshold?: number;
+
+                /** EncounterSettings ar_low_awareness_max_multiplier */
+                ar_low_awareness_max_multiplier?: number;
+
+                /** EncounterSettings ar_high_awareness_min_penalty_multiplier */
+                ar_high_awareness_min_penalty_multiplier?: number;
+
+                /** EncounterSettings ar_plus_attempts_until_flee_max */
+                ar_plus_attempts_until_flee_max?: number;
+
+                /** EncounterSettings ar_plus_attempts_until_flee_infinite */
+                ar_plus_attempts_until_flee_infinite?: number;
             }
 
             /** Represents an EncounterSettings. */
@@ -37481,6 +37292,33 @@ export namespace POGOProtos {
 
                 /** EncounterSettings milestone_threshold. */
                 public milestone_threshold: number;
+
+                /** EncounterSettings ar_plus_mode_enabled. */
+                public ar_plus_mode_enabled: boolean;
+
+                /** EncounterSettings ar_close_proximity_threshold. */
+                public ar_close_proximity_threshold: number;
+
+                /** EncounterSettings ar_low_awareness_threshold. */
+                public ar_low_awareness_threshold: number;
+
+                /** EncounterSettings ar_close_proximity_multiplier. */
+                public ar_close_proximity_multiplier: number;
+
+                /** EncounterSettings ar_awareness_penalty_threshold. */
+                public ar_awareness_penalty_threshold: number;
+
+                /** EncounterSettings ar_low_awareness_max_multiplier. */
+                public ar_low_awareness_max_multiplier: number;
+
+                /** EncounterSettings ar_high_awareness_min_penalty_multiplier. */
+                public ar_high_awareness_min_penalty_multiplier: number;
+
+                /** EncounterSettings ar_plus_attempts_until_flee_max. */
+                public ar_plus_attempts_until_flee_max: number;
+
+                /** EncounterSettings ar_plus_attempts_until_flee_infinite. */
+                public ar_plus_attempts_until_flee_infinite: number;
 
                 /**
                  * Creates a new EncounterSettings instance using the specified properties.
@@ -40924,6 +40762,121 @@ export namespace POGOProtos {
                 }
             }
 
+            /** Properties of a PokemonScaleSetting. */
+            interface IPokemonScaleSetting {
+
+                /** PokemonScaleSetting pokemon_scale_mode */
+                pokemon_scale_mode?: POGOProtos.Settings.Master.PokemonScaleSetting.PokemonScaleMode;
+
+                /** PokemonScaleSetting min_height */
+                min_height?: number;
+
+                /** PokemonScaleSetting max_height */
+                max_height?: number;
+            }
+
+            /** Represents a PokemonScaleSetting. */
+            class PokemonScaleSetting {
+
+                /**
+                 * Constructs a new PokemonScaleSetting.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: POGOProtos.Settings.Master.IPokemonScaleSetting);
+
+                /** PokemonScaleSetting pokemon_scale_mode. */
+                public pokemon_scale_mode: POGOProtos.Settings.Master.PokemonScaleSetting.PokemonScaleMode;
+
+                /** PokemonScaleSetting min_height. */
+                public min_height: number;
+
+                /** PokemonScaleSetting max_height. */
+                public max_height: number;
+
+                /**
+                 * Creates a new PokemonScaleSetting instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns PokemonScaleSetting instance
+                 */
+                public static create(properties?: POGOProtos.Settings.Master.IPokemonScaleSetting): POGOProtos.Settings.Master.PokemonScaleSetting;
+
+                /**
+                 * Encodes the specified PokemonScaleSetting message. Does not implicitly {@link POGOProtos.Settings.Master.PokemonScaleSetting.verify|verify} messages.
+                 * @param message PokemonScaleSetting message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: POGOProtos.Settings.Master.IPokemonScaleSetting, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified PokemonScaleSetting message, length delimited. Does not implicitly {@link POGOProtos.Settings.Master.PokemonScaleSetting.verify|verify} messages.
+                 * @param message PokemonScaleSetting message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: POGOProtos.Settings.Master.IPokemonScaleSetting, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a PokemonScaleSetting message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns PokemonScaleSetting
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Settings.Master.PokemonScaleSetting;
+
+                /**
+                 * Decodes a PokemonScaleSetting message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns PokemonScaleSetting
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): POGOProtos.Settings.Master.PokemonScaleSetting;
+
+                /**
+                 * Verifies a PokemonScaleSetting message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a PokemonScaleSetting message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns PokemonScaleSetting
+                 */
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Settings.Master.PokemonScaleSetting;
+
+                /**
+                 * Creates a plain object from a PokemonScaleSetting message. Also converts values to other types if specified.
+                 * @param message PokemonScaleSetting
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: POGOProtos.Settings.Master.PokemonScaleSetting, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this PokemonScaleSetting to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace PokemonScaleSetting {
+
+                /** PokemonScaleMode enum. */
+                enum PokemonScaleMode {
+                    NaturalScale = 0,
+                    GuiScale = 1,
+                    BattlePokemonScale = 2,
+                    RaidBossScale = 3,
+                    GymTopperScale = 4,
+                    MapPokemonScale = 5
+                }
+            }
+
             /** Properties of a PokemonSettings. */
             interface IPokemonSettings {
 
@@ -41001,6 +40954,9 @@ export namespace POGOProtos {
 
                 /** PokemonSettings evolution_branch */
                 evolution_branch?: POGOProtos.Settings.Master.Pokemon.IEvolutionBranch[];
+
+                /** PokemonSettings model_scale_v2 */
+                model_scale_v2?: number;
             }
 
             /** Represents a PokemonSettings. */
@@ -41086,6 +41042,9 @@ export namespace POGOProtos {
 
                 /** PokemonSettings evolution_branch. */
                 public evolution_branch: POGOProtos.Settings.Master.Pokemon.IEvolutionBranch[];
+
+                /** PokemonSettings model_scale_v2. */
+                public model_scale_v2: number;
 
                 /**
                  * Creates a new PokemonSettings instance using the specified properties.
