@@ -3,7 +3,7 @@ package POGOProtos.Networking.Responses;
 
 import "POGOProtos/Data/Battle/BattleUpdate.proto";
 
-message AttackRaidBattleResponse {
+message AttackRaidResponse {
 	Result result = 1;
 	.POGOProtos.Data.Battle.BattleUpdate battle_update = 2;
 
