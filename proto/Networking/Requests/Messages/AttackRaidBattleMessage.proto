@@ -3,7 +3,7 @@ package POGOProtos.Networking.Requests.Messages;
 
 import "POGOProtos.Data.Battle/BattleAction.proto";
 
-message AttackRaidBattleMessage
+message AttackRaidMessage
 {
 	string gym_id = 1;
 	string battle_id = 2;
